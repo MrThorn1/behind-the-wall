@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cioj51cfymxdv"]
+
+[ext_resource type="Script" path="res://Scenes/clicker_prototype/clicker_prototype.gd" id="1_e0k0k"]
+[ext_resource type="Script" path="res://Scenes/clicker_prototype/gold_label.gd" id="2_kra23"]
+
+[node name="ClickerPrototype" type="Control" node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0k0k")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "Clicks : 12"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_kra23")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click Me"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
