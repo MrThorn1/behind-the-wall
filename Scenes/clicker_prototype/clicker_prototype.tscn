@@ -1,17 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://cioj51cfymxdv"]
+[gd_scene load_steps=5 format=3 uid="uid://cioj51cfymxdv"]
 
-[ext_resource type="Script" path="res://Scenes/clicker_prototype/clicker_prototype.gd" id="1_e0k0k"]
+[ext_resource type="Texture2D" uid="uid://ca8pyy3jhonby" path="res://assets/Target.png" id="2_jfo8e"]
 [ext_resource type="Script" path="res://Scenes/clicker_prototype/gold_label.gd" id="2_kra23"]
 
-[node name="ClickerPrototype" type="Control" node_paths=PackedStringArray("label")]
+[sub_resource type="GDScript" id="GDScript_c5h2y"]
+resource_name = "button"
+script/source = "extends TextureButton
+var tweenscalechange : float = 1.1
+
+func _ready() -> void:
+	reposition_pivot_offset()
+
+func reposition_pivot_offset() -> void:
+	pivot_offset = size / 2.0
+
+func tweening() -> void:
+	var tween : Tween = create_tween()
+	tween.tween_property(self, \"scale\", Vector2(tweenscalechange, tweenscalechange), 0.05)
+	tween.tween_property(self, \"scale\", Vector2(1,1), 0.05)
+
+func _on_pressed() -> void:
+	ManagerClick.ref.click()
+	tweening()
+	pass # Replace with function body.
+"
+
+[sub_resource type="GDScript" id="GDScript_4xe15"]
+resource_name = "ClickPowerLable"
+script/source = "extends Label
+
+func _ready() -> void:
+	update_text()
+	ManagerClick.ref.click_power_updated.connect(_on_click_power_updated)
+
+func update_text() -> void:
+	text = \"Click Power : %s\" %ManagerClick.ref.click_power
+	print(ManagerClick.ref.click_power)
+
+func _on_click_power_updated() -> void:
+	update_text()
+"
+
+[node name="ClickerPrototype" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_e0k0k")
-label = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 80)
@@ -26,20 +62,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_kra23")
 
-[node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(320, 80)
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -38.0
+offset_top = -40.0
+offset_right = 38.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Click Me"
+texture_normal = ExtResource("2_jfo8e")
+stretch_mode = 3
+script = SubResource("GDScript_c5h2y")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+script = SubResource("GDScript_4xe15")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
