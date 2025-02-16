@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://drb7asspowt7k"]
+
+[ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
+[ext_resource type="PackedScene" uid="uid://cioj51cfymxdv" path="res://Scenes/clicker_prototype/clicker_prototype.tscn" id="2_q0f71"]
+[ext_resource type="PackedScene" uid="uid://cwlfbquhevwud" path="res://Scenes/managers/click_manager/manager_click.tscn" id="3_p02xc"]
+[ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Scenes/managers/gold_manager/manager_junk.tscn" id="4_jc330"]
+
+[node name="Behind The Wall Main Game Object" type="Node"]
+
+[node name="data_repository" type="Node" parent="."]
+script = ExtResource("1_f5bdk")
+
+[node name="ClickerPrototype" parent="." instance=ExtResource("2_q0f71")]
+
+[node name="resource_managers" type="Node" parent="."]
+
+[node name="managerclick" parent="resource_managers" instance=ExtResource("3_p02xc")]
+
+[node name="managerJunk" parent="resource_managers" instance=ExtResource("4_jc330")]

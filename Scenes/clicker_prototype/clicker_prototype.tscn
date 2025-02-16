@@ -20,7 +20,7 @@ func tweening() -> void:
 	tween.tween_property(self, \"scale\", Vector2(1,1), 0.05)
 
 func _on_pressed() -> void:
-	ManagerClick.ref.click()
+	managerclick.ref.click()
 	tweening()
 	pass # Replace with function body.
 "
@@ -31,11 +31,10 @@ script/source = "extends Label
 
 func _ready() -> void:
 	update_text()
-	ManagerClick.ref.click_power_updated.connect(_on_click_power_updated)
 
 func update_text() -> void:
-	text = \"Click Power : %s\" %ManagerClick.ref.click_power
-	print(ManagerClick.ref.click_power)
+	text = \"Click Power : %s\" %managerclick.ref.click_power
+	print(managerclick.ref.click_power)
 
 func _on_click_power_updated() -> void:
 	update_text()
