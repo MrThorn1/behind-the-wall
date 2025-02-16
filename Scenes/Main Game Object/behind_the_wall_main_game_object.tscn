@@ -1,19 +1,122 @@
-[gd_scene load_steps=5 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=6 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://cioj51cfymxdv" path="res://Scenes/clicker_prototype/clicker_prototype.tscn" id="2_q0f71"]
 [ext_resource type="PackedScene" uid="uid://cwlfbquhevwud" path="res://Scenes/managers/click_manager/manager_click.tscn" id="3_p02xc"]
 [ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Scenes/managers/gold_manager/manager_junk.tscn" id="4_jc330"]
+[ext_resource type="Texture2D" uid="uid://dkw18rfv0l5uk" path="res://Sprites/Screen Layout Prototype.png" id="5_wopyc"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
-[node name="data_repository" type="Node" parent="."]
+[node name="technical_management_nodes" type="Node" parent="."]
+
+[node name="resource_managers" type="Node" parent="technical_management_nodes"]
+
+[node name="managerclick" parent="technical_management_nodes/resource_managers" instance=ExtResource("3_p02xc")]
+
+[node name="managerJunk" parent="technical_management_nodes/resource_managers" instance=ExtResource("4_jc330")]
+
+[node name="data_repository" type="Node" parent="technical_management_nodes"]
 script = ExtResource("1_f5bdk")
 
 [node name="ClickerPrototype" parent="." instance=ExtResource("2_q0f71")]
 
-[node name="resource_managers" type="Node" parent="."]
+[node name="ui_overlay" type="CanvasLayer" parent="."]
 
-[node name="managerclick" parent="resource_managers" instance=ExtResource("3_p02xc")]
+[node name="HBoxContainer" type="HBoxContainer" parent="ui_overlay"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -877.0
+offset_right = 859.0
+offset_bottom = 40.0
+grow_horizontal = 2
 
-[node name="managerJunk" parent="resource_managers" instance=ExtResource("4_jc330")]
+[node name="spacer_container_1" type="Control" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="trash_label" type="Label" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Trash: "
+horizontal_alignment = 2
+
+[node name="trash_value" type="Label" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "2500"
+
+[node name="spacer_container_3" type="Control" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="housing_label" type="Label" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Housing: "
+horizontal_alignment = 2
+
+[node name="housing_value" type="Label" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "100"
+
+[node name="spacer_container_4" type="Control" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="food_label" type="Label" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Food: "
+horizontal_alignment = 2
+
+[node name="food_value" type="Label" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "2000"
+
+[node name="spacer_container_5" type="Control" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="cloth_label" type="Label" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Cloth: "
+horizontal_alignment = 2
+
+[node name="cloth_value" type="Label" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "100"
+
+[node name="spacer_container_2" type="Control" parent="ui_overlay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="ui_overlay"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("5_wopyc")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cioj51cfymxdv"]
+[gd_scene load_steps=4 format=3 uid="uid://cioj51cfymxdv"]
 
 [ext_resource type="Texture2D" uid="uid://ca8pyy3jhonby" path="res://assets/Target.png" id="2_jfo8e"]
 [ext_resource type="Script" path="res://Scenes/clicker_prototype/gold_label.gd" id="2_kra23"]
@@ -23,21 +23,7 @@ func _on_pressed() -> void:
 	managerclick.ref.click()
 	tweening()
 	pass # Replace with function body.
-"
-
-[sub_resource type="GDScript" id="GDScript_4xe15"]
-resource_name = "ClickPowerLable"
-script/source = "extends Label
-
-func _ready() -> void:
-	update_text()
-
-func update_text() -> void:
-	text = \"Click Power : %s\" %managerclick.ref.click_power
-	print(managerclick.ref.click_power)
-
-func _on_click_power_updated() -> void:
-	update_text()
+ 
 "
 
 [node name="ClickerPrototype" type="Control"]
@@ -49,6 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
+visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 anchors_preset = 10
@@ -63,25 +50,18 @@ script = ExtResource("2_kra23")
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -38.0
-offset_top = -40.0
+offset_top = -71.0
 offset_right = 38.0
-offset_bottom = 40.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 texture_normal = ExtResource("2_jfo8e")
 stretch_mode = 3
 script = SubResource("GDScript_c5h2y")
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 23.0
-script = SubResource("GDScript_4xe15")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
