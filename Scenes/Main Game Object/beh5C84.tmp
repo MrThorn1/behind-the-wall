@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=7 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
-[ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
-[ext_resource type="PackedScene" uid="uid://cwlfbquhevwud" path="res://Scenes/managers/click_manager/managerclick.tscn" id="3_p02xc"]
+[ext_resource type="PackedScene" uid="uid://cioj51cfymxdv" path="res://Scenes/clicker_prototype/clicker_prototype.tscn" id="2_q0f71"]
+[ext_resource type="PackedScene" uid="uid://cwlfbquhevwud" path="res://Scenes/managers/click_manager/manager_click.tscn" id="3_p02xc"]
 [ext_resource type="Script" path="res://Scenes/managers/cloth_manager/managercloth.gd" id="3_xcfqu"]
-[ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Scenes/managers/gold_manager/managertrash.tscn" id="4_jc330"]
+[ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Scenes/managers/gold_manager/manager_trash.tscn" id="4_jc330"]
 [ext_resource type="Texture2D" uid="uid://dkw18rfv0l5uk" path="res://Sprites/Screen Layout Prototype.png" id="5_wopyc"]
-[ext_resource type="Script" path="res://Scripts/Label_trash_value.gd" id="7_epm3s"]
-[ext_resource type="Script" path="res://Scripts/trash_button.gd" id="9_j8qxd"]
-[ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="10_adv6k"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
@@ -20,11 +17,13 @@
 
 [node name="managertrash" parent="technical_management_nodes/resource_managers" instance=ExtResource("4_jc330")]
 
-[node name="managercloth" parent="technical_management_nodes/resource_managers" instance=ExtResource("3_40ffs")]
+[node name="managercloth" type="Node" parent="technical_management_nodes/resource_managers"]
 script = ExtResource("3_xcfqu")
 
 [node name="data_repository" type="Node" parent="technical_management_nodes"]
 script = ExtResource("1_f5bdk")
+
+[node name="ClickerPrototype" parent="." instance=ExtResource("2_q0f71")]
 
 [node name="ui_overlay" type="CanvasLayer" parent="."]
 
@@ -53,7 +52,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 45
 text = "2500"
-script = ExtResource("7_epm3s")
 
 [node name="spacer_container_3" type="Control" parent="ui_overlay/HBoxContainer"]
 layout_mode = 2
@@ -126,22 +124,3 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 texture = ExtResource("5_wopyc")
-
-[node name="trash_button" type="Button" parent="ui_overlay"]
-offset_left = 459.0
-offset_top = 895.0
-offset_right = 511.0
-offset_bottom = 926.0
-text = "Trash"
-script = ExtResource("9_j8qxd")
-
-[node name="cloth_buttom" type="Button" parent="ui_overlay"]
-offset_left = 1472.0
-offset_top = 888.0
-offset_right = 1521.0
-offset_bottom = 919.0
-text = "Cloth"
-script = ExtResource("10_adv6k")
-
-[connection signal="pressed" from="ui_overlay/trash_button" to="ui_overlay/trash_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/cloth_buttom" to="ui_overlay/cloth_buttom" method="_on_pressed"]

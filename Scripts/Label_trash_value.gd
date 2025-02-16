@@ -5,7 +5,7 @@ func _ready() -> void:
 	managertrash.ref.trash_created.connect(_on_trash_created)
 
 func update_text() -> void:
-	text = "Trash : %s" %managertrash.ref.get_trash()
+	text = "%s" %managertrash.ref.get_trash()
 
 func _on_trash_created(_quantity : int) -> void:
 	update_text()

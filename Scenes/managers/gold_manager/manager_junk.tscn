@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://rm7tk3mxh17k"]
-
-[ext_resource type="Script" path="res://Scenes/managers/gold_manager/manager_junk.gd" id="1_vxkwa"]
-
-[node name="ManagerGold" type="Node"]
-script = ExtResource("1_vxkwa")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwlfbquhevwud"]
 
-[ext_resource type="Script" path="res://Scenes/managers/click_manager/manager_click.gd" id="1_50k3m"]
+[ext_resource type="Script" path="res://Scenes/managers/click_manager/managerclick.gd" id="1_50k3m"]
 
 [node name="ManagerClick" type="Node"]
 script = ExtResource("1_50k3m")

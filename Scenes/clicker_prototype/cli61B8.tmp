@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://cioj51cfymxdv"]
+
+[ext_resource type="Texture2D" uid="uid://ca8pyy3jhonby" path="res://assets/Target.png" id="2_jfo8e"]
+[ext_resource type="Script" path="res://Scenes/clicker_prototype/gold_label.gd" id="2_kra23"]
+
+[sub_resource type="GDScript" id="GDScript_c5h2y"]
+resource_name = "button"
+script/source = "extends TextureButton
+var tweenscalechange : float = 1.1
+
+func _ready() -> void:
+	reposition_pivot_offset()
+
+func reposition_pivot_offset() -> void:
+	pivot_offset = size / 2.0
+
+func tweening() -> void:
+	var tween : Tween = create_tween()
+	tween.tween_property(self, \"scale\", Vector2(tweenscalechange, tweenscalechange), 0.05)
+	tween.tween_property(self, \"scale\", Vector2(1,1), 0.05)
+
+func _on_pressed() -> void:
+	managerclick.ref.click()
+	tweening()
+	pass # Replace with function body.
+ 
+"
+
+[node name="ClickerPrototype" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "Clicks : 12"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_kra23")
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -71.0
+offset_right = 38.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_jfo8e")
+stretch_mode = 3
+script = SubResource("GDScript_c5h2y")
+
+[node name="trash_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 162.0
+offset_right = 85.0
+offset_bottom = 193.0
+text = "Trash"
+
+[node name="cloth_buttom" type="Button" parent="."]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 163.0
+offset_right = 592.0
+offset_bottom = 194.0
+text = "Cloth"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
