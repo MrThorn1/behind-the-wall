@@ -24,4 +24,6 @@ func click(resource_type) -> void:
 		managertrash.ref.create_trash(quantity)
 	if resource_type == 2:
 		managercloth.ref.create_cloth(quantity)
-		pass
+	if resource_type == 3:
+		managerfood.ref.create_food(quantity)
+	pass

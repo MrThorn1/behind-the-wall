@@ -1,15 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=16 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
 [ext_resource type="PackedScene" uid="uid://cwlfbquhevwud" path="res://Scenes/managers/click_manager/managerclick.tscn" id="3_p02xc"]
 [ext_resource type="Script" path="res://Scenes/managers/cloth_manager/managercloth.gd" id="3_xcfqu"]
 [ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Scenes/managers/gold_manager/managertrash.tscn" id="4_jc330"]
+[ext_resource type="Script" path="res://Scenes/managers/food_manager/managerfood.gd" id="4_nccm0"]
 [ext_resource type="Texture2D" uid="uid://dkw18rfv0l5uk" path="res://Sprites/Screen Layout Prototype.png" id="5_wopyc"]
-[ext_resource type="Script" path="res://Scripts/Label_trash_value.gd" id="7_epm3s"]
-[ext_resource type="Script" path="res://Scenes/Main Game Object/cloth_value.gd" id="7_gorkp"]
+[ext_resource type="Script" path="res://Scripts/label_trash_value.gd" id="7_epm3s"]
+[ext_resource type="Script" path="res://Scripts/label_cloth_value.gd" id="7_gorkp"]
+[ext_resource type="Texture2D" uid="uid://3yg0yhudfe46" path="res://assets/Dumpster_Icon_v2.png" id="7_li4si"]
+[ext_resource type="Script" path="res://Scripts/lable_food_value.gd" id="7_tfr7a"]
 [ext_resource type="Script" path="res://Scripts/trash_button.gd" id="9_j8qxd"]
+[ext_resource type="Texture2D" uid="uid://wr1fxy3f32l8" path="res://assets/hotdog_icon_v1.png" id="9_ooden"]
 [ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="10_adv6k"]
+[ext_resource type="Script" path="res://Scripts/food_button.gd" id="11_ao23p"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
@@ -24,93 +29,212 @@
 [node name="managercloth" parent="technical_management_nodes/resource_managers" instance=ExtResource("3_40ffs")]
 script = ExtResource("3_xcfqu")
 
+[node name="managerfood" parent="technical_management_nodes/resource_managers" instance=ExtResource("3_40ffs")]
+script = ExtResource("4_nccm0")
+
 [node name="data_repository" type="Node" parent="technical_management_nodes"]
 script = ExtResource("1_f5bdk")
 
 [node name="ui_overlay" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ui_overlay"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ui_overlay"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -877.0
-offset_right = 859.0
-offset_bottom = 40.0
+offset_left = -953.0
+offset_right = 957.0
+offset_bottom = 67.0
 grow_horizontal = 2
 
-[node name="spacer_container_1" type="Control" parent="ui_overlay/HBoxContainer"]
+[node name="top_row_resource_ui" type="HBoxContainer" parent="ui_overlay/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
 
-[node name="trash_label" type="Label" parent="ui_overlay/HBoxContainer"]
+[node name="population_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 45
-text = "Trash: "
+text = "Population: "
 horizontal_alignment = 2
 
-[node name="trash_value" type="Label" parent="ui_overlay/HBoxContainer"]
+[node name="population_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 45
-text = "2500"
+text = "100/200"
+
+[node name="research_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Research: "
+horizontal_alignment = 2
+
+[node name="research_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "150/200"
+
+[node name="suspicion_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Research: "
+horizontal_alignment = 2
+
+[node name="suspicion_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "56/100"
+
+[node name="Control2" type="Control" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="bottom_row_resouce_ui" type="HBoxContainer" parent="ui_overlay/VBoxContainer"]
+layout_mode = 2
+
+[node name="spacer_container_1" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="dumpster_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+texture = ExtResource("7_li4si")
+
+[node name="trash_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 35
+text = ":  "
+horizontal_alignment = 2
+
+[node name="trash_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "200"
 script = ExtResource("7_epm3s")
 
-[node name="spacer_container_3" type="Control" parent="ui_overlay/HBoxContainer"]
+[node name="spacer_container_3" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="housing_label" type="Label" parent="ui_overlay/HBoxContainer"]
+[node name="hotdog_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
-text = "Housing: "
+texture = ExtResource("9_ooden")
+
+[node name="food_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = ": "
 horizontal_alignment = 2
 
-[node name="housing_value" type="Label" parent="ui_overlay/HBoxContainer"]
+[node name="food_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
-text = "100"
+theme_override_font_sizes/font_size = 35
+text = "200"
+script = ExtResource("7_tfr7a")
 
-[node name="spacer_container_4" type="Control" parent="ui_overlay/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="food_label" type="Label" parent="ui_overlay/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
-text = "Food: "
-horizontal_alignment = 2
-
-[node name="food_value" type="Label" parent="ui_overlay/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
-text = "2000"
-
-[node name="spacer_container_5" type="Control" parent="ui_overlay/HBoxContainer"]
+[node name="spacer_container_5" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="cloth_label" type="Label" parent="ui_overlay/HBoxContainer"]
+[node name="cloth_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 35
 text = "Cloth: "
 horizontal_alignment = 2
 
-[node name="cloth_value" type="Label" parent="ui_overlay/HBoxContainer"]
+[node name="cloth_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 35
 text = "100"
 script = ExtResource("7_gorkp")
 
-[node name="spacer_container_2" type="Control" parent="ui_overlay/HBoxContainer"]
+[node name="spacer_container_6" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="wood_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Wood: "
+horizontal_alignment = 2
+
+[node name="wood_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "100"
+
+[node name="spacer_container_7" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="metal_label2" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Metal: "
+horizontal_alignment = 2
+
+[node name="metal_value2" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "100"
+
+[node name="spacer_container_4" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="elec_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Elec: "
+horizontal_alignment = 2
+
+[node name="elec_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "100"
+
+[node name="spacer_container_8" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fuel_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Fuel: "
+horizontal_alignment = 2
+
+[node name="fuel_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "100"
+
+[node name="spacer_container_2" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="TextureRect" type="TextureRect" parent="ui_overlay"]
 anchors_preset = 8
@@ -137,7 +261,7 @@ offset_bottom = 926.0
 text = "Trash"
 script = ExtResource("9_j8qxd")
 
-[node name="cloth_buttom" type="Button" parent="ui_overlay"]
+[node name="cloth_button" type="Button" parent="ui_overlay"]
 offset_left = 1472.0
 offset_top = 888.0
 offset_right = 1521.0
@@ -145,5 +269,14 @@ offset_bottom = 919.0
 text = "Cloth"
 script = ExtResource("10_adv6k")
 
+[node name="food_button" type="Button" parent="ui_overlay"]
+offset_left = 931.0
+offset_top = 901.0
+offset_right = 980.0
+offset_bottom = 932.0
+text = "food"
+script = ExtResource("11_ao23p")
+
 [connection signal="pressed" from="ui_overlay/trash_button" to="ui_overlay/trash_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/cloth_buttom" to="ui_overlay/cloth_buttom" method="_on_pressed"]
+[connection signal="pressed" from="ui_overlay/cloth_button" to="ui_overlay/cloth_button" method="_on_pressed"]
+[connection signal="pressed" from="ui_overlay/food_button" to="ui_overlay/food_button" method="_on_pressed"]
