@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=20 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
@@ -15,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://wr1fxy3f32l8" path="res://assets/hotdog_icon_v1.png" id="9_ooden"]
 [ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="10_adv6k"]
 [ext_resource type="Script" path="res://Scripts/food_button.gd" id="11_ao23p"]
+[ext_resource type="Texture2D" uid="uid://cliqksp8tu5ij" path="res://assets/gas_nozel_icon_v1.png" id="12_gxrn2"]
+[ext_resource type="Texture2D" uid="uid://bmy78ig4od77p" path="res://assets/wood_icon_v2.png" id="12_pv02s"]
+[ext_resource type="Texture2D" uid="uid://e5jxidsm3fld" path="res://assets/metal_icon_v1.png" id="13_yl8wh"]
+[ext_resource type="Texture2D" uid="uid://qpp51j33d1e4" path="res://assets/micro_chip_icon_v1.png" id="14_djrws"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
@@ -48,8 +52,9 @@ grow_horizontal = 2
 
 [node name="top_row_resource_ui" type="HBoxContainer" parent="ui_overlay/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 
-[node name="Control" type="Control" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+[node name="Control2" type="Control" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
@@ -84,7 +89,7 @@ text = "150/200"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 45
-text = "Research: "
+text = "Suspicion: "
 horizontal_alignment = 2
 
 [node name="suspicion_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
@@ -93,7 +98,13 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 45
 text = "56/100"
 
-[node name="Control2" type="Control" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+[node name="Control4" type="Control" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="row_separator_spacer" type="Control" parent="ui_overlay/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
@@ -167,11 +178,15 @@ script = ExtResource("7_gorkp")
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="wood_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+texture = ExtResource("12_pv02s")
+
 [node name="wood_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 35
-text = "Wood: "
+text = ":  "
 horizontal_alignment = 2
 
 [node name="wood_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
@@ -184,11 +199,15 @@ text = "100"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="metal_label2" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+[node name="metal_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
-size_flags_horizontal = 3
+texture = ExtResource("13_yl8wh")
+
+[node name="metal_label_2" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 35
-text = "Metal: "
+text = ":  "
 horizontal_alignment = 2
 
 [node name="metal_value2" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
@@ -201,11 +220,15 @@ text = "100"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="elec_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+[node name="elec_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
-size_flags_horizontal = 3
+texture = ExtResource("14_djrws")
+
+[node name="fuel_label2" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 35
-text = "Elec: "
+text = ":  "
 horizontal_alignment = 2
 
 [node name="elec_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
@@ -218,11 +241,15 @@ text = "100"
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="fuel_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+texture = ExtResource("12_gxrn2")
+
 [node name="fuel_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 35
-text = "Fuel: "
+text = ":  "
 horizontal_alignment = 2
 
 [node name="fuel_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
