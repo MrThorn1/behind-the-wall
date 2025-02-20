@@ -14,6 +14,6 @@ func tweening() -> void:
 	tween.tween_property(self, "scale", Vector2(1,1), 0.05)
 
 func _on_pressed() -> void:
-	managerclick.ref.click(1)
+	managerclick.ref.click(1,1)
 	tweening()
 	pass # Replace with function body.

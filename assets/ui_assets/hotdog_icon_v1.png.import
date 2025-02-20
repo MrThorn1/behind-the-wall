@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2a0gmtkp38gg"
-path="res://.godot/imported/wood_icon_v1.png-697c65c6617c16b12bfc265e16705288.ctex"
+uid="uid://wr1fxy3f32l8"
+path="res://.godot/imported/hotdog_icon_v1.png-26c015c0a4d32450b85e3f3af2492146.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wood_icon_v1.png"
-dest_files=["res://.godot/imported/wood_icon_v1.png-697c65c6617c16b12bfc265e16705288.ctex"]
+source_file="res://assets/ui_assets/hotdog_icon_v1.png"
+dest_files=["res://.godot/imported/hotdog_icon_v1.png-26c015c0a4d32450b85e3f3af2492146.ctex"]
 
 [params]
 

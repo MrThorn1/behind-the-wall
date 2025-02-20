@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmy78ig4od77p"
-path="res://.godot/imported/wood_icon_v2.png-c3bbaf1500c9cfe9c759f6d48e808a27.ctex"
+uid="uid://dd6o8hrw0ibi5"
+path="res://.godot/imported/quilt_icon_v1.png-e73057e10c8c8be0f4dc6b6e6b48728b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wood_icon_v2.png"
-dest_files=["res://.godot/imported/wood_icon_v2.png-c3bbaf1500c9cfe9c759f6d48e808a27.ctex"]
+source_file="res://assets/ui_assets/quilt_icon_v1.png"
+dest_files=["res://.godot/imported/quilt_icon_v1.png-e73057e10c8c8be0f4dc6b6e6b48728b.ctex"]
 
 [params]
 

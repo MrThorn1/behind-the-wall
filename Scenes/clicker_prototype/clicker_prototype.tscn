@@ -1,8 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://cioj51cfymxdv"]
 
-[ext_resource type="Script" path="res://Scenes/clicker_prototype/gold_label.gd" id="2_kra23"]
 [ext_resource type="Script" path="res://Scripts/trash_button.gd" id="3_bmmj5"]
 [ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="3_rs2le"]
+
+[sub_resource type="GDScript" id="GDScript_4chcr"]
+script/source = "extends Label
+
+func _ready() -> void:
+	update_text()
+	managertrash.ref.trash_created.connect(_on_trash_created)
+
+func update_text() -> void:
+	text = \"Trash : %s\" %managertrash.ref.get_trash()
+
+func _on_trash_created(_quantity : int) -> void:
+	update_text()
+
+func _on_trash_button_pressed() -> void:
+	pass # Replace with function body.
+"
 
 [node name="ClickerPrototype" type="Control"]
 layout_mode = 3
@@ -23,7 +39,7 @@ theme_type_variation = &"HeaderLarge"
 text = "Clicks : 12"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_kra23")
+script = SubResource("GDScript_4chcr")
 
 [node name="trash_button" type="Button" parent="."]
 layout_mode = 0

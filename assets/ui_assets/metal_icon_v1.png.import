@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wr1fxy3f32l8"
-path="res://.godot/imported/hotdog_icon_v1.png-0c252b6773c409aac8d29e41f6531443.ctex"
+uid="uid://e5jxidsm3fld"
+path="res://.godot/imported/metal_icon_v1.png-0a8ea7416415e5af60facb426626e347.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hotdog_icon_v1.png"
-dest_files=["res://.godot/imported/hotdog_icon_v1.png-0c252b6773c409aac8d29e41f6531443.ctex"]
+source_file="res://assets/ui_assets/metal_icon_v1.png"
+dest_files=["res://.godot/imported/metal_icon_v1.png-0a8ea7416415e5af60facb426626e347.ctex"]
 
 [params]
 

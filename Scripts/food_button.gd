@@ -14,7 +14,7 @@ func tweening() -> void:
 	tween.tween_property(self, "scale", Vector2(1,1), 0.05)
 
 func _on_pressed() -> void:
-	managerclick.ref.click(3)
+	managerclick.ref.click(3,1)
 	#reference type 3 is for food
 	tweening()
 	pass # Replace with function body.

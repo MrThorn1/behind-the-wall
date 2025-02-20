@@ -14,7 +14,7 @@ func tweening() -> void:
 	tween.tween_property(self, "scale", Vector2(1,1), 0.05)
 
 func _on_pressed() -> void:
-	managerclick.ref.click(2,1)
-	#click reference 2 is for cloth
+	managerclick.ref.click(6,5)
+	#reference type 6 is for metal
 	tweening()
 	pass # Replace with function body.

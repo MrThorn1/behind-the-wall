@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qpp51j33d1e4"
-path="res://.godot/imported/micro_chip_icon_v1.png-461341ee764699a377c1a6ea94efa0f6.ctex"
+uid="uid://s7yshsnqmwi0"
+path="res://.godot/imported/pcb_icon_v1.png-589b08f8ef6e057d294fbd752410262f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/micro_chip_icon_v1.png"
-dest_files=["res://.godot/imported/micro_chip_icon_v1.png-461341ee764699a377c1a6ea94efa0f6.ctex"]
+source_file="res://assets/ui_assets/pcb_icon_v1.png"
+dest_files=["res://.godot/imported/pcb_icon_v1.png-589b08f8ef6e057d294fbd752410262f.ctex"]
 
 [params]
 

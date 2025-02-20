@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca8pyy3jhonby"
-path="res://.godot/imported/Target.png-ef543c9a94eb407cf6644562261e56e8.ctex"
+uid="uid://ccifljtb7fkf0"
+path="res://.godot/imported/suspicion_bar_plain.png-63495b84cc9fc5e06a0abdff76a36906.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Target.png"
-dest_files=["res://.godot/imported/Target.png-ef543c9a94eb407cf6644562261e56e8.ctex"]
+source_file="res://assets/ui_assets/suspicion_bar_plain.png"
+dest_files=["res://.godot/imported/suspicion_bar_plain.png-63495b84cc9fc5e06a0abdff76a36906.ctex"]
 
 [params]
 

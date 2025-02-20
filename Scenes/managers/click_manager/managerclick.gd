@@ -19,11 +19,17 @@ func _enter_tree() -> void:
 		
 	ref = self
 
-func click(resource_type) -> void:
+func click(resource_type, quantity) -> void:
 	if resource_type == 1:
 		managertrash.ref.create_trash(quantity)
 	if resource_type == 2:
 		managercloth.ref.create_cloth(quantity)
 	if resource_type == 3:
 		managerfood.ref.create_food(quantity)
+	if resource_type == 4:
+		managersuspicion.ref.modify_suspicion(quantity)
+	if resource_type == 5:
+		managerwood.ref.create_wood(quantity)
+	if resource_type == 6:
+		managermetal.ref.create_metal(quantity)
 	pass

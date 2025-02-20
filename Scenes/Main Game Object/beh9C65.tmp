@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=38 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
@@ -31,17 +31,12 @@
 [ext_resource type="Script" path="res://Scripts/suspicion_progress_bar.gd" id="13_i5l6l"]
 [ext_resource type="Texture2D" uid="uid://e5jxidsm3fld" path="res://assets/ui_assets/metal_icon_v1.png" id="13_yl8wh"]
 [ext_resource type="Texture2D" uid="uid://s7yshsnqmwi0" path="res://assets/ui_assets/pcb_icon_v1.png" id="14_088wt"]
-[ext_resource type="PackedScene" uid="uid://bpm2sgl8swtl8" path="res://Scenes/managers/fuel_manager/managerfuel.tscn" id="14_bbxb5"]
-[ext_resource type="Script" path="res://Scenes/managers/fuel_manager/managerfuel.gd" id="15_8e6mu"]
 [ext_resource type="Script" path="res://Scripts/wood_value.gd" id="21_gir1x"]
 [ext_resource type="Script" path="res://Scripts/wood_button.gd" id="24_ggut1"]
 [ext_resource type="Script" path="res://Scripts/metal_value.gd" id="25_jjrh6"]
 [ext_resource type="Script" path="res://Scripts/suspicion_down_button.gd" id="26_tevwb"]
-[ext_resource type="Script" path="res://Scripts/elec_value.gd" id="29_rtg7l"]
 [ext_resource type="Script" path="res://Scripts/suspicion_up_button.gd" id="30_q6l5g"]
 [ext_resource type="Script" path="res://Scripts/metal_button.gd" id="30_rhlki"]
-[ext_resource type="Script" path="res://Scripts/fuel_value.gd" id="31_0flp7"]
-[ext_resource type="Script" path="res://Scripts/metal_button_x_5.gd" id="36_lpgx3"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
@@ -71,9 +66,6 @@ script = ExtResource("11_q61ya")
 [node name="managerelec" parent="technical_management_nodes/resource_managers" instance=ExtResource("12_402bl")]
 script = ExtResource("13_dy4lm")
 
-[node name="managerfuel" parent="technical_management_nodes/resource_managers" instance=ExtResource("14_bbxb5")]
-script = ExtResource("15_8e6mu")
-
 [node name="data_repository" type="Node" parent="technical_management_nodes"]
 script = ExtResource("1_f5bdk")
 
@@ -96,7 +88,7 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 35
-text = "Population:"
+text = "Population: "
 horizontal_alignment = 2
 
 [node name="population_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
@@ -105,29 +97,35 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 35
 text = "100000"
 
-[node name="trash_ui_centering_container" type="CenterContainer" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
+[node name="trash_container" type="Control" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 
-[node name="trash_ui_hbox_container" type="HBoxContainer" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_ui_centering_container"]
+[node name="dumpster_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_container"]
 layout_mode = 2
-
-[node name="dumpster_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_ui_centering_container/trash_ui_hbox_container"]
-layout_mode = 2
+offset_left = 4.0
+offset_right = 54.0
+offset_bottom = 50.0
 texture = ExtResource("7_li4si")
 
-[node name="trash_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_ui_centering_container/trash_ui_hbox_container"]
+[node name="trash_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_container"]
 layout_mode = 2
+offset_left = 58.0
+offset_right = 86.0
+offset_bottom = 49.0
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 35
-text = ":"
+text = ":  "
 horizontal_alignment = 2
 
-[node name="trash_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_ui_centering_container/trash_ui_hbox_container"]
+[node name="trash_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_container"]
 layout_mode = 2
-size_flags_horizontal = 2
+offset_left = 90.0
+offset_right = 451.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 35
-text = "10000000000000"
+text = "9999999999999"
 script = ExtResource("7_epm3s")
 
 [node name="research_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
@@ -153,7 +151,7 @@ layout_mode = 2
 size_flags_stretch_ratio = 0.75
 
 [node name="suspicion_progress_bar" type="TextureProgressBar" parent="ui_overlay/VBoxContainer/middle_row_resource_ui"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 texture_under = ExtResource("9_4pqjl")
 texture_progress = ExtResource("7_yebbw")
@@ -170,6 +168,12 @@ layout_mode = 2
 [node name="spacer_container_1" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="spacer_container_3" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
 
 [node name="hotdog_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
@@ -277,7 +281,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 35
 text = "99999"
-script = ExtResource("29_rtg7l")
 
 [node name="spacer_container_9" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
@@ -300,11 +303,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 35
 text = "99999"
-script = ExtResource("31_0flp7")
 
 [node name="spacer_container_2" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="TextureRect" type="TextureRect" parent="ui_overlay"]
 anchors_preset = 8
@@ -365,14 +368,6 @@ offset_bottom = 1001.0
 text = "metal"
 script = ExtResource("30_rhlki")
 
-[node name="metal_button x 5" type="Button" parent="ui_overlay"]
-offset_left = 561.0
-offset_top = 1015.0
-offset_right = 636.0
-offset_bottom = 1046.0
-text = "metal x5"
-script = ExtResource("36_lpgx3")
-
 [node name="suspicion_up_button" type="Button" parent="ui_overlay"]
 offset_left = 983.0
 offset_top = 837.0
@@ -394,6 +389,5 @@ script = ExtResource("26_tevwb")
 [connection signal="pressed" from="ui_overlay/cloth_button" to="ui_overlay/cloth_button" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/food_button" to="ui_overlay/food_button" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/metal_button" to="ui_overlay/metal_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/metal_button x 5" to="ui_overlay/metal_button x 5" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/suspicion_up_button" to="ui_overlay/suspicion_up_button" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/suspicion_down_button" to="ui_overlay/suspicion_down_button" method="_on_pressed"]
