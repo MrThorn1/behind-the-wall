@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7eqpldtgx3bu"]
+
+[ext_resource type="Script" path="res://Scripts/trash_button.gd" id="1_ekm7t"]
+
+[node name="trash_button" type="Button"]
+offset_left = 459.0
+offset_top = 895.0
+offset_right = 511.0
+offset_bottom = 926.0
+text = "Trash"
+script = ExtResource("1_ekm7t")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

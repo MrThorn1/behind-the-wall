@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://7plwcnguqcej"]
+
+[ext_resource type="Script" path="res://Scripts/metal_button.gd" id="1_jilmi"]
+
+[node name="metal_button" type="Button"]
+offset_left = 571.0
+offset_top = 970.0
+offset_right = 620.0
+offset_bottom = 1001.0
+text = "metal"
+script = ExtResource("1_jilmi")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

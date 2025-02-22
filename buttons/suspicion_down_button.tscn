@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dachufo7e0hk5"]
+
+[ext_resource type="Script" path="res://Scripts/suspicion_down_button.gd" id="1_56a0a"]
+
+[node name="suspicion_down_button" type="Button"]
+offset_left = 840.0
+offset_top = 840.0
+offset_right = 934.0
+offset_bottom = 871.0
+text = "susipcion -"
+script = ExtResource("1_56a0a")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

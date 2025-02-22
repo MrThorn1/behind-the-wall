@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2ac426qbsocv"]
+[gd_scene load_steps=8 format=3 uid="uid://d2ac426qbsocv"]
 
 [ext_resource type="Script" path="res://Test Viewport Files/grandmas_apartment_root.gd" id="1_k2ina"]
 [ext_resource type="Script" path="res://Test Viewport Files/mouse_colony_camera.gd" id="2_vmeys"]
 [ext_resource type="Texture2D" uid="uid://c5axohg8ib4e2" path="res://Sprites/mouse_colony_draft.png" id="3_gyobu"]
-[ext_resource type="Texture2D" uid="uid://3yg0yhudfe46" path="res://assets/ui_assets/Dumpster_Icon_v2.png" id="3_omw3g"]
-[ext_resource type="Texture2D" uid="uid://cliqksp8tu5ij" path="res://assets/ui_assets/gas_nozel_icon_v1.png" id="4_cnoo1"]
-[ext_resource type="Texture2D" uid="uid://wr1fxy3f32l8" path="res://assets/ui_assets/hotdog_icon_v1.png" id="5_87p6c"]
+[ext_resource type="PackedScene" uid="uid://l4inmxowrlhy" path="res://buttons/cloth_button.tscn" id="4_h2tv7"]
+[ext_resource type="PackedScene" uid="uid://c1poxrw0507es" path="res://buttons/food_button.tscn" id="5_v7lev"]
+[ext_resource type="PackedScene" uid="uid://b7eqpldtgx3bu" path="res://buttons/trash_button.tscn" id="6_2a5bo"]
+[ext_resource type="PackedScene" uid="uid://57y2rf2tsc1y" path="res://buttons/wood_button.tscn" id="7_p0vlj"]
 
 [node name="mouse_colony" type="Node"]
 script = ExtResource("1_k2ina")
@@ -26,14 +27,26 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_gyobu")
 
-[node name="DumpsterIconV2" type="Sprite2D" parent="."]
-position = Vector2(116, 79)
-texture = ExtResource("3_omw3g")
+[node name="cloth_button" parent="." instance=ExtResource("4_h2tv7")]
+offset_left = 491.0
+offset_top = -91.0
+offset_right = 540.0
+offset_bottom = -60.0
 
-[node name="GasNozelIconV1" type="Sprite2D" parent="."]
-position = Vector2(698, 428)
-texture = ExtResource("4_cnoo1")
+[node name="food_button" parent="." instance=ExtResource("5_v7lev")]
+offset_left = 89.0
+offset_top = 66.0
+offset_right = 138.0
+offset_bottom = 97.0
 
-[node name="HotdogIconV1" type="Sprite2D" parent="."]
-position = Vector2(199, 694)
-texture = ExtResource("5_87p6c")
+[node name="trash_button" parent="." instance=ExtResource("6_2a5bo")]
+offset_left = 221.0
+offset_top = 677.0
+offset_right = 273.0
+offset_bottom = 708.0
+
+[node name="wood_button" parent="." instance=ExtResource("7_p0vlj")]
+offset_left = 661.0
+offset_top = 414.0
+offset_right = 714.0
+offset_bottom = 445.0

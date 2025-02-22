@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=41 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
@@ -17,12 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dk7s4d61rlx8f" path="res://Scenes/managers/wood_manager/managerwood.tscn" id="8_efu31"]
 [ext_resource type="Texture2D" uid="uid://ba3h4todnw1y2" path="res://assets/ui_assets/suspicion_bar_plain_under.png" id="9_4pqjl"]
 [ext_resource type="Script" path="res://Scenes/managers/wood_manager/managerwood.gd" id="9_8maxc"]
-[ext_resource type="Script" path="res://Scripts/trash_button.gd" id="9_j8qxd"]
 [ext_resource type="Texture2D" uid="uid://wr1fxy3f32l8" path="res://assets/ui_assets/hotdog_icon_v1.png" id="9_ooden"]
 [ext_resource type="PackedScene" uid="uid://dvk7y1r6o5lhv" path="res://Scenes/managers/metal_manager/managermetal.tscn" id="10_8qmq3"]
-[ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="10_adv6k"]
 [ext_resource type="Texture2D" uid="uid://dd6o8hrw0ibi5" path="res://assets/ui_assets/quilt_icon_v1.png" id="11_30c28"]
-[ext_resource type="Script" path="res://Scripts/food_button.gd" id="11_ao23p"]
 [ext_resource type="Script" path="res://Scenes/managers/metal_manager/managermetal.gd" id="11_q61ya"]
 [ext_resource type="PackedScene" uid="uid://d0mx8nln8w2b6" path="res://Scenes/managers/elec_manager/managerelec.tscn" id="12_402bl"]
 [ext_resource type="Texture2D" uid="uid://cliqksp8tu5ij" path="res://assets/ui_assets/gas_nozel_icon_v1.png" id="12_gxrn2"]
@@ -38,14 +35,11 @@
 [ext_resource type="Script" path="res://Scripts/center_split_screen_spacer.gd" id="18_tkn8k"]
 [ext_resource type="PackedScene" uid="uid://d2ac426qbsocv" path="res://Test Viewport Files/mouse_colony.tscn" id="19_7yuw8"]
 [ext_resource type="Script" path="res://Scripts/wood_value.gd" id="21_gir1x"]
-[ext_resource type="Script" path="res://Scripts/wood_button.gd" id="24_ggut1"]
 [ext_resource type="Script" path="res://Scripts/metal_value.gd" id="25_jjrh6"]
-[ext_resource type="Script" path="res://Scripts/suspicion_down_button.gd" id="26_tevwb"]
 [ext_resource type="Script" path="res://Scripts/elec_value.gd" id="29_rtg7l"]
-[ext_resource type="Script" path="res://Scripts/suspicion_up_button.gd" id="30_q6l5g"]
-[ext_resource type="Script" path="res://Scripts/metal_button.gd" id="30_rhlki"]
 [ext_resource type="Script" path="res://Scripts/fuel_value.gd" id="31_0flp7"]
-[ext_resource type="Script" path="res://Scripts/metal_button_x_5.gd" id="36_lpgx3"]
+[ext_resource type="PackedScene" uid="uid://b25i4vgs5h6hd" path="res://buttons/suspicion_up_button.tscn" id="39_x7goa"]
+[ext_resource type="PackedScene" uid="uid://dachufo7e0hk5" path="res://buttons/suspicion_down_button.tscn" id="40_cv7hv"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
@@ -372,78 +366,9 @@ script = ExtResource("31_0flp7")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="trash_button" type="Button" parent="ui_overlay"]
-offset_left = 459.0
-offset_top = 895.0
-offset_right = 511.0
-offset_bottom = 926.0
-text = "Trash"
-script = ExtResource("9_j8qxd")
+[node name="suspicion_up_button" parent="ui_overlay" instance=ExtResource("39_x7goa")]
 
-[node name="wood_button" type="Button" parent="ui_overlay"]
-offset_left = 375.0
-offset_top = 977.0
-offset_right = 428.0
-offset_bottom = 1008.0
-text = "Wood
-"
-script = ExtResource("24_ggut1")
-
-[node name="cloth_button" type="Button" parent="ui_overlay"]
-offset_left = 1472.0
-offset_top = 888.0
-offset_right = 1521.0
-offset_bottom = 919.0
-text = "Cloth"
-script = ExtResource("10_adv6k")
-
-[node name="food_button" type="Button" parent="ui_overlay"]
-offset_left = 931.0
-offset_top = 901.0
-offset_right = 980.0
-offset_bottom = 932.0
-text = "food"
-script = ExtResource("11_ao23p")
-
-[node name="metal_button" type="Button" parent="ui_overlay"]
-offset_left = 571.0
-offset_top = 970.0
-offset_right = 620.0
-offset_bottom = 1001.0
-text = "metal"
-script = ExtResource("30_rhlki")
-
-[node name="metal_button x 5" type="Button" parent="ui_overlay"]
-offset_left = 561.0
-offset_top = 1015.0
-offset_right = 636.0
-offset_bottom = 1046.0
-text = "metal x5"
-script = ExtResource("36_lpgx3")
-
-[node name="suspicion_up_button" type="Button" parent="ui_overlay"]
-offset_left = 983.0
-offset_top = 837.0
-offset_right = 1077.0
-offset_bottom = 868.0
-text = "susipcion +"
-script = ExtResource("30_q6l5g")
-
-[node name="suspicion_down_button" type="Button" parent="ui_overlay"]
-offset_left = 840.0
-offset_top = 840.0
-offset_right = 934.0
-offset_bottom = 871.0
-text = "susipcion -"
-script = ExtResource("26_tevwb")
+[node name="suspicion_down_button" parent="ui_overlay" instance=ExtResource("40_cv7hv")]
 
 [connection signal="split_screen_switched" from="split_screen_overlay" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/grandmas_apartment_viewport_container/grandmas_apartment_viewport/grandmas_apartment" method="_on_split_screen_overlay_split_screen_switched"]
 [connection signal="split_screen_switched" from="split_screen_overlay" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport/mouse_colony" method="_on_split_screen_overlay_split_screen_switched"]
-[connection signal="pressed" from="ui_overlay/trash_button" to="ui_overlay/trash_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/wood_button" to="ui_overlay/wood_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/cloth_button" to="ui_overlay/cloth_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/food_button" to="ui_overlay/food_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/metal_button" to="ui_overlay/metal_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/metal_button x 5" to="ui_overlay/metal_button x 5" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/suspicion_up_button" to="ui_overlay/suspicion_up_button" method="_on_pressed"]
-[connection signal="pressed" from="ui_overlay/suspicion_down_button" to="ui_overlay/suspicion_down_button" method="_on_pressed"]
