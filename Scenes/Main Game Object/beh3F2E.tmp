@@ -437,8 +437,6 @@ offset_bottom = 871.0
 text = "susipcion -"
 script = ExtResource("26_tevwb")
 
-[connection signal="split_screen_switched" from="split_screen_overlay" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/grandmas_apartment_viewport_container/grandmas_apartment_viewport/grandmas_apartment" method="_on_split_screen_overlay_split_screen_switched"]
-[connection signal="split_screen_switched" from="split_screen_overlay" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport/mouse_colony" method="_on_split_screen_overlay_split_screen_switched"]
 [connection signal="pressed" from="ui_overlay/trash_button" to="ui_overlay/trash_button" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/wood_button" to="ui_overlay/wood_button" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/cloth_button" to="ui_overlay/cloth_button" method="_on_pressed"]

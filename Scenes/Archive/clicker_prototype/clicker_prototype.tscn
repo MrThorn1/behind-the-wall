@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cioj51cfymxdv"]
 
-[ext_resource type="Script" path="res://Scripts/trash_button.gd" id="3_bmmj5"]
-[ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="3_rs2le"]
+[ext_resource type="Script" path="res://Scripts/trash_button.gd" id="1_5tpw2"]
+[ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="2_dfrfp"]
 
 [sub_resource type="GDScript" id="GDScript_4chcr"]
 script/source = "extends Label
@@ -48,7 +48,7 @@ offset_top = 895.0
 offset_right = 511.0
 offset_bottom = 926.0
 text = "Trash"
-script = ExtResource("3_bmmj5")
+script = ExtResource("1_5tpw2")
 
 [node name="cloth_buttom" type="Button" parent="."]
 layout_mode = 0
@@ -57,7 +57,7 @@ offset_top = 891.0
 offset_right = 1505.0
 offset_bottom = 922.0
 text = "Cloth"
-script = ExtResource("3_rs2le")
+script = ExtResource("2_dfrfp")
 
 [connection signal="pressed" from="trash_button" to="trash_button" method="_on_pressed"]
 [connection signal="pressed" from="cloth_buttom" to="cloth_buttom" method="_on_pressed"]

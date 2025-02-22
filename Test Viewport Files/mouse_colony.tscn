@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2ac426qbsocv"]
+
+[ext_resource type="Script" path="res://Test Viewport Files/grandmas_apartment_root.gd" id="1_k2ina"]
+[ext_resource type="Script" path="res://Test Viewport Files/mouse_colony_camera.gd" id="2_vmeys"]
+[ext_resource type="Texture2D" uid="uid://c5axohg8ib4e2" path="res://Sprites/mouse_colony_draft.png" id="3_gyobu"]
+[ext_resource type="Texture2D" uid="uid://3yg0yhudfe46" path="res://assets/ui_assets/Dumpster_Icon_v2.png" id="3_omw3g"]
+[ext_resource type="Texture2D" uid="uid://cliqksp8tu5ij" path="res://assets/ui_assets/gas_nozel_icon_v1.png" id="4_cnoo1"]
+[ext_resource type="Texture2D" uid="uid://wr1fxy3f32l8" path="res://assets/ui_assets/hotdog_icon_v1.png" id="5_87p6c"]
+
+[node name="mouse_colony" type="Node"]
+script = ExtResource("1_k2ina")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("2_vmeys")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -1066.0
+offset_right = 886.0
+offset_bottom = 1066.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_gyobu")
+
+[node name="DumpsterIconV2" type="Sprite2D" parent="."]
+position = Vector2(116, 79)
+texture = ExtResource("3_omw3g")
+
+[node name="GasNozelIconV1" type="Sprite2D" parent="."]
+position = Vector2(698, 428)
+texture = ExtResource("4_cnoo1")
+
+[node name="HotdogIconV1" type="Sprite2D" parent="."]
+position = Vector2(199, 694)
+texture = ExtResource("5_87p6c")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=45 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
@@ -33,10 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://s7yshsnqmwi0" path="res://assets/ui_assets/pcb_icon_v1.png" id="14_088wt"]
 [ext_resource type="PackedScene" uid="uid://bpm2sgl8swtl8" path="res://Scenes/managers/fuel_manager/managerfuel.tscn" id="14_bbxb5"]
 [ext_resource type="Script" path="res://Scenes/managers/fuel_manager/managerfuel.gd" id="15_8e6mu"]
-[ext_resource type="Script" path="res://Scripts/split_screen_overlay.gd" id="17_jhlim"]
-[ext_resource type="PackedScene" uid="uid://uacdkbkqw6cm" path="res://Test Viewport Files/grandmas_apartment.tscn" id="17_o2vrg"]
-[ext_resource type="Script" path="res://Scripts/center_split_screen_spacer.gd" id="18_tkn8k"]
-[ext_resource type="PackedScene" uid="uid://d2ac426qbsocv" path="res://Test Viewport Files/mouse_colony.tscn" id="19_7yuw8"]
 [ext_resource type="Script" path="res://Scripts/wood_value.gd" id="21_gir1x"]
 [ext_resource type="Script" path="res://Scripts/wood_button.gd" id="24_ggut1"]
 [ext_resource type="Script" path="res://Scripts/metal_value.gd" id="25_jjrh6"]
@@ -46,6 +42,8 @@
 [ext_resource type="Script" path="res://Scripts/metal_button.gd" id="30_rhlki"]
 [ext_resource type="Script" path="res://Scripts/fuel_value.gd" id="31_0flp7"]
 [ext_resource type="Script" path="res://Scripts/metal_button_x_5.gd" id="36_lpgx3"]
+[ext_resource type="Script" path="res://Scripts/grandmas_apartment_camera.gd" id="43_2g5j3"]
+[ext_resource type="Script" path="res://Scripts/grandmas_apartment_viewport.gd" id="43_exr2o"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
@@ -81,69 +79,7 @@ script = ExtResource("15_8e6mu")
 [node name="data_repository" type="Node" parent="technical_management_nodes"]
 script = ExtResource("1_f5bdk")
 
-[node name="split_screen_overlay" type="CanvasLayer" parent="."]
-script = ExtResource("17_jhlim")
-
-[node name="MarginContainer" type="MarginContainer" parent="split_screen_overlay"]
-offset_right = 1920.0
-offset_bottom = 1076.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 6
-
-[node name="split_screen_hbox_container" type="HBoxContainer" parent="split_screen_overlay/MarginContainer"]
-layout_mode = 2
-
-[node name="grandmas_apartment_viewport_container" type="SubViewportContainer" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="grandmas_apartment_viewport" type="SubViewport" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container/grandmas_apartment_viewport_container"]
-handle_input_locally = false
-size = Vector2i(889, 1066)
-render_target_update_mode = 4
-
-[node name="grandmas_apartment" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container/grandmas_apartment_viewport_container/grandmas_apartment_viewport" instance=ExtResource("17_o2vrg")]
-
-[node name="center_split_screen_spacer" type="Control" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.13
-script = ExtResource("18_tkn8k")
-
-[node name="mouse_colony_viewport_container" type="SubViewportContainer" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="mouse_colony_viewport" type="SubViewport" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container"]
-handle_input_locally = false
-size = Vector2i(502, 1066)
-render_target_update_mode = 4
-
-[node name="mouse_colony" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport" instance=ExtResource("19_7yuw8")]
-
 [node name="ui_overlay" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="ui_overlay"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 0.996678)
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-texture = ExtResource("5_wopyc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ui_overlay"]
 anchors_preset = 5
@@ -151,7 +87,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -953.0
 offset_right = 957.0
-offset_bottom = 133.0
+offset_bottom = 67.0
 grow_horizontal = 2
 
 [node name="top_row_resource_ui" type="HBoxContainer" parent="ui_overlay/VBoxContainer"]
@@ -372,6 +308,24 @@ script = ExtResource("31_0flp7")
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="TextureRect" type="TextureRect" parent="ui_overlay"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.996678)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("5_wopyc")
+
 [node name="trash_button" type="Button" parent="ui_overlay"]
 offset_left = 459.0
 offset_top = 895.0
@@ -437,8 +391,54 @@ offset_bottom = 871.0
 text = "susipcion -"
 script = ExtResource("26_tevwb")
 
-[connection signal="split_screen_switched" from="split_screen_overlay" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/grandmas_apartment_viewport_container/grandmas_apartment_viewport/grandmas_apartment" method="_on_split_screen_overlay_split_screen_switched"]
-[connection signal="split_screen_switched" from="split_screen_overlay" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport/mouse_colony" method="_on_split_screen_overlay_split_screen_switched"]
+[node name="mouse_colony_viewport_container" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1026.0
+offset_top = 7.0
+offset_right = -5.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="mouse_colony_viewport" type="SubViewport" parent="mouse_colony_viewport_container"]
+handle_input_locally = false
+size = Vector2i(889, 1066)
+render_target_update_mode = 4
+
+[node name="grandmas_apartment_viewport_container" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = -1025.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="grandmas_apartment_viewport" type="SubViewport" parent="grandmas_apartment_viewport_container"]
+handle_input_locally = false
+size = Vector2i(889, 1066)
+render_target_update_mode = 4
+script = ExtResource("43_exr2o")
+
+[node name="grandmas_apartment" type="Node" parent="."]
+
+[node name="GasNozelIconV1" type="Sprite2D" parent="grandmas_apartment"]
+position = Vector2(-830, 563)
+scale = Vector2(8.6, 8.12)
+texture = ExtResource("12_gxrn2")
+
+[node name="grandmas_apartment_camera" type="Camera2D" parent="grandmas_apartment"]
+position = Vector2(-790, 536)
+script = ExtResource("43_2g5j3")
+
 [connection signal="pressed" from="ui_overlay/trash_button" to="ui_overlay/trash_button" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/wood_button" to="ui_overlay/wood_button" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/cloth_button" to="ui_overlay/cloth_button" method="_on_pressed"]
