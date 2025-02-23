@@ -24,8 +24,10 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
-"res://Scenes/": "red",
+"res://Archive/": "red",
+"res://Scenes/": "teal",
 "res://Scripts/": "yellow",
+"res://Sprites/": "pink",
 "res://assets/": "green"
 }
 

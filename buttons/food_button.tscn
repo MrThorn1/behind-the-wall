@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1poxrw0507es"]
 
-[ext_resource type="Script" path="res://Scripts/food_button.gd" id="1_5hkwb"]
+[ext_resource type="Script" path="res://Scripts/Buttons/food_button.gd" id="1_5hkwb"]
 
 [node name="food_button" type="Button"]
 offset_left = 931.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://57y2rf2tsc1y"]
 
-[ext_resource type="Script" path="res://Scripts/wood_button.gd" id="1_xo3bs"]
+[ext_resource type="Script" path="res://Scripts/Buttons/wood_button.gd" id="1_xo3bs"]
 
 [node name="wood_button" type="Button"]
 offset_left = 375.0

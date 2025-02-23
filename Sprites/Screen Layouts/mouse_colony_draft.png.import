@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkw18rfv0l5uk"
-path="res://.godot/imported/Screen Layout Prototype.png-2ed0ed0df6bb35efd7a0a7aaf9c0980f.ctex"
+uid="uid://c5axohg8ib4e2"
+path="res://.godot/imported/mouse_colony_draft.png-cdfe92d0d651b79c2ce1f2f476dbc943.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Screen Layout Prototype.png"
-dest_files=["res://.godot/imported/Screen Layout Prototype.png-2ed0ed0df6bb35efd7a0a7aaf9c0980f.ctex"]
+source_file="res://Sprites/Screen Layouts/mouse_colony_draft.png"
+dest_files=["res://.godot/imported/mouse_colony_draft.png-cdfe92d0d651b79c2ce1f2f476dbc943.ctex"]
 
 [params]
 

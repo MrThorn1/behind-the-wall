@@ -1,9 +1,15 @@
+#This script is the main input manager for the game scene.  
+#Each of the individaul resource managers is reference linked to this 
+#script so when a button or action generates resources it comes there 
+#here with the two input variable types.
 class_name managerclick
 extends Node
 
 static var ref: managerclick
 var resource_type : int
-# setting up the resource click type so that we can differentiate between what of click we get so that it can be allocated to the correct resource type
+# setting up the resource click type so that we can differentiate 
+#between what of click we get so that it can be allocated to the 
+#correct resource type
 var click_power : int = 1
 var quantity : int = 1
 

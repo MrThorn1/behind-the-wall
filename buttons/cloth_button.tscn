@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://l4inmxowrlhy"]
 
-[ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="1_pps5y"]
+[ext_resource type="Script" path="res://Scripts/Buttons/cloth_button.gd" id="1_pps5y"]
 
 [node name="cloth_button" type="Button"]
 offset_left = 1472.0

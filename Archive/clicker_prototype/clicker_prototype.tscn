@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cioj51cfymxdv"]
 
-[ext_resource type="Script" path="res://Scripts/trash_button.gd" id="1_5tpw2"]
-[ext_resource type="Script" path="res://Scripts/cloth_button.gd" id="2_dfrfp"]
+[ext_resource type="Script" path="res://Scripts/Buttons/trash_button.gd" id="1_5tpw2"]
+[ext_resource type="Script" path="res://Scripts/Buttons/cloth_button.gd" id="2_dfrfp"]
 
 [sub_resource type="GDScript" id="GDScript_4chcr"]
 script/source = "extends Label

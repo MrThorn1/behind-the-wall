@@ -9,7 +9,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if get_viewport().get_mouse_position().x < get_viewport().size.x:
-		print("inleftside")
 		if Input.is_action_just_released("scroll_up"):
 			position.y -= scroll_speed
 			if position.y <= -540:

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://m0vbovhe4314"]
+
+[ext_resource type="Script" path="res://Scenes/Buildings/Trash Pile/trash_pile.gd" id="1_64psn"]
+[ext_resource type="Texture2D" uid="uid://ccqyixcj8pumw" path="res://Sprites/Buildings/Trash_Pile_v1_anim-Sheet.png" id="1_ojxrt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8pki"]
+atlas = ExtResource("1_ojxrt")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s1cl"]
+atlas = ExtResource("1_ojxrt")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bnjf"]
+atlas = ExtResource("1_ojxrt")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b1dpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8pki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s1cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bnjf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[node name="TrashPile" type="Node2D"]
+script = ExtResource("1_64psn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b1dpj")
+animation = &"idle"

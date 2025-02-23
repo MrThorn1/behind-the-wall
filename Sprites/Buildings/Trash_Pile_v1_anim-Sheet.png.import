@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5axohg8ib4e2"
-path="res://.godot/imported/mouse_colony_draft.png-85818b0299106762d13f91c909f596a9.ctex"
+uid="uid://ccqyixcj8pumw"
+path="res://.godot/imported/Trash_Pile_v1_anim-Sheet.png-cb3829c8734c95309401358b6ab5439f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mouse_colony_draft.png"
-dest_files=["res://.godot/imported/mouse_colony_draft.png-85818b0299106762d13f91c909f596a9.ctex"]
+source_file="res://Sprites/Buildings/Trash_Pile_v1_anim-Sheet.png"
+dest_files=["res://.godot/imported/Trash_Pile_v1_anim-Sheet.png-cb3829c8734c95309401358b6ab5439f.ctex"]
 
 [params]
 

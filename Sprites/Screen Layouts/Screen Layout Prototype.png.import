@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do2ltbciuam68"
-path="res://.godot/imported/grandmas_apartment_draft.png-9546a9875bafc53dbbfe4d14c3992250.ctex"
+uid="uid://dkw18rfv0l5uk"
+path="res://.godot/imported/Screen Layout Prototype.png-38bc60068e537dd5487fbf592b8d446a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/grandmas_apartment_draft.png"
-dest_files=["res://.godot/imported/grandmas_apartment_draft.png-9546a9875bafc53dbbfe4d14c3992250.ctex"]
+source_file="res://Sprites/Screen Layouts/Screen Layout Prototype.png"
+dest_files=["res://.godot/imported/Screen Layout Prototype.png-38bc60068e537dd5487fbf592b8d446a.ctex"]
 
 [params]
 

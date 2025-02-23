@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://7plwcnguqcej"]
 
-[ext_resource type="Script" path="res://Scripts/metal_button.gd" id="1_jilmi"]
+[ext_resource type="Script" path="res://Scripts/Buttons/metal_button.gd" id="1_jilmi"]
 
 [node name="metal_button" type="Button"]
 offset_left = 571.0

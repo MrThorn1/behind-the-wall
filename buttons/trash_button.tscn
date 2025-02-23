@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7eqpldtgx3bu"]
 
-[ext_resource type="Script" path="res://Scripts/trash_button.gd" id="1_ekm7t"]
+[ext_resource type="Script" path="res://Scripts/Buttons/trash_button.gd" id="1_ekm7t"]
 
 [node name="trash_button" type="Button"]
 offset_left = 459.0

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="building" load_steps=3 format=3 uid="uid://cury1f512a1ms"]
+
+[ext_resource type="PackedScene" uid="uid://m0vbovhe4314" path="res://Scenes/Buildings/Trash Pile/trash_pile.tscn" id="1_gvihe"]
+[ext_resource type="Script" path="res://Scripts/Buildings/Base Resource/building.gd" id="1_miemj"]
+
+[resource]
+script = ExtResource("1_miemj")
+name = "Trash Pile"
+scene = ExtResource("1_gvihe")
