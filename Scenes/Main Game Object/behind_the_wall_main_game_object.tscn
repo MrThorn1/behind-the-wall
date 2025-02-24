@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=42 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/Managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
@@ -40,6 +40,7 @@
 [ext_resource type="Script" path="res://Scripts/ui/fuel_value.gd" id="31_0flp7"]
 [ext_resource type="PackedScene" uid="uid://b25i4vgs5h6hd" path="res://buttons/suspicion_up_button.tscn" id="39_x7goa"]
 [ext_resource type="PackedScene" uid="uid://dachufo7e0hk5" path="res://buttons/suspicion_down_button.tscn" id="40_cv7hv"]
+[ext_resource type="PackedScene" uid="uid://b78yiyqathxrt" path="res://Scenes/UI Scenes/build_menu.tscn" id="41_rdebj"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
@@ -393,3 +394,7 @@ offset_top = 637.0
 offset_right = 977.0
 offset_bottom = 668.0
 text = "Raid"
+
+[node name="build_menu" parent="ui_overlay" instance=ExtResource("41_rdebj")]
+
+[connection signal="pressed" from="ui_overlay/build_button" to="ui_overlay/build_menu" method="_on_build_button_pressed"]

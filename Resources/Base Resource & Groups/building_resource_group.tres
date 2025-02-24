@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" load_steps=2 format=3 uid="uid://dskp0jw4mucgs"]
+
+[ext_resource type="Script" path="res://addons/godot_resource_groups/resource_group.gd" id="1_n04wm"]
+
+[resource]
+script = ExtResource("1_n04wm")
+base_folder = "res://Resources/Building Resources"
+includes = Array[String]([])
+excludes = Array[String]([])
+paths = Array[String](["res://Resources/Building Resources/Mouse Colony/food_mound.tres", "res://Resources/Building Resources/Mouse Colony/trash_pile.tres"])

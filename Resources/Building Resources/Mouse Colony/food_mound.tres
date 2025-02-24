@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://bclxro2o76ln2"]
+
+[ext_resource type="Texture2D" uid="uid://dawq34y2were5" path="res://Sprites/Buildings/food_mound_v1_icon.png" id="1_eiijb"]
+[ext_resource type="PackedScene" uid="uid://cl57e7m37eysl" path="res://Scenes/Buildings/Food Mound/food_mound.tscn" id="2_sfs7u"]
+[ext_resource type="Script" path="res://Resources/Base Resource & Groups/building.gd" id="3_kgxmn"]
+
+[resource]
+script = ExtResource("3_kgxmn")
+name = "Food Mound"
+scene = ExtResource("2_sfs7u")
+icon = ExtResource("1_eiijb")
