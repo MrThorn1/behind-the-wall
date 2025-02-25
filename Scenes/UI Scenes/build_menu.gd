@@ -16,6 +16,9 @@ func _ready():
 func open():
 	show()
 	#loops through all of the buildings in the new resource array, and adds them to the new grid container slot for each one
+	for child in grid_container.get_children():
+		child.queue_free()
+	
 	for building in _content:
 		var slot = slot_scene.instantiate()
 		grid_container.add_child(slot)
