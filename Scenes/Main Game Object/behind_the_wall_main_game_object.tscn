@@ -396,5 +396,6 @@ offset_bottom = 668.0
 text = "Raid"
 
 [node name="build_menu" parent="ui_overlay" instance=ExtResource("41_rdebj")]
+process_mode = 2
 
 [connection signal="pressed" from="ui_overlay/build_button" to="ui_overlay/build_menu" method="_on_build_button_pressed"]

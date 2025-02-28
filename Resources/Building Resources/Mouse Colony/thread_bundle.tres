@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://c8rgceaqmnd16"]
+
+[ext_resource type="Script" path="res://Resources/Base Resource & Groups/building.gd" id="1_ahrxw"]
+[ext_resource type="Texture2D" uid="uid://dqtgyq3n47shk" path="res://Sprites/Buildings/thread_bundle_v1.png" id="1_gnxv4"]
+[ext_resource type="PackedScene" uid="uid://c363dl7a45jqe" path="res://Scenes/Buildings/Thread_bundle/thread_bundle.tscn" id="2_1ix2w"]
+
+[resource]
+script = ExtResource("1_ahrxw")
+name = "Thread Bundle"
+scene = ExtResource("2_1ix2w")
+icon = ExtResource("1_gnxv4")
+trash_cost = 50
+food_cost = 0
+wood_cost = 0
+metal_cost = 0
+elec_cost = 0
+fuel_cost = 0
+cloth_cost = 0
