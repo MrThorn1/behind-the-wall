@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2ac426qbsocv"]
+[gd_scene load_steps=11 format=3 uid="uid://d2ac426qbsocv"]
 
 [ext_resource type="Script" path="res://Scripts/Split Screen/grandmas_apartment_root.gd" id="1_k2ina"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/mouse_colony_camera.gd" id="2_vmeys"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c1qkkehrr7c66" path="res://Scenes/Buildings/Root Building Scene/root_building.tscn" id="8_rk52g"]
 [ext_resource type="Resource" uid="uid://cury1f512a1ms" path="res://Resources/Building Resources/Mouse Colony/trash_pile.tres" id="9_bvich"]
 [ext_resource type="Resource" uid="uid://bclxro2o76ln2" path="res://Resources/Building Resources/Mouse Colony/food_mound.tres" id="10_egkhg"]
-[ext_resource type="Resource" uid="uid://c8rgceaqmnd16" path="res://Resources/Building Resources/Mouse Colony/thread_bundle.tres" id="11_g21bu"]
 
 [node name="mouse_colony" type="Node"]
 script = ExtResource("1_k2ina")
@@ -62,7 +61,3 @@ building = ExtResource("9_bvich")
 [node name="Food Mound" parent="." instance=ExtResource("8_rk52g")]
 position = Vector2(392, 692)
 building = ExtResource("10_egkhg")
-
-[node name="Thread Bundle" parent="." instance=ExtResource("8_rk52g")]
-position = Vector2(514, 425)
-building = ExtResource("11_g21bu")
