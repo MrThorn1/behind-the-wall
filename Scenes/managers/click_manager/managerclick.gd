@@ -38,4 +38,8 @@ func click(resource_type, quantity) -> void:
 		managerwood.ref.create_wood(quantity)
 	if resource_type == 6:
 		managermetal.ref.create_metal(quantity)
+	if resource_type == 7:
+		managerelec.ref.create_elec(quantity)
+	if resource_type == 8:
+		managerfuel.ref.create_fuel(quantity)
 	pass

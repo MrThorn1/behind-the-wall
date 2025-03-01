@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@onready var texture_rect: TextureRect = %TextureRect
+@onready var texture_rect: TextureButton = %texture_button
 @onready var food_cost_label: Label = %food_cost_label
 @onready var cloth_cost_label: Label = %cloth_cost_label
 @onready var wood_cost_label: Label = %wood_cost_label
@@ -11,7 +11,8 @@ extends PanelContainer
 @onready var fuel_cost_label: Label = %fuel_cost_label
 
 func display(building:Building):
-	texture_rect.texture = building.icon
+	texture_rect.texture_normal = building.icon
+	texture_rect.texture_hover = building.icon_hover
 	building_name.text = building.name
 	texture_rect.scale = Vector2(1.25,1.25)
 	trash_cost_label.text = str(building.trash_cost)
@@ -25,7 +26,6 @@ func display(building:Building):
 
 func _on_mouse_entered() -> void:
 	pass # Replace with function body.
-
 
 func _on_mouse_exited() -> void:
 	pass # Replace with function body.

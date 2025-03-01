@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cliqksp8tu5ij"
-path="res://.godot/imported/gas_nozel_icon_v1.png-3797b5a10e32e1c0883cfcbbce406887.ctex"
+path="res://.godot/imported/gas_nozel_icon_v1.png-167867c20d5bcbeb2ba7606b14bb7032.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui_assets/gas_nozel_icon_v1.png"
-dest_files=["res://.godot/imported/gas_nozel_icon_v1.png-3797b5a10e32e1c0883cfcbbce406887.ctex"]
+source_file="res://Assets/ui_assets/gas_nozel_icon_v1.png"
+dest_files=["res://.godot/imported/gas_nozel_icon_v1.png-167867c20d5bcbeb2ba7606b14bb7032.ctex"]
 
 [params]
 

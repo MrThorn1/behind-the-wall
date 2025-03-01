@@ -2,13 +2,13 @@
 
 [ext_resource type="StyleBox" uid="uid://cv5wnvr5hfvok" path="res://Themes/building_slot_hover.tres" id="1_58eyl"]
 [ext_resource type="Script" path="res://Scenes/UI Scenes/building_slot.gd" id="1_s08gy"]
-[ext_resource type="Texture2D" uid="uid://wr1fxy3f32l8" path="res://assets/ui_assets/hotdog_icon_v1.png" id="2_w5cq6"]
-[ext_resource type="Texture2D" uid="uid://3yg0yhudfe46" path="res://assets/ui_assets/Dumpster_Icon_v2.png" id="2_y2116"]
-[ext_resource type="Texture2D" uid="uid://dd6o8hrw0ibi5" path="res://assets/ui_assets/quilt_icon_v1.png" id="4_0yfyo"]
-[ext_resource type="Texture2D" uid="uid://bmy78ig4od77p" path="res://assets/ui_assets/wood_icon_v2.png" id="5_vm61s"]
-[ext_resource type="Texture2D" uid="uid://e5jxidsm3fld" path="res://assets/ui_assets/metal_icon_v1.png" id="6_e3sca"]
-[ext_resource type="Texture2D" uid="uid://s7yshsnqmwi0" path="res://assets/ui_assets/pcb_icon_v1.png" id="7_ajpap"]
-[ext_resource type="Texture2D" uid="uid://cliqksp8tu5ij" path="res://assets/ui_assets/gas_nozel_icon_v1.png" id="8_p6upw"]
+[ext_resource type="Texture2D" uid="uid://wr1fxy3f32l8" path="res://Assets/ui_assets/hotdog_icon_v1.png" id="2_w5cq6"]
+[ext_resource type="Texture2D" uid="uid://3yg0yhudfe46" path="res://Assets/ui_assets/Dumpster_Icon_v2.png" id="2_y2116"]
+[ext_resource type="Texture2D" uid="uid://dd6o8hrw0ibi5" path="res://Assets/ui_assets/quilt_icon_v1.png" id="4_0yfyo"]
+[ext_resource type="Texture2D" uid="uid://bmy78ig4od77p" path="res://Assets/ui_assets/wood_icon_v2.png" id="5_vm61s"]
+[ext_resource type="Texture2D" uid="uid://e5jxidsm3fld" path="res://Assets/ui_assets/metal_icon_v1.png" id="6_e3sca"]
+[ext_resource type="Texture2D" uid="uid://s7yshsnqmwi0" path="res://Assets/ui_assets/pcb_icon_v1.png" id="7_ajpap"]
+[ext_resource type="Texture2D" uid="uid://cliqksp8tu5ij" path="res://Assets/ui_assets/gas_nozel_icon_v1.png" id="8_p6upw"]
 
 [node name="build_menu_slot" type="PanelContainer"]
 anchors_preset = 15
@@ -34,7 +34,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/build_menu_individual"]
+[node name="texture_button" type="TextureButton" parent="MarginContainer/build_menu_individual"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

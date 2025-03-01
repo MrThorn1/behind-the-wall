@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Split Screen/grandmas_apartment_root.gd" id="1_k2yro"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/grandmas_apartment_camera.gd" id="2_4cglq"]
 [ext_resource type="Texture2D" uid="uid://do2ltbciuam68" path="res://Sprites/Screen Layouts/grandmas_apartment_draft.png" id="3_i0kis"]
-[ext_resource type="PackedScene" uid="uid://c1qkkehrr7c66" path="res://Scenes/Buildings/Root Building Scene/root_building.tscn" id="7_r00ol"]
+[ext_resource type="PackedScene" uid="uid://c1qkkehrr7c66" path="res://Resources/Base Resource & Groups/Root Building Scene/root_building.tscn" id="7_r00ol"]
 [ext_resource type="Resource" uid="uid://c8yllk81v5v6c" path="res://Resources/Building Resources/Apartment/hold_in_the_wall.tres" id="8_oig64"]
 
 [node name="grandmas_apartment" type="Node"]

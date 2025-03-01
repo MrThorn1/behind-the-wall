@@ -29,11 +29,11 @@ enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg")
 
 folder_colors={
 "res://Archive/": "red",
+"res://Assets/": "green",
 "res://Resources/": "purple",
 "res://Scenes/": "teal",
 "res://Scripts/": "yellow",
-"res://Sprites/": "pink",
-"res://assets/": "green"
+"res://Sprites/": "pink"
 }
 
 [godot_resource_groups]

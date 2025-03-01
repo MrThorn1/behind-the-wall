@@ -25,11 +25,9 @@ func open():
 		slot.display(building)
 	
 	get_tree().paused = true
-	print("paused")
 
 func _on_close_button_pressed() -> void:
 	hide()
-	print("pressed")
 	get_tree().paused = false
 	pass # Replace with function body.
 
