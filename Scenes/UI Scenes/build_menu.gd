@@ -9,6 +9,13 @@ extends PanelContainer
 var resource_group:ResourceGroup = load("res://Resources/Base Resource & Groups/building_resource_group.tres")
 #loading all of those resources, might have to autoload in the future
 var _content = resource_group.load_all()
+var instantiated_tree : SceneTree
+var vbox_child : Node
+var margin_child : Node
+var grid_child : Node
+var panel_child : Node
+var texture_button_child : Node
+var instantiated_path : String
 
 func _ready():
 	hide()
@@ -23,6 +30,8 @@ func open():
 		var slot = slot_scene.instantiate()
 		grid_container.add_child(slot)
 		slot.display(building)
+		#some_node_with_signal.pressed.connect(bullet_node.some_func)
+		slot.build_button_pressed.connect(build_select)
 	
 	get_tree().paused = true
 
@@ -34,3 +43,7 @@ func _on_close_button_pressed() -> void:
 func _on_build_button_pressed() -> void:
 	open()
 	pass # Replace with function body.
+	
+func build_select() -> void:
+	print("building signal passed to build menu")
+	pass

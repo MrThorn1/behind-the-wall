@@ -9,8 +9,12 @@ extends PanelContainer
 @onready var metal_cost_label: Label = %metal_cost_label
 @onready var elec_cost_label: Label = %elec_cost_label
 @onready var fuel_cost_label: Label = %fuel_cost_label
+signal build_button_pressed
+var internal_name
 
 func display(building:Building):
+	self.name = building.name
+	internal_name = self.name
 	texture_rect.texture_normal = building.icon
 	texture_rect.texture_hover = building.icon_hover
 	building_name.text = building.name
@@ -28,4 +32,8 @@ func _on_mouse_entered() -> void:
 	pass # Replace with function body.
 
 func _on_mouse_exited() -> void:
+	pass # Replace with function body.
+
+func _on_texture_button_pressed():
+	emit_signal("build_button_pressed")
 	pass # Replace with function body.
