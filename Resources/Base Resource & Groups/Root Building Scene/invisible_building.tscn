@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://n0xle1hxq6qm"]
+
+[ext_resource type="Script" path="res://Resources/Base Resource & Groups/Root Building Scene/invisible_building_2.gd" id="1_mud20"]
+
+[node name="InvisibleBuilding" type="Node2D"]
+script = ExtResource("1_mud20")

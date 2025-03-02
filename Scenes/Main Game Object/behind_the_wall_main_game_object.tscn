@@ -119,6 +119,7 @@ render_target_update_mode = 4
 
 [node name="mouse_colony" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport" instance=ExtResource("19_7yuw8")]
 script = ExtResource("20_8goc6")
+building_placement_holder = null
 
 [node name="ui_overlay" type="CanvasLayer" parent="."]
 
@@ -399,3 +400,4 @@ text = "Raid"
 process_mode = 2
 
 [connection signal="pressed" from="ui_overlay/build_button" to="ui_overlay/build_menu" method="_on_build_button_pressed"]
+[connection signal="passed_to_colony" from="ui_overlay/build_menu" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport/mouse_colony" method="_on_build_menu_passed_to_colony"]

@@ -28,12 +28,6 @@ func display(building:Building):
 	fuel_cost_label.text = str(building.fuel_cost)
 	pass
 
-func _on_mouse_entered() -> void:
-	pass # Replace with function body.
-
-func _on_mouse_exited() -> void:
-	pass # Replace with function body.
-
 func _on_texture_button_pressed():
-	emit_signal("build_button_pressed")
+	emit_signal("build_button_pressed", internal_name)
 	pass # Replace with function body.

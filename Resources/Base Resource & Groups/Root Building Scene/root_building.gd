@@ -10,15 +10,12 @@ var time_mod : float = randf_range(.25, .5)
 func _ready() -> void:
 	var instance = building.scene.instantiate()
 	add_child(instance)
+	
 	if building.production_time:
 		var timer : Timer = Timer.new()
 		add_child(timer)
 		timer.start(building.production_time)
 		timer.timeout.connect(_timer_timeout)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func tweening() -> void:
 	var tween : Tween = create_tween()

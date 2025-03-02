@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b78yiyqathxrt"]
+[gd_scene load_steps=4 format=3 uid="uid://b78yiyqathxrt"]
 
 [ext_resource type="Script" path="res://Scenes/UI Scenes/build_menu.gd" id="1_letha"]
 [ext_resource type="PackedScene" uid="uid://b6gu5sn1mcvsm" path="res://Scenes/UI Scenes/building_slot.tscn" id="2_m7xgi"]
+[ext_resource type="PackedScene" uid="uid://n0xle1hxq6qm" path="res://Resources/Base Resource & Groups/Root Building Scene/invisible_building.tscn" id="3_omu2l"]
 
 [node name="build_menu" type="PanelContainer"]
 anchors_preset = 8
@@ -19,6 +20,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_letha")
 slot_scene = ExtResource("2_m7xgi")
+building_placement_holder = ExtResource("3_omu2l")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
