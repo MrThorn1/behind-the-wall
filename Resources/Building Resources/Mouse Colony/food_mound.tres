@@ -18,3 +18,4 @@ fuel_cost = 0
 cloth_cost = 0
 production_type = 3
 production_quantity = 1
+production_time = 1.0
