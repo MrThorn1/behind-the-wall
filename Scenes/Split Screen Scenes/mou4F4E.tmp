@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2ac426qbsocv"]
+
+[ext_resource type="Script" path="res://Scripts/Split Screen/mouse_colony_root.gd" id="1_5ob52"]
+[ext_resource type="Script" path="res://Scripts/Split Screen/mouse_colony_camera.gd" id="2_vmeys"]
+[ext_resource type="Texture2D" uid="uid://c5axohg8ib4e2" path="res://Sprites/Screen Layouts/mouse_colony_draft.png" id="3_gyobu"]
+[ext_resource type="PackedScene" uid="uid://l4inmxowrlhy" path="res://Buttons/cloth_button.tscn" id="4_h2tv7"]
+[ext_resource type="PackedScene" uid="uid://c1poxrw0507es" path="res://Buttons/food_button.tscn" id="5_v7lev"]
+[ext_resource type="PackedScene" uid="uid://b7eqpldtgx3bu" path="res://Buttons/trash_button.tscn" id="6_2a5bo"]
+[ext_resource type="PackedScene" uid="uid://57y2rf2tsc1y" path="res://Buttons/wood_button.tscn" id="7_p0vlj"]
+[ext_resource type="Script" path="res://Scenes/Split Screen Scenes/platform_3.gd" id="8_gwngg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7l4j"]
+size = Vector2(483, 55)
+
+[node name="mouse_colony" type="Node2D"]
+script = ExtResource("1_5ob52")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("2_vmeys")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -533.0
+offset_right = 886.0
+offset_bottom = 1599.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_gyobu")
+
+[node name="cloth_button" parent="." instance=ExtResource("4_h2tv7")]
+offset_left = 747.0
+offset_top = -168.0
+offset_right = 796.0
+offset_bottom = -137.0
+
+[node name="food_button" parent="." instance=ExtResource("5_v7lev")]
+offset_left = 676.0
+offset_top = -168.0
+offset_right = 725.0
+offset_bottom = -137.0
+
+[node name="trash_button" parent="." instance=ExtResource("6_2a5bo")]
+offset_left = 818.0
+offset_top = -166.0
+offset_right = 870.0
+offset_bottom = -135.0
+
+[node name="wood_button" parent="." instance=ExtResource("7_p0vlj")]
+offset_left = 595.0
+offset_top = -169.0
+offset_right = 648.0
+offset_bottom = -138.0
+
+[node name="Platform_3" type="Area2D" parent="."]
+position = Vector2(242, 686)
+script = ExtResource("8_gwngg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_3"]
+shape = SubResource("RectangleShape2D_e7l4j")
+
+[connection signal="building_entered_build_area" from="Platform_3" to="." method="_on_platform_3_building_entered_build_area"]
+[connection signal="mouse_entered" from="Platform_3" to="Platform_3" method="_on_mouse_entered"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj3gvwthsqlmm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0udj"]
+size = Vector2(770, 302)
+
+[node name="building_area" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="building_area_collider" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(386, 149)
+shape = SubResource("RectangleShape2D_b0udj")

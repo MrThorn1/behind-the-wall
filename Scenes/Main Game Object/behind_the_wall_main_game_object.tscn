@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=41 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/Managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
@@ -33,7 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://uacdkbkqw6cm" path="res://Scenes/Split Screen Scenes/grandmas_apartment.tscn" id="17_o2vrg"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/center_split_screen_spacer.gd" id="18_tkn8k"]
 [ext_resource type="PackedScene" uid="uid://d2ac426qbsocv" path="res://Scenes/Split Screen Scenes/mouse_colony.tscn" id="19_7yuw8"]
-[ext_resource type="Script" path="res://Scripts/Split Screen/mouse_colony_root.gd" id="20_8goc6"]
 [ext_resource type="Script" path="res://Scripts/ui/wood_value.gd" id="21_gir1x"]
 [ext_resource type="Script" path="res://Scripts/ui/metal_value.gd" id="25_jjrh6"]
 [ext_resource type="Script" path="res://Scripts/ui/elec_value.gd" id="29_rtg7l"]
@@ -106,6 +105,7 @@ render_target_update_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.13
+mouse_filter = 1
 script = ExtResource("18_tkn8k")
 
 [node name="mouse_colony_viewport_container" type="SubViewportContainer" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container"]
@@ -118,8 +118,6 @@ size = Vector2i(502, 1066)
 render_target_update_mode = 4
 
 [node name="mouse_colony" parent="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport" instance=ExtResource("19_7yuw8")]
-script = ExtResource("20_8goc6")
-building_placement_holder = null
 
 [node name="ui_overlay" type="CanvasLayer" parent="."]
 
