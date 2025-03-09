@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c363dl7a45jqe"]
+[gd_scene load_steps=3 format=3 uid="uid://c363dl7a45jqe"]
 
 [ext_resource type="Texture2D" uid="uid://dqtgyq3n47shk" path="res://Sprites/Buildings/thread_bundle_v1.png" id="1_0weno"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wgy7g"]
+radius = 4.0
 
 [node name="ThreadBundle" type="Node2D"]
 
 [node name="ThreadBundleV1" type="Sprite2D" parent="."]
 texture = ExtResource("1_0weno")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wgy7g")

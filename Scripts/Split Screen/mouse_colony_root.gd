@@ -21,6 +21,7 @@ func _on_build_menu_passed_to_colony(passed_name) -> void:
 			building_placement_holder = building
 			invisible_building = building_placement_holder.scene.instantiate()
 			add_child(invisible_building)
+			print(invisible_building)
 			#invisible_building.position = vector2(100,200)
 			building_selected = true
 			print(building_selected)
@@ -38,10 +39,7 @@ func building_enetered_build_area() -> void:
 		pass
 	pass # Replace with function body.
 
-func _on_platform_3_mouse_entered() -> void:
-	print("building enetered build area")
-	pass # Replace with function body.
 
-func _on_platform_3_mouse_shape_entered(shape_idx: int) -> void:
-	print("building enetered build area")
+func _on_platform_3_area_entered(area: Area2D) -> void:
+	print("area entered worked")
 	pass # Replace with function body.
