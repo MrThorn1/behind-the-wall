@@ -89,3 +89,4 @@ mouse_filter = 1
 color = Color(1, 1, 1, 0.45098)
 
 [connection signal="area_entered" from="platform3" to="." method="_on_platform_3_area_entered"]
+[connection signal="area_exited" from="platform3" to="." method="_on_platform_3_area_exited"]

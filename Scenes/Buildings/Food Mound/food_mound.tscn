@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl57e7m37eysl"]
+[gd_scene load_steps=8 format=3 uid="uid://cl57e7m37eysl"]
 
 [ext_resource type="Script" path="res://Scenes/Buildings/Trash Pile/trash_pile.gd" id="1_2y7ir"]
 [ext_resource type="Texture2D" uid="uid://v2ulh5aobhfp" path="res://Sprites/Buildings/food_mound_v1_anim-Sheet.png" id="2_irjdc"]
@@ -32,9 +32,16 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ne3c"]
+
 [node name="Food Mound" type="Node2D"]
 script = ExtResource("1_2y7ir")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jgxq8")
 animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1ne3c")

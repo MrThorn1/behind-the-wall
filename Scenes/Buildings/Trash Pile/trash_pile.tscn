@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://m0vbovhe4314"]
+[gd_scene load_steps=8 format=3 uid="uid://m0vbovhe4314"]
 
 [ext_resource type="Script" path="res://Scenes/Buildings/Trash Pile/trash_pile.gd" id="1_64psn"]
 [ext_resource type="Texture2D" uid="uid://ccqyixcj8pumw" path="res://Sprites/Buildings/Trash_Pile_v1_anim-Sheet.png" id="1_ojxrt"]
@@ -32,9 +32,16 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iaddm"]
+
 [node name="TrashPile" type="Node2D"]
 script = ExtResource("1_64psn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b1dpj")
 animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_iaddm")

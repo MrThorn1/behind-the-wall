@@ -122,7 +122,6 @@ render_target_update_mode = 4
 [node name="ui_overlay" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="ui_overlay"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -397,6 +396,7 @@ text = "Raid"
 
 [node name="build_menu" parent="ui_overlay" instance=ExtResource("41_rdebj")]
 process_mode = 2
+visible = false
 
 [connection signal="pressed" from="ui_overlay/build_button" to="ui_overlay/build_menu" method="_on_build_button_pressed"]
 [connection signal="passed_to_colony" from="ui_overlay/build_menu" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport/mouse_colony" method="_on_build_menu_passed_to_colony"]
