@@ -10,7 +10,6 @@ var time_mod : float = randf_range(.25, .5)
 func _ready() -> void:
 	var instance = building.scene.instantiate()
 	add_child(instance)
-	
 	if building.production_time:
 		var timer : Timer = Timer.new()
 		add_child(timer)

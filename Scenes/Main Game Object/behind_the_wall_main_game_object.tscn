@@ -148,6 +148,10 @@ offset_right = 957.0
 offset_bottom = 133.0
 grow_horizontal = 2
 
+[node name="Control" type="Control" parent="ui_overlay/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
 [node name="top_row_resource_ui" type="HBoxContainer" parent="ui_overlay/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
