@@ -44,15 +44,28 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("Build_Building") and building_selected:
 			#print(building.name)
 			for building in _content:
+
 				if building.name == invisible_building.name:
+					print("entered name match")
 					building_placement_holder = building
 					temp_name = invisible_building.name
 					placed_building = building_placement_holder.scene.instantiate()
+					placed_building.trash_cost = building_placement_holder.trash_cost
+					placed_building.food_cost = building_placement_holder.food_cost
+					placed_building.wood_cost = building_placement_holder.wood_cost
+					placed_building.metal_cost = building_placement_holder.metal_cost
+					placed_building.elec_cost = building_placement_holder.elec_cost
+					placed_building.fuel_cost = building_placement_holder.fuel_cost
+					placed_building.cloth_cost = building_placement_holder.cloth_cost
+					placed_building.production_type = building_placement_holder.production_type
+					placed_building.production_quantity = building_placement_holder.production_quantity
+					placed_building.production_time = building_placement_holder.production_time
 					add_child(placed_building)
 					placed_building.position.x = invisible_building.position.x
 					placed_building.position.y = invisible_building.position.y
 					invisible_building.queue_free()
 					placed_building.name = temp_name
+
 					temp_name = invisible_building.name
 					building_selected = false
 					building_in_build_area = false
