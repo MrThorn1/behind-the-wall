@@ -23,7 +23,6 @@ var production_update_time : int
 func _ready() -> void:
 	get_viewport().size = Vector2(886,1066)
 	build_area_bottom_surface = $platform3.position.y
-	print(build_area_bottom_surface)
 	pass # Replace with function body.
 
 func _on_build_menu_passed_to_colony(passed_name) -> void:
@@ -32,8 +31,9 @@ func _on_build_menu_passed_to_colony(passed_name) -> void:
 			building_placement_holder = building
 			invisible_building = building_placement_holder.scene.instantiate()
 			add_child(invisible_building)
+			print(invisible_building)
+			invisible_building.modulate.a = 0.5
 			building_selected = true
-			production_update_time = building.production_time
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
@@ -45,11 +45,6 @@ func _process(delta: float) -> void:
 			add_child(placed_building)
 			placed_building.position.x = invisible_building.position.x
 			placed_building.position.y = invisible_building.position.y
-			var timer : Timer = Timer.new()
-			add_child(timer)
-			timer.start(production_update_time)
-			timer.timeout.connect(_timer_timeout)
-			invisible_building.queue_free()
 			building_selected = false
 	elif building_selected:
 		if not building_in_build_area:
@@ -62,20 +57,11 @@ func building_enetered_build_area() -> void:
 	pass # Replace with function body.
 
 func _on_platform_3_area_entered(area: Area2D) -> void:
-	print("area entered worked")
+	invisible_building.modulate.g = 200
 	building_in_build_area = true
 	pass # Replace with function body.
 
 func _on_platform_3_area_exited(area: Area2D) -> void:
-	print("area exited worked")
+	invisible_building.modulate.g = 1
 	building_in_build_area = false
 	pass # Replace with function body.
-	
-func tweening() -> void:
-	var tween : Tween = create_tween()
-	tween.tween_property(self, "scale", Vector2(tweenscalechange, tweenscalechange), 0.1)
-	tween.tween_property(self, "scale", Vector2(1,1), 0.1)
-
-func _timer_timeout() -> void:
-	managerclick.ref.click(building.production_type,building.production_quantity)
-	tweening()

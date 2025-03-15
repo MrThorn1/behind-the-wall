@@ -9,7 +9,6 @@ var time_mod : float = randf_range(.25, .5)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print(building_root)
-	print("in root building script for some reason")
 	#if building_root.production_time:
 		#var timer : Timer = Timer.new()
 		#add_child(timer)
