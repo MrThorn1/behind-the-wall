@@ -1,14 +1,14 @@
 extends Node2D
 
-@export var building_root:Building
 var tweenscalechange : float = 1.5
 var pivot_offset : float
 var timer_wait_start : Timer = Timer.new()
 var time_mod : float = randf_range(.25, .5)
+var production_type
+var production_quantity
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(building_root)
 	print("in root building script for some reason")
 	#if building_root.production_time:
 		#var timer : Timer = Timer.new()
@@ -22,5 +22,5 @@ func tweening() -> void:
 	tween.tween_property(self, "scale", Vector2(1,1), 0.1)
 
 func _timer_timeout() -> void:
-	managerclick.ref.click(building_root.production_type,building_root.production_quantity)
+	managerclick.ref.click(production_type,production_quantity)
 	tweening()

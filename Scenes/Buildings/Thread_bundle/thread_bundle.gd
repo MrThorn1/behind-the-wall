@@ -1,14 +1,13 @@
 extends Node2D
-
-@export var building_root:Building
 var tweenscalechange : float = 1.5
 var pivot_offset : float
 var timer_wait_start : Timer = Timer.new()
 var time_mod : float = randf_range(.25, .5)
+var building_root : Building
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(building_root)
+	print("this is in the root building script ^")
 	#if building_root.production_time:
 		#var timer : Timer = Timer.new()
 		#add_child(timer)
