@@ -5,7 +5,7 @@ extends PanelContainer
 @onready var cloth_cost_label: Label = %cloth_cost_label
 @onready var wood_cost_label: Label = %wood_cost_label
 @onready var trash_cost_label: Label = %trash_cost_label
-@onready var building_name: Label = %Building_Name
+@onready var building_name_label: Label = %Building_Name
 @onready var metal_cost_label: Label = %metal_cost_label
 @onready var elec_cost_label: Label = %elec_cost_label
 @onready var fuel_cost_label: Label = %fuel_cost_label
@@ -17,7 +17,7 @@ func display(building:Building):
 	internal_name = self.name
 	texture_rect.texture_normal = building.icon
 	texture_rect.texture_hover = building.icon_hover
-	building_name.text = building.building_name
+	building_name_label.text = building.building_name
 	texture_rect.scale = Vector2(1.25,1.25)
 	trash_cost_label.text = str(building.trash_cost)
 	food_cost_label.text = str(building.food_cost)

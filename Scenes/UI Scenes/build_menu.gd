@@ -17,15 +17,13 @@ func _ready():
 	hide()
 
 func open():
+	#standrad UI command that shows it rather than hides it
 	show()
 	#loops through all of the buildings in the new resource array, and adds them to the new grid container slot for each one
-	for child in grid_container.get_children():
-		child.queue_free()
 	for building in _content:
 		var slot = slot_scene.instantiate()
 		grid_container.add_child(slot)
 		slot.display(building)
-		#some_node_with_signal.pressed.connect(bullet_node.some_func)
 		slot.build_button_pressed.connect(build_selected)
 	get_tree().paused = true
 
@@ -39,11 +37,9 @@ func _on_build_button_pressed() -> void:
 	pass # Replace with function body.
 	
 func build_selected(passed_name) -> void:
-	push_up_to_colony_or_apartment(passed_name)
-	pass
-
-func push_up_to_colony_or_apartment(passed_name) -> void:
 	emit_signal("passed_to_colony", passed_name)
 	hide()
+	for child in grid_container.get_children():
+		child.queue_free()
 	get_tree().paused = false
 	pass

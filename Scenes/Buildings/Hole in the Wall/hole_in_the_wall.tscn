@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://djdsu8hco88ql"]
+[gd_scene load_steps=3 format=3 uid="uid://bg3w60hwlnocc"]
 
 [ext_resource type="Texture2D" uid="uid://dveivxg7a0fa8" path="res://Sprites/Buildings/hole_in_the_wall_v1.png" id="1_o70h4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnqgx"]
 
-[node name="HoleInTheWall" type="Node2D"]
+[node name="Hole In The Wall" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_o70h4")

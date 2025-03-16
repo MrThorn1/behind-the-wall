@@ -29,7 +29,6 @@ func _ready() -> void:
 func _on_build_menu_passed_to_colony(passed_name) -> void:
 	for building in _content:
 		if building.building_name == passed_name:
-			print("enterd building invisible creation")
 			building_placement_holder = building
 			invisible_building = building_placement_holder.scene.instantiate()
 			add_child(invisible_building)
@@ -39,17 +38,17 @@ func _on_build_menu_passed_to_colony(passed_name) -> void:
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Cancel_Build") and building_selected:
+		building_selected = false
+		building_in_build_area = false
+		invisible_building.queue_free()
 	if building_in_build_area and building_selected:
 		invisible_building.position.y = build_area_bottom_surface + ($platform3/platform_3_collider.shape.size.y/2)
 		invisible_building.position.x = get_local_mouse_position().x
 		if Input.is_action_just_pressed("Build_Building") and building_selected:
-			#print(building.name)
 			for building in _content:
-				print(temp_name)
-				print(building.building_name)
-				print(invisible_building.name)
 				if building.building_name == invisible_building.name:
-					print("entered name match")
+					print("entered name match for building placement")
 					building_placement_holder = building
 					temp_name = invisible_building.name
 					placed_building = building_placement_holder.scene.instantiate()
