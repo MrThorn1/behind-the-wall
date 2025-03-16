@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_ahrxw")
-name = "Thread Bundle"
+building_name = "Thread Bundle"
 scene = ExtResource("3_wrhtu")
 icon = ExtResource("1_q7iev")
 icon_hover = ExtResource("2_dto65")

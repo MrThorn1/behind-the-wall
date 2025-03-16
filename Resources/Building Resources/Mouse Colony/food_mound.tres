@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_kgxmn")
-name = "Food Mound"
+building_name = "Food Mound"
 scene = ExtResource("2_sfs7u")
 icon = ExtResource("1_eiijb")
 trash_cost = 50

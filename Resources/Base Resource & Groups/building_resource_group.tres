@@ -7,4 +7,4 @@ script = ExtResource("1_n04wm")
 base_folder = "res://Resources/Building Resources"
 includes = Array[String]([])
 excludes = Array[String]([])
-paths = Array[String](["res://Resources/Building Resources/Apartment/hold_in_the_wall.tres", "res://Resources/Building Resources/Mouse Colony/food_mound.tres", "res://Resources/Building Resources/Mouse Colony/thread_bundle.tres", "res://Resources/Building Resources/Mouse Colony/trash_pile.tres"])
+paths = Array[String](["res://Resources/Building Resources/Apartment/hole_in_the_wall.tres", "res://Resources/Building Resources/Mouse Colony/food_mound.tres", "res://Resources/Building Resources/Mouse Colony/thread_bundle.tres", "res://Resources/Building Resources/Mouse Colony/trash_pile.tres"])

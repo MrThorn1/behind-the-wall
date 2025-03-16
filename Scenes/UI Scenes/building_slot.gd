@@ -13,11 +13,11 @@ signal build_button_pressed
 var internal_name
 
 func display(building:Building):
-	self.name = building.name
+	self.name = building.building_name
 	internal_name = self.name
 	texture_rect.texture_normal = building.icon
 	texture_rect.texture_hover = building.icon_hover
-	building_name.text = building.name
+	building_name.text = building.building_name
 	texture_rect.scale = Vector2(1.25,1.25)
 	trash_cost_label.text = str(building.trash_cost)
 	food_cost_label.text = str(building.food_cost)

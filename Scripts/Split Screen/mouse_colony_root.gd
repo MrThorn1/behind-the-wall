@@ -28,13 +28,14 @@ func _ready() -> void:
 
 func _on_build_menu_passed_to_colony(passed_name) -> void:
 	for building in _content:
-		if building.name == passed_name:
+		if building.building_name == passed_name:
+			print("enterd building invisible creation")
 			building_placement_holder = building
 			invisible_building = building_placement_holder.scene.instantiate()
 			add_child(invisible_building)
 			invisible_building.modulate.a = 0.5
 			building_selected = true
-			passed_name = invisible_building.name
+			temp_name = invisible_building.name
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
@@ -44,8 +45,10 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("Build_Building") and building_selected:
 			#print(building.name)
 			for building in _content:
-
-				if building.name == invisible_building.name:
+				print(temp_name)
+				print(building.building_name)
+				print(invisible_building.name)
+				if building.building_name == invisible_building.name:
 					print("entered name match")
 					building_placement_holder = building
 					temp_name = invisible_building.name
@@ -65,7 +68,6 @@ func _process(delta: float) -> void:
 					placed_building.position.y = invisible_building.position.y
 					invisible_building.queue_free()
 					placed_building.name = temp_name
-
 					temp_name = invisible_building.name
 					building_selected = false
 					building_in_build_area = false
