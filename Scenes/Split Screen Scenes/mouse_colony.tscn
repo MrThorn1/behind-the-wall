@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2ac426qbsocv"]
+[gd_scene load_steps=10 format=3 uid="uid://d2ac426qbsocv"]
 
 [ext_resource type="Script" path="res://Scripts/Split Screen/mouse_colony_root.gd" id="1_5ob52"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/mouse_colony_camera.gd" id="2_vmeys"]
@@ -10,6 +10,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocru6"]
 size = Vector2(481, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv0qj"]
+size = Vector2(341, 76)
 
 [node name="mouse_colony" type="Node2D"]
 script = ExtResource("1_5ob52")
@@ -64,13 +67,11 @@ position = Vector2(243, 667)
 [node name="platform_3_collider" type="CollisionShape2D" parent="platform3"]
 shape = SubResource("RectangleShape2D_ocru6")
 
-[node name="ColorRect" type="ColorRect" parent="platform3/platform_3_collider"]
-offset_left = -241.0
-offset_top = -46.0
-offset_right = 243.0
-offset_bottom = 44.0
-mouse_filter = 1
-color = Color(1, 1, 1, 0.45098)
+[node name="platform2" type="Area2D" parent="."]
+position = Vector2(714, 1179)
+
+[node name="platform_2_collider" type="CollisionShape2D" parent="platform2"]
+shape = SubResource("RectangleShape2D_gv0qj")
 
 [connection signal="area_entered" from="platform3" to="." method="_on_platform_3_area_entered"]
 [connection signal="area_exited" from="platform3" to="." method="_on_platform_3_area_exited"]

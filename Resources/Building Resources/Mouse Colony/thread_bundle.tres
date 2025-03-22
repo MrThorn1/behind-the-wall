@@ -1,14 +1,13 @@
-[gd_resource type="Resource" script_class="Building" load_steps=5 format=3 uid="uid://c11r2mlugu3vy"]
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://c11r2mlugu3vy"]
 
 [ext_resource type="Script" path="res://Resources/Base Resource & Groups/building.gd" id="1_ahrxw"]
 [ext_resource type="Texture2D" uid="uid://dqtgyq3n47shk" path="res://Sprites/Buildings/thread_bundle_v1.png" id="1_q7iev"]
 [ext_resource type="Texture2D" uid="uid://bgfcrebf8xn8s" path="res://Sprites/Buildings/thred_bundle_hover_v1.png" id="2_dto65"]
-[ext_resource type="PackedScene" uid="uid://c363dl7a45jqe" path="res://Scenes/Buildings/Thread_bundle/thread_bundle.tscn" id="3_wrhtu"]
 
 [resource]
 script = ExtResource("1_ahrxw")
 building_name = "Thread Bundle"
-scene = ExtResource("3_wrhtu")
+building_sprite = ExtResource("1_q7iev")
 icon = ExtResource("1_q7iev")
 icon_hover = ExtResource("2_dto65")
 trash_cost = 50

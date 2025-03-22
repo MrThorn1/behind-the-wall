@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://n0xle1hxq6qm"]
+[gd_scene load_steps=3 format=3 uid="uid://n0xle1hxq6qm"]
 
-[ext_resource type="Script" path="res://Resources/Base Resource & Groups/Root Building Scene/invisible_building_2.gd" id="1_mud20"]
+[ext_resource type="Script" path="res://Resources/Base Resource & Groups/Root Building Scene/invisible_building.gd" id="1_mud20"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f43gd"]
+radius = 3.0
 
 [node name="InvisibleBuilding" type="Node2D"]
 script = ExtResource("1_mud20")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_f43gd")

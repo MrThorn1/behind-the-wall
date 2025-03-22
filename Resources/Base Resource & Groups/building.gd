@@ -2,7 +2,9 @@ class_name Building
 extends Resource
 
 @export var building_name:String
-@export var scene:PackedScene
+#@export var scene:PackedScene
+@export var building_sprite:Texture
+@export var building_sprite_sheet:Texture
 @export var icon:Texture2D
 @export var icon_hover:Texture2D
 @export var trash_cost:int

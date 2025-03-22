@@ -2,9 +2,8 @@ extends Node2D
 
 var tweenscalechange : float = 1.5
 var pivot_offset : float
-var timer_wait_start : Timer = Timer.new()
-var time_mod : float = randf_range(.25, .5)
-var trash_cost
+var building_sprite
+var trash_cost : int
 var food_cost
 var wood_cost
 var metal_cost

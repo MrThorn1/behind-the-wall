@@ -1,13 +1,9 @@
 extends Node2D
-
+#doesnt currently appear to be being used at all in the game, check later
 @export var building:Building
 var time : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
-func _process(delta) -> void:
-	self.position = get_viewport().get_local_mouse_position()
-	print(self.position)
-	print("inprocess")
+	print("invisible building ready")
+	pass # Replace with function body.
