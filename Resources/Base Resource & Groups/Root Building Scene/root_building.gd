@@ -17,6 +17,7 @@ var sprite_size
 var sprite_size_x
 var sprite_size_y
 var sprite_holder
+signal entered_a_restricted_area
 
 func tweening() -> void:
 	var tween : Tween = create_tween()
@@ -45,3 +46,10 @@ func after_invisible_population() -> void:
 	sprite_holder = get_child(0)
 	sprite_size = sprite_holder.texture.get_size()
 	sprite_holder.offset = Vector2(0, -(sprite_size.y/2))
+	$Build_Restrictor/Build_Restrictor_Collider.shape.size.x = sprite_size.x
+	$Build_Restrictor/Build_Restrictor_Collider.shape.size.y = sprite_size.y
+	
+
+func _on_build_restrictor_area_entered(area: Area2D) -> void:
+	emit_signal("entered_a_restricted_area")
+	pass # Replace with function body.

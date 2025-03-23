@@ -17,6 +17,7 @@ var building_area_hovered_within
 
 var building_selected : bool = false
 var building_in_build_area : bool = false
+var building_restricted : bool = false
 
 var invisible_building : Node2D
 var placed_building : Node2D
@@ -25,6 +26,8 @@ var pivot_offset : float
 var timer_wait_start : Timer = Timer.new()
 var time_mod : float = randf_range(.25, .5)
 var production_update_time : int
+
+
 
 func _ready() -> void:
 	get_viewport().size = Vector2(886,1066)
@@ -38,16 +41,19 @@ func _on_build_menu_passed_to_colony(passed_name) -> void:
 			building_placement_holder = load("res://Resources/Base Resource & Groups/Root Building Scene/root_building.tscn").duplicate()
 			invisible_building = building_placement_holder.instantiate()
 			add_child(invisible_building)
+			invisible_building.entered_a_restricted_area.connect(restrict_build)
+			print("signal connected")
 			invisible_building.name = "Temp_Invisible_Building"
 			populate_invisible_building(building)
 			$Temp_Invisible_Building.after_invisible_population()
-			#invisible_building.connect()
 			invisible_building.modulate.a = 0.5
 			building_selected = true
 			temp_name = building.building_name
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
+	if building_restricted and building_selected:
+		invisible_building.modulate.r = 100
 	if Input.is_action_just_pressed("Cancel_Build") and building_selected:
 		building_selected = false
 		building_in_build_area = false
@@ -59,7 +65,7 @@ func _process(delta: float) -> void:
 			invisible_building.modulate.g = 1
 			invisible_building.position.y = get_local_mouse_position().y
 			pass
-		if Input.is_action_just_pressed("Build_Building") and building_selected:
+		if Input.is_action_just_pressed("Build_Building") and building_selected and not building_restricted:
 			invisible_building.queue_free()
 			for building in _content:
 				if building.building_name == temp_name:
@@ -83,6 +89,10 @@ func _on_platform_3_area_entered(area: Area2D) -> void:
 		invisible_building.modulate.g = 200
 		building_in_build_area = true
 	pass # Replace with function body.
+	
+func _on_build_restrictor_area_entered(area: Area2D) -> void:
+	print("signal connected")
+	
 
 func _on_platform_3_area_exited(area: Area2D) -> void:
 	if building_selected:
@@ -114,3 +124,8 @@ func populate_invisible_building(building) -> void:
 	#will need to instantiate and populate the buildingable collider here so that you can automatically create the buidling collider seperate from the buidlable area signal collider to generaete the size of the building to prepeve overwritting
 	pass
 pass
+
+func restrict_build(area: Area2D) -> void:
+	print("build restricted")
+	building_restricted = true
+	pass
