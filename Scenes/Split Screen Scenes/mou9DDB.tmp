@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2ac426qbsocv"]
+
+[ext_resource type="Script" path="res://Scripts/Split Screen/mouse_colony_root.gd" id="1_5ob52"]
+[ext_resource type="Script" path="res://Scripts/Split Screen/mouse_colony_camera.gd" id="2_vmeys"]
+[ext_resource type="Texture2D" uid="uid://c5axohg8ib4e2" path="res://Sprites/Screen Layouts/mouse_colony_draft.png" id="3_gyobu"]
+[ext_resource type="PackedScene" uid="uid://l4inmxowrlhy" path="res://Buttons/cloth_button.tscn" id="4_h2tv7"]
+[ext_resource type="PackedScene" uid="uid://c1poxrw0507es" path="res://Buttons/food_button.tscn" id="5_v7lev"]
+[ext_resource type="PackedScene" uid="uid://b7eqpldtgx3bu" path="res://Buttons/trash_button.tscn" id="6_2a5bo"]
+[ext_resource type="PackedScene" uid="uid://57y2rf2tsc1y" path="res://Buttons/wood_button.tscn" id="7_p0vlj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocru6"]
+size = Vector2(481, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv0qj"]
+size = Vector2(341, 76)
+
+[node name="mouse_colony" type="Node2D"]
+script = ExtResource("1_5ob52")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("2_vmeys")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -533.0
+offset_right = 886.0
+offset_bottom = 1599.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_gyobu")
+
+[node name="cloth_button" parent="." instance=ExtResource("4_h2tv7")]
+offset_left = 684.0
+offset_top = -185.0
+offset_right = 733.0
+offset_bottom = -154.0
+mouse_filter = 1
+
+[node name="food_button" parent="." instance=ExtResource("5_v7lev")]
+offset_left = 604.0
+offset_top = -181.0
+offset_right = 653.0
+offset_bottom = -150.0
+mouse_filter = 1
+
+[node name="trash_button" parent="." instance=ExtResource("6_2a5bo")]
+offset_left = 532.0
+offset_top = -184.0
+offset_right = 584.0
+offset_bottom = -153.0
+mouse_filter = 1
+
+[node name="wood_button" parent="." instance=ExtResource("7_p0vlj")]
+offset_left = 801.0
+offset_top = -175.0
+offset_right = 854.0
+offset_bottom = -144.0
+mouse_filter = 1
+
+[node name="platform3" type="Area2D" parent="."]
+position = Vector2(243, 667)
+
+[node name="platform_3_collider" type="CollisionShape2D" parent="platform3"]
+shape = SubResource("RectangleShape2D_ocru6")
+
+[node name="platform2" type="Area2D" parent="."]
+position = Vector2(714, 1179)
+
+[node name="platform_2_collider" type="CollisionShape2D" parent="platform2"]
+shape = SubResource("RectangleShape2D_gv0qj")
+
+[connection signal="area_entered" from="platform3" to="." method="_on_platform_3_area_entered"]
+[connection signal="area_exited" from="platform3" to="." method="_on_platform_3_area_exited"]
