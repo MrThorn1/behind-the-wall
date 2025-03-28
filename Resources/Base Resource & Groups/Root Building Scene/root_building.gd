@@ -51,5 +51,6 @@ func after_invisible_population() -> void:
 	
 
 func _on_build_restrictor_area_entered(area: Area2D) -> void:
-	emit_signal("entered_a_restricted_area")
+	print("signal for entering a restricted area emitted")
+	print(area)
 	pass # Replace with function body.

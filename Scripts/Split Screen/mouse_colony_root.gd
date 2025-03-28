@@ -41,11 +41,11 @@ func _on_build_menu_passed_to_colony(passed_name) -> void:
 			building_placement_holder = load("res://Resources/Base Resource & Groups/Root Building Scene/root_building.tscn").duplicate()
 			invisible_building = building_placement_holder.instantiate()
 			add_child(invisible_building)
-			invisible_building.entered_a_restricted_area.connect(restrict_build)
-			print("signal connected")
 			invisible_building.name = "Temp_Invisible_Building"
 			populate_invisible_building(building)
 			$Temp_Invisible_Building.after_invisible_population()
+			$Temp_Invisible_Building/Build_Restrictor.area_entered.connect(restrict_build)
+			$Temp_Invisible_Building/Build_Restrictor.area_exited.connect(unrestrict_build)
 			invisible_building.modulate.a = 0.5
 			building_selected = true
 			temp_name = building.building_name
@@ -126,6 +126,12 @@ func populate_invisible_building(building) -> void:
 pass
 
 func restrict_build(area: Area2D) -> void:
-	print("build restricted")
+	
+	invisible_building.modulate.g = 1
 	building_restricted = true
 	pass
+
+func unrestrict_build(area: Area2D) -> void:
+	invisible_building.modulate.g = 200
+	invisible_building.modulate.r = 1
+	building_restricted = false
