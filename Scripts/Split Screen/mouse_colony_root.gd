@@ -18,6 +18,8 @@ var building_area_hovered_within
 var building_selected : bool = false
 var building_in_build_area : bool = false
 var building_restricted : bool = false
+var areas_on_restricted_list : Array
+var current_platform
 
 var invisible_building : Node2D
 var placed_building : Node2D
@@ -44,6 +46,8 @@ func _on_build_menu_passed_to_colony(passed_name) -> void:
 			invisible_building.name = "Temp_Invisible_Building"
 			populate_invisible_building(building)
 			$Temp_Invisible_Building.after_invisible_population()
+			$Temp_Invisible_Building/Build_Area_Selector.area_entered.connect(platform_build_enter)
+			$Temp_Invisible_Building/Build_Area_Selector.area_exited.connect(platform_build_exit)
 			$Temp_Invisible_Building/Build_Restrictor.area_entered.connect(restrict_build)
 			$Temp_Invisible_Building/Build_Restrictor.area_exited.connect(unrestrict_build)
 			invisible_building.modulate.a = 0.5
@@ -59,7 +63,9 @@ func _process(delta: float) -> void:
 		building_in_build_area = false
 		invisible_building.queue_free()
 	if building_in_build_area and building_selected:
-		invisible_building.position.y = build_area_bottom_surface + ($platform3/platform_3_collider.shape.size.y/2)
+		platform_position = building_area_hovered_within.position
+		invisible_building.position.y = building_area_hovered_within.position.y + 40
+		#invisible_building.positionb.y = build_area_bottom_surface + ($platform3/platform_3_collider.shape.size.y/2)
 		invisible_building.position.x = get_local_mouse_position().x
 		if get_local_mouse_position().y < (invisible_building.position.y - 105):
 			invisible_building.modulate.g = 1
@@ -83,18 +89,18 @@ func _process(delta: float) -> void:
 			invisible_building.position = get_local_mouse_position()
 	pass
 
-func _on_platform_3_area_entered(area: Area2D) -> void:
-	if building_selected:
-		building_area_hovered_within = area
-		invisible_building.modulate.g = 200
-		building_in_build_area = true
-	pass # Replace with function body.
-	
-func _on_build_restrictor_area_entered(area: Area2D) -> void:
-	print("signal connected")
-	
+func area_entered(area: Area2D) -> void:
+	print("area entered worked for everyone")
+	pass
 
-func _on_platform_3_area_exited(area: Area2D) -> void:
+#func _on_platform_3_area_entered(area: Area2D) -> void:
+	#if building_selected:
+		#building_area_hovered_within = area
+		#invisible_building.modulate.g = 200
+		#building_in_build_area = true
+	#pass # Replace with function body.
+
+func area_exited(area: Area2D) -> void:
 	if building_selected:
 		invisible_building.modulate.g = 1
 		building_in_build_area = false
@@ -126,12 +132,28 @@ func populate_invisible_building(building) -> void:
 pass
 
 func restrict_build(area: Area2D) -> void:
-	
+	areas_on_restricted_list.append(area)
 	invisible_building.modulate.g = 1
 	building_restricted = true
 	pass
 
 func unrestrict_build(area: Area2D) -> void:
-	invisible_building.modulate.g = 200
-	invisible_building.modulate.r = 1
-	building_restricted = false
+	areas_on_restricted_list.erase(area)
+	if building_restricted and not areas_on_restricted_list:
+		invisible_building.modulate.g = 200
+		invisible_building.modulate.r = 1
+		building_restricted = false
+
+
+func platform_build_enter(area) -> void:
+	if building_selected:
+		building_area_hovered_within = area
+		print(building_area_hovered_within)
+		invisible_building.modulate.g = 200
+		building_in_build_area = true
+			
+func platform_build_exit(area: Area2D) -> void:
+	if building_selected:
+		invisible_building.modulate.g = 1
+		building_in_build_area = false
+	pass # Replace with function body.

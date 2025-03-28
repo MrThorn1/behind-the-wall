@@ -77,9 +77,10 @@ offset_bottom = 960.0
 mouse_filter = 1
 
 [node name="platform7" type="Area2D" parent="."]
-position = Vector2(141, -394)
+position = Vector2(1, 1)
 
 [node name="platform_collider" type="CollisionShape2D" parent="platform7"]
+position = Vector2(141.5, -395.75)
 shape = SubResource("RectangleShape2D_ogtvj")
 
 [node name="platform6" type="Area2D" parent="."]
@@ -114,9 +115,10 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_s0jav")
 
 [node name="platform1" type="Area2D" parent="."]
-position = Vector2(372, 1424)
+position = Vector2(312, 1198)
 
 [node name="platform_collider" type="CollisionShape2D" parent="platform1"]
+position = Vector2(60, 227)
 shape = SubResource("RectangleShape2D_lr5s2")
 
 [connection signal="area_entered" from="platform7" to="." method="_on_platform_7_area_entered"]
