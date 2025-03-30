@@ -71,6 +71,10 @@ func _process(delta: float) -> void:
 			invisible_building.modulate.g = 1
 			invisible_building.position.y = get_local_mouse_position().y
 			pass
+		if get_local_mouse_position().y > (invisible_building.position.y + 105):
+			invisible_building.modulate.g = 1
+			invisible_building.position.y = get_local_mouse_position().y
+			pass
 		if Input.is_action_just_pressed("Build_Building") and building_selected and not building_restricted:
 			invisible_building.queue_free()
 			for building in _content:
