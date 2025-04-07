@@ -21,14 +21,25 @@ func display(building:Building):
 	texture_rect.scale = Vector2(1.25,1.25)
 	trash_cost_label.text = str(building.trash_cost)
 	if CurrencySingleton.global_trash < building.trash_cost:
-		print(CurrencySingleton.global_trash)
-		texture_rect.modulate.r = 100
+		trash_cost_label.set("theme_override_colors/font_color", Color.RED)
 	food_cost_label.text = str(building.food_cost)
+	if CurrencySingleton.global_food < building.food_cost:
+		food_cost_label.set("theme_override_colors/font_color", Color.RED)
 	cloth_cost_label.text = str(building.cloth_cost)
+	if CurrencySingleton.global_cloth < building.cloth_cost:
+		cloth_cost_label.set("theme_override_colors/font_color", Color.RED)
 	wood_cost_label.text = str(building.wood_cost)
+	if CurrencySingleton.global_wood < building.wood_cost:
+		wood_cost_label.set("theme_override_colors/font_color", Color.RED)
 	metal_cost_label.text = str(building.metal_cost)
+	if CurrencySingleton.global_metal < building.metal_cost:
+		metal_cost_label.set("theme_override_colors/font_color", Color.RED)
 	elec_cost_label.text = str(building.elec_cost)
+	if CurrencySingleton.global_elec < building.elec_cost:
+		elec_cost_label.set("theme_override_colors/font_color", Color.RED)
 	fuel_cost_label.text = str(building.fuel_cost)
+	if CurrencySingleton.global_fuel < building.fuel_cost:
+		fuel_cost_label.set("theme_override_colors/font_color", Color.RED)
 	pass
 
 func _on_texture_button_pressed():
