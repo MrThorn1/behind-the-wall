@@ -15,9 +15,9 @@ signal fuel_created(quantity : int)
 var fuel : int = 0
 
 func create_fuel(quantity : int) -> void:
-	fuel += quantity
+	CurrencySingleton.global_fuel += quantity
 	fuel_created.emit(quantity)
 	pass
 	
 func get_fuel() -> int:
-	return fuel
+	return CurrencySingleton.global_fuel

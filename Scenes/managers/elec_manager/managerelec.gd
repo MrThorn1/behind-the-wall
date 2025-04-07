@@ -15,9 +15,9 @@ signal elec_created(quantity : int)
 var elec : int = 0
 
 func create_elec(quantity : int) -> void:
-	elec += quantity
+	CurrencySingleton.global_elec += quantity
 	elec_created.emit(quantity)
 	pass
 	
 func get_elec() -> int:
-	return elec
+	return CurrencySingleton.global_elec

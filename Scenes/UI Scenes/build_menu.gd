@@ -30,6 +30,8 @@ func open():
 func _on_close_button_pressed() -> void:
 	hide()
 	get_tree().paused = false
+	for child in grid_container.get_children():
+		child.queue_free()
 	pass # Replace with function body.
 
 func _on_build_button_pressed() -> void:

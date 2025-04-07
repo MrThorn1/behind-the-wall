@@ -9,6 +9,3 @@ func update_value() -> void:
 
 func _on_suspicion_modified(_quantity : int) -> void:
 	update_value()
-
-func _on_trash_button_pressed() -> void:
-	pass # Replace with function body.

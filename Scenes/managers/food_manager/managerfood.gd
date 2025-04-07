@@ -15,9 +15,9 @@ signal food_created(quantity : int)
 var food : int = 0
 
 func create_food(quantity : int) -> void:
-	food += quantity
+	CurrencySingleton.global_food += quantity
 	food_created.emit(quantity)
 	pass
 	
 func get_food() -> int:
-	return food
+	return CurrencySingleton.global_food

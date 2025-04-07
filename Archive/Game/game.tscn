@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Archive/Game/game.gd" id="1_uiu77"]
 [ext_resource type="PackedScene" uid="uid://cioj51cfymxdv" path="res://Archive/clicker_prototype/clicker_prototype.tscn" id="2_ufucx"]
 [ext_resource type="PackedScene" uid="uid://cwlfbquhevwud" path="res://Scenes/Managers/click_manager/managerclick.tscn" id="3_cf48j"]
-[ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Archive/gold_manager/managertrash.tscn" id="3_lxcg2"]
+[ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Scenes/Managers/trash_manager/managertrash.tscn" id="3_lxcg2"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_uiu77")

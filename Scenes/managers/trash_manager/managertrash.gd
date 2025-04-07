@@ -21,9 +21,9 @@ signal trash_created(quantity : int)
 var trash : int = 0
 
 func create_trash(quantity : int) -> void:
-	trash += quantity
+	CurrencySingleton.global_trash += quantity
 	trash_created.emit(quantity)
 	pass
 	
 func get_trash() -> int:
-	return trash
+	return CurrencySingleton.global_trash

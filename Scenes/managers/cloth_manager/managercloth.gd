@@ -15,9 +15,9 @@ signal cloth_created(quantity : int)
 var cloth : int = 0
 
 func create_cloth(quantity : int) -> void:
-	cloth += quantity
+	CurrencySingleton.global_cloth += quantity
 	cloth_created.emit(quantity)
 	pass
 	
 func get_cloth() -> int:
-	return cloth
+	return CurrencySingleton.global_cloth

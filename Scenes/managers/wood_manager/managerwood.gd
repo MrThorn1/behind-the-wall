@@ -15,9 +15,9 @@ signal wood_created(quantity : int)
 var wood : int = 0
 
 func create_wood(quantity : int) -> void:
-	wood += quantity
+	CurrencySingleton.global_wood += quantity
 	wood_created.emit(quantity)
 	pass
 	
 func get_wood() -> int:
-	return wood
+	return CurrencySingleton.global_wood

@@ -28,6 +28,10 @@ run/main_scene="res://Scenes/Main Game Object/behind_the_wall_main_game_object.t
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+CurrencySingleton="*res://Scripts/Singletons/currency_singleton.gd"
+
 [display]
 
 window/size/viewport_width=1920

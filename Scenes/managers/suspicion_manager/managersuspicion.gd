@@ -15,9 +15,9 @@ signal suspicion_modified(quantity : int)
 var suspicion_value : int = 0
 
 func modify_suspicion(quantity : int) -> void:
-	suspicion_value += quantity
+	CurrencySingleton.global_suspicion += quantity
 	suspicion_modified.emit(quantity)
 	pass
 	
 func get_suspicion() -> int:
-	return suspicion_value
+	return CurrencySingleton.global_suspicion

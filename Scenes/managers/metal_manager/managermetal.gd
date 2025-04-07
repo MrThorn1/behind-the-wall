@@ -15,9 +15,9 @@ signal metal_created(quantity : int)
 var metal : int = 0
 
 func create_metal(quantity : int) -> void:
-	metal += quantity
+	CurrencySingleton.global_metal += quantity
 	metal_created.emit(quantity)
 	pass
 	
 func get_metal() -> int:
-	return metal
+	return CurrencySingleton.global_metal

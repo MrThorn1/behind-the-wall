@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/Managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
 [ext_resource type="PackedScene" uid="uid://cwlfbquhevwud" path="res://Scenes/Managers/click_manager/managerclick.tscn" id="3_p02xc"]
 [ext_resource type="Script" path="res://Scenes/Managers/cloth_manager/managercloth.gd" id="3_xcfqu"]
-[ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Archive/gold_manager/managertrash.tscn" id="4_jc330"]
+[ext_resource type="PackedScene" uid="uid://rm7tk3mxh17k" path="res://Scenes/Managers/trash_manager/managertrash.tscn" id="4_jc330"]
 [ext_resource type="Script" path="res://Scenes/Managers/suspicion_manager/managersuspicion.gd" id="5_cpxbv"]
 [ext_resource type="PackedScene" uid="uid://b4dxut05i667c" path="res://Scenes/Managers/food_manager/managerfood.tscn" id="5_ql2l0"]
 [ext_resource type="Texture2D" uid="uid://dkw18rfv0l5uk" path="res://Sprites/Screen Layouts/Screen Layout Prototype.png" id="5_wopyc"]

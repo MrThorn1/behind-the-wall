@@ -20,6 +20,9 @@ func display(building:Building):
 	building_name_label.text = building.building_name
 	texture_rect.scale = Vector2(1.25,1.25)
 	trash_cost_label.text = str(building.trash_cost)
+	if CurrencySingleton.global_trash < building.trash_cost:
+		print(CurrencySingleton.global_trash)
+		texture_rect.modulate.r = 100
 	food_cost_label.text = str(building.food_cost)
 	cloth_cost_label.text = str(building.cloth_cost)
 	wood_cost_label.text = str(building.wood_cost)
