@@ -33,7 +33,7 @@ var production_update_time : int
 
 func _ready() -> void:
 	get_viewport().size = Vector2(886,1066)
-	build_area_bottom_surface = $platform3.position.y
+
 	#will need to be replaced with a signal input from the new collider function to pull the correct platform position upon entering
 	pass # Replace with function body.
 
@@ -148,11 +148,9 @@ func unrestrict_build(area: Area2D) -> void:
 		invisible_building.modulate.r = 1
 		building_restricted = false
 
-
 func platform_build_enter(area) -> void:
 	if building_selected:
 		building_area_hovered_within = area
-		print(building_area_hovered_within)
 		invisible_building.modulate.g = 200
 		building_in_build_area = true
 			

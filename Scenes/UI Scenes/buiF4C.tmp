@@ -1,0 +1,174 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6gu5sn1mcvsm"]
+
+[ext_resource type="StyleBox" uid="uid://cv5wnvr5hfvok" path="res://Themes/building_slot_hover.tres" id="1_58eyl"]
+[ext_resource type="Script" path="res://Scenes/UI Scenes/building_slot.gd" id="1_s08gy"]
+[ext_resource type="Texture2D" uid="uid://wr1fxy3f32l8" path="res://Assets/ui_assets/hotdog_icon_v1.png" id="2_w5cq6"]
+[ext_resource type="Texture2D" uid="uid://3yg0yhudfe46" path="res://Assets/ui_assets/Dumpster_Icon_v2.png" id="2_y2116"]
+[ext_resource type="Texture2D" uid="uid://dd6o8hrw0ibi5" path="res://Assets/ui_assets/quilt_icon_v1.png" id="4_0yfyo"]
+[ext_resource type="Texture2D" uid="uid://bmy78ig4od77p" path="res://Assets/ui_assets/wood_icon_v2.png" id="5_vm61s"]
+[ext_resource type="Texture2D" uid="uid://e5jxidsm3fld" path="res://Assets/ui_assets/metal_icon_v1.png" id="6_e3sca"]
+[ext_resource type="Texture2D" uid="uid://s7yshsnqmwi0" path="res://Assets/ui_assets/pcb_icon_v1.png" id="7_ajpap"]
+[ext_resource type="Texture2D" uid="uid://cliqksp8tu5ij" path="res://Assets/ui_assets/gas_nozel_icon_v1.png" id="8_p6upw"]
+
+[node name="build_menu_slot" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("1_58eyl")
+script = ExtResource("1_s08gy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="build_menu_individual" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Building_Name" type="Label" parent="MarginContainer/build_menu_individual"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="texture_button" type="TextureButton" parent="MarginContainer/build_menu_individual"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+stretch_mode = 4
+
+[node name="trash" type="HBoxContainer" parent="MarginContainer/build_menu_individual"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="trash_icon" type="TextureRect" parent="MarginContainer/build_menu_individual/trash"]
+custom_minimum_size = Vector2(12.5, 12.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_y2116")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="trash_cost_label" type="Label" parent="MarginContainer/build_menu_individual/trash"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="food_cloth_wood" type="HBoxContainer" parent="MarginContainer/build_menu_individual"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Food" type="HBoxContainer" parent="MarginContainer/build_menu_individual/food_cloth_wood"]
+layout_mode = 2
+
+[node name="food_icon" type="TextureRect" parent="MarginContainer/build_menu_individual/food_cloth_wood/Food"]
+custom_minimum_size = Vector2(12.5, 12.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_w5cq6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="food_cost_label" type="Label" parent="MarginContainer/build_menu_individual/food_cloth_wood/Food"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Cloth" type="HBoxContainer" parent="MarginContainer/build_menu_individual/food_cloth_wood"]
+layout_mode = 2
+
+[node name="cloth_icon" type="TextureRect" parent="MarginContainer/build_menu_individual/food_cloth_wood/Cloth"]
+custom_minimum_size = Vector2(12.5, 12.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_0yfyo")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="cloth_cost_label" type="Label" parent="MarginContainer/build_menu_individual/food_cloth_wood/Cloth"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Wood" type="HBoxContainer" parent="MarginContainer/build_menu_individual/food_cloth_wood"]
+layout_mode = 2
+
+[node name="wood_icon" type="TextureRect" parent="MarginContainer/build_menu_individual/food_cloth_wood/Wood"]
+custom_minimum_size = Vector2(12.5, 12.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_vm61s")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="wood_cost_label" type="Label" parent="MarginContainer/build_menu_individual/food_cloth_wood/Wood"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="metal_elec_fuel" type="HBoxContainer" parent="MarginContainer/build_menu_individual"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="metal" type="HBoxContainer" parent="MarginContainer/build_menu_individual/metal_elec_fuel"]
+layout_mode = 2
+
+[node name="metal_icon" type="TextureRect" parent="MarginContainer/build_menu_individual/metal_elec_fuel/metal"]
+custom_minimum_size = Vector2(12.5, 12.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_e3sca")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="metal_cost_label" type="Label" parent="MarginContainer/build_menu_individual/metal_elec_fuel/metal"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="elec" type="HBoxContainer" parent="MarginContainer/build_menu_individual/metal_elec_fuel"]
+layout_mode = 2
+
+[node name="elec_icon" type="TextureRect" parent="MarginContainer/build_menu_individual/metal_elec_fuel/elec"]
+custom_minimum_size = Vector2(12.5, 12.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ajpap")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="elec_cost_label" type="Label" parent="MarginContainer/build_menu_individual/metal_elec_fuel/elec"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="fuel" type="HBoxContainer" parent="MarginContainer/build_menu_individual/metal_elec_fuel"]
+layout_mode = 2
+
+[node name="fuel_icon" type="TextureRect" parent="MarginContainer/build_menu_individual/metal_elec_fuel/fuel"]
+custom_minimum_size = Vector2(12.5, 12.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_p6upw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="fuel_cost_label" type="Label" parent="MarginContainer/build_menu_individual/metal_elec_fuel/fuel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/build_menu_individual" to="MarginContainer/build_menu_individual" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/build_menu_individual/texture_button" to="." method="_on_texture_button_pressed"]

@@ -39,9 +39,14 @@ func _on_build_button_pressed() -> void:
 	pass # Replace with function body.
 	
 func build_selected(passed_name) -> void:
-	emit_signal("passed_to_colony", passed_name)
-	hide()
-	for child in grid_container.get_children():
-		child.queue_free()
-	get_tree().paused = false
-	pass
+	for building in _content:
+		if building.building_name == passed_name:
+			if building.trash_cost > CurrencySingleton.global_trash:
+				print("Not enough trash to build this")
+			if building.trash_cost <= CurrencySingleton.global_trash and building.cloth_cost <= CurrencySingleton.global_cloth and building.food_cost <= CurrencySingleton.global_food and building.wood_cost <= CurrencySingleton.global_wood and building.metal_cost <= CurrencySingleton.global_metal and building.elec_cost <= CurrencySingleton.global_elec and building.fuel_cost <= CurrencySingleton.global_fuel:
+				managerclick.ref.click(1,-building.trash_cost)
+				emit_signal("passed_to_colony", passed_name)
+				hide()
+				for child in grid_container.get_children():
+					child.queue_free()
+				get_tree().paused = false

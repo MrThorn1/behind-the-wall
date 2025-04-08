@@ -8,3 +8,9 @@ var global_metal : int
 var global_elec : int
 var global_fuel : int
 var global_suspicion : int
+var full_building_list
+
+func _ready():
+	var resource_group:ResourceGroup = load("res://Resources/Base Resource & Groups/building_resource_group.tres")
+	var full_building_list = resource_group.load_all()
+#loading all of those resources, might have to autoload in the future

@@ -11,6 +11,7 @@ extends PanelContainer
 @onready var fuel_cost_label: Label = %fuel_cost_label
 signal build_button_pressed
 var internal_name
+var sufficient_trash = true
 
 func display(building:Building):
 	self.name = building.building_name
@@ -19,6 +20,10 @@ func display(building:Building):
 	texture_rect.texture_hover = building.icon_hover
 	building_name_label.text = building.building_name
 	texture_rect.scale = Vector2(1.25,1.25)
+	
+	#Setting the individual lables to match the resource cost sections of the buildings
+	#then checking to see how many resources you have of each and color coding the label
+	#if the player is short on a resource to build any of the buildings populated in the menu
 	trash_cost_label.text = str(building.trash_cost)
 	if CurrencySingleton.global_trash < building.trash_cost:
 		trash_cost_label.set("theme_override_colors/font_color", Color.RED)
@@ -43,5 +48,6 @@ func display(building:Building):
 	pass
 
 func _on_texture_button_pressed():
+	#for CurrencySingleton.full_building_list
 	emit_signal("build_button_pressed", internal_name)
 	pass # Replace with function body.
