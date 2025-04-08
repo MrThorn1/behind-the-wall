@@ -45,6 +45,12 @@ func build_selected(passed_name) -> void:
 				print("Not enough trash to build this")
 			if building.trash_cost <= CurrencySingleton.global_trash and building.cloth_cost <= CurrencySingleton.global_cloth and building.food_cost <= CurrencySingleton.global_food and building.wood_cost <= CurrencySingleton.global_wood and building.metal_cost <= CurrencySingleton.global_metal and building.elec_cost <= CurrencySingleton.global_elec and building.fuel_cost <= CurrencySingleton.global_fuel:
 				managerclick.ref.click(1,-building.trash_cost)
+				managerclick.ref.click(2,-building.cloth_cost)
+				managerclick.ref.click(3,-building.food_cost)
+				managerclick.ref.click(5,-building.wood_cost)
+				managerclick.ref.click(6,-building.metal_cost)
+				managerclick.ref.click(7,-building.elec_cost)
+				managerclick.ref.click(8,-building.fuel_cost)
 				emit_signal("passed_to_colony", passed_name)
 				hide()
 				for child in grid_container.get_children():

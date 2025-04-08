@@ -62,6 +62,15 @@ func _process(delta: float) -> void:
 		building_selected = false
 		building_in_build_area = false
 		invisible_building.queue_free()
+		for building in _content:
+			if building.building_name == temp_name:
+				managerclick.ref.click(1,building.trash_cost)
+				managerclick.ref.click(2,building.cloth_cost)
+				managerclick.ref.click(3,building.food_cost)
+				managerclick.ref.click(5,building.wood_cost)
+				managerclick.ref.click(6,building.metal_cost)
+				managerclick.ref.click(7,building.elec_cost)
+				managerclick.ref.click(8,building.fuel_cost)
 	if building_in_build_area and building_selected:
 		platform_position = building_area_hovered_within.position
 		invisible_building.position.y = building_area_hovered_within.position.y + 40
