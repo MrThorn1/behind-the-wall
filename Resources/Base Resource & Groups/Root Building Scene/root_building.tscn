@@ -11,6 +11,8 @@ script = ExtResource("1_5w68t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
 [node name="Build_Area_Selector" type="Area2D" parent="."]
 
 [node name="Build_Area_Selector_Collider" type="CollisionShape2D" parent="Build_Area_Selector"]

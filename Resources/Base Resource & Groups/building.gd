@@ -17,3 +17,4 @@ extends Resource
 @export var production_type:int = 0
 @export var production_quantity: int = 1
 @export var production_time:float = 1
+@export var building_animation_sheet:SpriteFrames

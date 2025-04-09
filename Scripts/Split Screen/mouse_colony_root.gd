@@ -120,7 +120,7 @@ func area_exited(area: Area2D) -> void:
 	pass # Replace with function body.
 	
 func populate_placed_building(building) -> void:
-	$Temp_Placed_Building/Sprite2D.texture = building.building_sprite
+	#$Temp_Placed_Building/Sprite2D.texture = building.building_sprite
 	#placed_building.Sprite2D = building_placement_holder.building_sprite
 	$Temp_Placed_Building.trash_cost = building.trash_cost
 	$Temp_Placed_Building.food_cost = building.food_cost
@@ -132,7 +132,9 @@ func populate_placed_building(building) -> void:
 	$Temp_Placed_Building.production_type = building.production_type
 	$Temp_Placed_Building.production_quantity = building.production_quantity
 	$Temp_Placed_Building.production_time = building.production_time
+	$Temp_Placed_Building/AnimatedSprite2D.sprite_frames = building.building_animation_sheet
 	$Temp_Placed_Building.after_placed_population()
+	#$Temp_Place_Building/AnimatedSprite2D.play("idle")
 	$Temp_Placed_Building.name = building.building_name
 	#placed_building.AnimatedSprite2D = building_placement_holder.building_sprite_sheet
 	pass

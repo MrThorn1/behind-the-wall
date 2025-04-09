@@ -17,6 +17,7 @@ var sprite_size
 var sprite_size_x
 var sprite_size_y
 var sprite_holder
+var first_animation_spirte
 signal entered_a_restricted_area
 
 func tweening() -> void:
@@ -37,9 +38,11 @@ func after_placed_population() -> void:
 		add_child(timer)
 		timer.start(production_time)
 		timer.timeout.connect(_timer_timeout)
-	sprite_holder = get_child(0)
-	sprite_size = sprite_holder.texture.get_size()
+	sprite_holder = get_child(1)
+	first_animation_spirte = sprite_holder.sprite_frames.get_frame_texture("idle", 0)
+	sprite_size = first_animation_spirte.get_size()
 	sprite_holder.offset = Vector2(0, -(sprite_size.y/2))
+	sprite_holder.play("idle")
 	pass
 	
 func after_invisible_population() -> void:
@@ -47,8 +50,7 @@ func after_invisible_population() -> void:
 	sprite_size = sprite_holder.texture.get_size()
 	sprite_holder.offset = Vector2(0, -(sprite_size.y/2))
 	$Build_Restrictor/Build_Restrictor_Collider.shape.size.x = sprite_size.x
-	$Build_Restrictor/Build_Restrictor_Collider.shape.size.y = sprite_size.y
-	
+	$Build_Restrictor/Build_Restrictor_Collider.shape.size.y = sprite_size.y	
 
 func _on_build_restrictor_area_entered(area: Area2D) -> void:
 	print("signal for entering a restricted area emitted")
