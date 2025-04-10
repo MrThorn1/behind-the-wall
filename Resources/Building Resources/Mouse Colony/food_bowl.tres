@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="Building" load_steps=16 format=3 uid="uid://bclxro2o76ln2"]
+
+[ext_resource type="Texture2D" uid="uid://b865i04xilvms" path="res://Sprites/Buildings/Food Bowl/Food_Bowl_Sprite_Sheet.png" id="1_aigsi"]
+[ext_resource type="Texture2D" uid="uid://btonw7rt8mg3d" path="res://Sprites/Buildings/Food Bowl/Food_Bowl.png" id="2_ui767"]
+[ext_resource type="Texture2D" uid="uid://f6w33bykbydg" path="res://Sprites/Buildings/Food Bowl/Food_Bowl_Hover.png" id="3_4mctw"]
+[ext_resource type="Script" path="res://Resources/Base Resource & Groups/building.gd" id="4_m1d2y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kr55"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiyge"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gd61"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7inf"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65omt"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16gv5"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h6bk"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihkxi"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rwnd"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(400, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ab8f"]
+atlas = ExtResource("1_aigsi")
+region = Rect2(450, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5iw5n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kr55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiyge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gd61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7inf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65omt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16gv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h6bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihkxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rwnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ab8f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("4_m1d2y")
+building_name = "Food Bowl"
+building_sprite = ExtResource("2_ui767")
+icon = ExtResource("2_ui767")
+icon_hover = ExtResource("3_4mctw")
+trash_cost = 10.0
+food_cost = 0
+wood_cost = 0
+metal_cost = 0
+elec_cost = 0
+fuel_cost = 0
+cloth_cost = 0
+production_type = 3
+production_quantity = 1
+production_time = 5.0
+building_animation_sheet = SubResource("SpriteFrames_5iw5n")

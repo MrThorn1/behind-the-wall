@@ -99,5 +99,5 @@ fuel_cost = 0
 cloth_cost = 0
 production_type = 1
 production_quantity = 1
-production_time = 1.0
+production_time = 5.0
 building_animation_sheet = SubResource("SpriteFrames_o4yrd")

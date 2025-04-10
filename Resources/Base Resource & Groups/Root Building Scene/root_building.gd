@@ -1,6 +1,6 @@
 extends Node2D
 
-var tweenscalechange : float = 1.5
+var tweenscalechange : float = 1.25
 var pivot_offset : float
 var building_sprite
 var trash_cost : int
@@ -22,8 +22,8 @@ signal entered_a_restricted_area
 
 func tweening() -> void:
 	var tween : Tween = create_tween()
-	tween.tween_property($Sprite2D, "scale", Vector2(tweenscalechange, tweenscalechange), 0.1)
-	tween.tween_property($Sprite2D, "scale", Vector2(1,1), 0.1)
+	tween.tween_property($AnimatedSprite2D, "scale", Vector2(tweenscalechange, tweenscalechange), 0.1)
+	tween.tween_property($AnimatedSprite2D, "scale", Vector2(1,1), 0.1)
 
 func _timer_timeout() -> void:
 	managerclick.ref.click(production_type,production_quantity)
