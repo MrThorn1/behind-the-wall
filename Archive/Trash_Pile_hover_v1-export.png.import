@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://syckixbt6syw"
-path="res://.godot/imported/Trash_Pile_v1_icon.png-d18955bb492512712e6275229d198de7.ctex"
+uid="uid://b7c776e6qiwsg"
+path="res://.godot/imported/Trash_Pile_hover_v1-export.png-b7edf8f0c67d3418ac29e7af0cb26b4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Buildings/Trash_Pile_v1_icon.png"
-dest_files=["res://.godot/imported/Trash_Pile_v1_icon.png-d18955bb492512712e6275229d198de7.ctex"]
+source_file="res://Archive/Trash_Pile_hover_v1-export.png"
+dest_files=["res://.godot/imported/Trash_Pile_hover_v1-export.png-b7edf8f0c67d3418ac29e7af0cb26b4c.ctex"]
 
 [params]
 

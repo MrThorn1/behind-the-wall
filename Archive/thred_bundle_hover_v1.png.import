@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7c776e6qiwsg"
-path="res://.godot/imported/Trash_Pile_hover_v1-export.png-b262ec157361ce53561043b4e45d0cb8.ctex"
+uid="uid://bgfcrebf8xn8s"
+path="res://.godot/imported/thred_bundle_hover_v1.png-2d6d799e780317581aaed5542e1fffde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Buildings/Trash_Pile_hover_v1-export.png"
-dest_files=["res://.godot/imported/Trash_Pile_hover_v1-export.png-b262ec157361ce53561043b4e45d0cb8.ctex"]
+source_file="res://Archive/thred_bundle_hover_v1.png"
+dest_files=["res://.godot/imported/thred_bundle_hover_v1.png-2d6d799e780317581aaed5542e1fffde.ctex"]
 
 [params]
 

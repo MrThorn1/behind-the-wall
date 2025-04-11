@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dawq34y2were5"
-path="res://.godot/imported/food_mound_v1_icon.png-b218d1856d22c567e2f2335642c90e25.ctex"
+uid="uid://v2ulh5aobhfp"
+path="res://.godot/imported/food_mound_v1_anim-Sheet.png-28a33a66e676c24d425bf987e5d26b46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Buildings/food_mound_v1_icon.png"
-dest_files=["res://.godot/imported/food_mound_v1_icon.png-b218d1856d22c567e2f2335642c90e25.ctex"]
+source_file="res://Archive/food_mound_v1_anim-Sheet.png"
+dest_files=["res://.godot/imported/food_mound_v1_anim-Sheet.png-28a33a66e676c24d425bf987e5d26b46.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgfcrebf8xn8s"
-path="res://.godot/imported/thred_bundle_hover_v1.png-8f0243abd492f149f42aec4068b5563d.ctex"
+uid="uid://5q8wqca5svnw"
+path="res://.godot/imported/Tread_Spool.png-17b3a7a7f85406bd72026debaaadcfdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Buildings/thred_bundle_hover_v1.png"
-dest_files=["res://.godot/imported/thred_bundle_hover_v1.png-8f0243abd492f149f42aec4068b5563d.ctex"]
+source_file="res://Sprites/Buildings/Thread Spool/Tread_Spool.png"
+dest_files=["res://.godot/imported/Tread_Spool.png-17b3a7a7f85406bd72026debaaadcfdf.ctex"]
 
 [params]
 

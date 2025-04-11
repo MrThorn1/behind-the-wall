@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cl57e7m37eysl"]
 
 [ext_resource type="Script" path="res://Resources/Base Resource & Groups/Root Building Scene/root_building.gd" id="1_64d11"]
-[ext_resource type="Texture2D" uid="uid://v2ulh5aobhfp" path="res://Sprites/Buildings/food_mound_v1_anim-Sheet.png" id="2_irjdc"]
+[ext_resource type="Texture2D" uid="uid://v2ulh5aobhfp" path="res://Archive/food_mound_v1_anim-Sheet.png" id="2_irjdc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8p53x"]
 atlas = ExtResource("2_irjdc")
