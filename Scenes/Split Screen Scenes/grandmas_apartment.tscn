@@ -1,14 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://uacdkbkqw6cm"]
+[gd_scene load_steps=13 format=3 uid="uid://uacdkbkqw6cm"]
 
 [ext_resource type="Script" path="res://Scripts/Split Screen/grandmas_apartment_root.gd" id="1_k2yro"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/grandmas_apartment_camera.gd" id="2_4cglq"]
 [ext_resource type="Texture2D" uid="uid://do2ltbciuam68" path="res://Sprites/Screen Layouts/grandmas_apartment_draft.png" id="3_i0kis"]
+[ext_resource type="Script" path="res://Scripts/College_Student/college_student.gd" id="4_on6nq"]
+[ext_resource type="Texture2D" uid="uid://c123vsa0laeny" path="res://Sprites/College Student/College_Student_1.png" id="4_rsyic"]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_knogb"]
-points = PackedVector2Array(10, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cmikq"]
+vertices = PackedVector2Array(55.0391, 797.922, -574.648, 802.906, -567.328, 585.828, 55.1563, 574.82, 47.1563, 78, 188, 78, 873, 1566.9, 188, -215.109, 873, -222.883, 52.0313, 1559.09)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 6, 5), PackedInt32Array(0, 3, 6), PackedInt32Array(0, 6, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(178, -225, 883, -233, 883, 1577, 42, 1569, 45, 808, -585, 813, -577, 576, 45, 565, 37, 68, 178, 68)])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aitcx"]
+radius = 119.942
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sisoq"]
+size = Vector2(145.5, 167.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x24h4"]
+size = Vector2(112, 434)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buh8m"]
+size = Vector2(136, 374)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hchtt"]
+size = Vector2(141, 162)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_owqmv"]
+radius = 17.0
 
 [node name="grandmas_apartment" type="Node"]
 script = ExtResource("1_k2yro")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_cmikq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -26,34 +51,78 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_i0kis")
 
-[node name="Position markers" type="Node2D" parent="."]
+[node name="Furniture" type="Node2D" parent="."]
 
-[node name="Sink Marker" type="Marker2D" parent="Position markers"]
+[node name="Kitchen Table" type="StaticBody2D" parent="Furniture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Kitchen Table"]
+position = Vector2(656, 116)
+shape = SubResource("CircleShape2D_aitcx")
+
+[node name="Ottoman" type="StaticBody2D" parent="Furniture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Ottoman"]
+position = Vector2(263.25, 915.25)
+shape = SubResource("RectangleShape2D_sisoq")
+
+[node name="Shelf" type="StaticBody2D" parent="Furniture"]
+position = Vector2(107, 293)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Shelf"]
+shape = SubResource("RectangleShape2D_x24h4")
+
+[node name="Couch" type="StaticBody2D" parent="Furniture"]
+position = Vector2(119, 1021)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Couch"]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_buh8m")
+
+[node name="TV" type="StaticBody2D" parent="Furniture"]
+position = Vector2(804, 993)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/TV"]
+shape = SubResource("RectangleShape2D_hchtt")
+
+[node name="Position_Markers" type="Node2D" parent="."]
+
+[node name="Sink_Marker" type="Marker2D" parent="Position_Markers"]
 position = Vector2(491, -147)
 
-[node name="Oven Marker" type="Marker2D" parent="Position markers"]
+[node name="Oven_Marker" type="Marker2D" parent="Position_Markers"]
 position = Vector2(236, -74)
 
-[node name="Dinner Table Marker" type="Marker2D" parent="Position markers"]
+[node name="DinnerTable_Marker" type="Marker2D" parent="Position_Markers"]
 position = Vector2(657, 281)
 
-[node name="Couch Marker" type="Marker2D" parent="Position markers"]
+[node name="Couch_Marker" type="Marker2D" parent="Position_Markers"]
 position = Vector2(123, 1080)
 
-[node name="Desk Marker" type="Marker2D" parent="Position markers"]
+[node name="Desk_Marker" type="Marker2D" parent="Position_Markers"]
 position = Vector2(265, 1440)
 
-[node name="Bed Marker" type="Marker2D" parent="Position markers"]
+[node name="Bed_Marker" type="Marker2D" parent="Position_Markers"]
 position = Vector2(661, 1431)
 
-[node name="Shelf Marker" type="Marker2D" parent="Position markers"]
+[node name="Shelf_Marker" type="Marker2D" parent="Position_Markers"]
 position = Vector2(245, 300)
 
-[node name="Exit Marker" type="Marker2D" parent="Position markers"]
-position = Vector2(104, 691)
+[node name="Exit_Marker" type="Marker2D" parent="Position_Markers"]
+position = Vector2(-486, 691)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Initial_Spot" type="Marker2D" parent="Position_Markers"]
+position = Vector2(513, 644)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(114, -266)
-shape = SubResource("ConvexPolygonShape2D_knogb")
+[node name="College_Student" type="CharacterBody2D" parent="." node_paths=PackedStringArray("room_target")]
+position = Vector2(520, 669)
+script = ExtResource("4_on6nq")
+room_target = NodePath("../Position_Markers/Initial_Spot")
+
+[node name="Sprite2D" type="Sprite2D" parent="College_Student"]
+texture = ExtResource("4_rsyic")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="College_Student"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="College_Student"]
+position = Vector2(1, -15)
+shape = SubResource("CircleShape2D_owqmv")

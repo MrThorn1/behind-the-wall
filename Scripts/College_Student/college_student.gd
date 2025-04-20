@@ -1,0 +1,39 @@
+extends CharacterBody2D
+
+
+const speed = 300.0
+const accel = 7
+var distance_between
+var target_position
+var player_position
+var markers_in_scene
+var rand_max : int = 100000
+var rand_location_place : int
+var rng = RandomNumberGenerator.new()
+@export var room_target : Marker2D
+@onready var nav:NavigationAgent2D = $NavigationAgent2D
+
+
+func _physics_process(delta: float) -> void:
+	target_position = room_target.get_position()
+	player_position = self.get_position()
+	distance_between = player_position.distance_to(target_position)
+	rand_location_place = rng.randi_range(0,rand_max)
+	
+	#markers_in_scene = get_node("../Postiion_Markers")
+	#markers_in_scene = get_children(markers_in_scene)
+	
+	#if markers_in_scene[rand_location_place]:
+		#room_target = markers_in_scene[rand_location_place]
+	
+	var direction = Vector3()
+	nav.target_position = room_target.get_position()
+	
+	direction = nav.get_next_path_position() - global_position
+	direction = direction.normalized()
+	
+	velocity = velocity.lerp(direction*speed, accel * delta)
+	if distance_between < 2:
+		self.position = target_position
+	else:
+		move_and_slide()
