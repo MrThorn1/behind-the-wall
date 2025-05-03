@@ -13,7 +13,6 @@ var rng = RandomNumberGenerator.new()
 @export var room_target : Marker2D
 @onready var nav:NavigationAgent2D = $NavigationAgent2D
 
-
 func _physics_process(delta: float) -> void:
 	target_position = room_target.get_position()
 	player_position = self.get_position()
