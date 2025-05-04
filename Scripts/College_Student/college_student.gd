@@ -14,19 +14,10 @@ var rng = RandomNumberGenerator.new()
 @onready var nav:NavigationAgent2D = $NavigationAgent2D
 
 func _physics_process(delta: float) -> void:
-	target_position = room_target.get_position()
 	player_position = self.get_position()
 	distance_between = player_position.distance_to(target_position)
-	rand_location_place = rng.randi_range(0,rand_max)
-	
-	#markers_in_scene = get_node("../Postiion_Markers")
-	#markers_in_scene = get_children(markers_in_scene)
-	
-	#if markers_in_scene[rand_location_place]:
-		#room_target = markers_in_scene[rand_location_place]
-	
 	var direction = Vector3()
-	nav.target_position = room_target.get_position()
+	nav.target_position = target_position
 	
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
