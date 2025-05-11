@@ -7,6 +7,7 @@ var distance_between
 var target_position
 var player_position
 var markers_in_scene
+var current_rotation
 var rand_max : int = 100000
 var rand_location_place : int
 var rng = RandomNumberGenerator.new()
@@ -20,10 +21,12 @@ func _physics_process(delta: float) -> void:
 	nav.target_position = target_position
 	
 	direction = nav.get_next_path_position() - global_position
+	current_rotation = rad_to_deg((direction.angle()))
+	print(rad_to_deg(direction.angle()))
 	direction = direction.normalized()
-	
+	set_rotation_degrees(current_rotation+180)
 	velocity = velocity.lerp(direction*speed, accel * delta)
-	if distance_between < 2:
+	if distance_between < 4:
 		self.position = target_position
 	else:
 		move_and_slide()

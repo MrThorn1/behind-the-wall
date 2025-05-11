@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c123vsa0laeny" path="res://Sprites/College Student/College_Student_1.png" id="4_rsyic"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cmikq"]
-vertices = PackedVector2Array(786.297, 116, 873, -222.883, 873, 902, 768.852, 181.148, 768.852, 50.8516, 721.148, 228.852, 723.5, 902, 721.148, 3.15625, 188, -215.109, 656, -14.2969, 590.852, 3.15625, 188, 78, 543.156, 50.8516, 525.703, 116, 173, 520, 346, 1009, 346, 821.5, 656, 246.297, 723.5, 1084, 55.0391, 797.922, -574.648, 802.906, -567.328, 585.828, 55.1563, 574.82, 180.5, 821.5, 54.2813, 520, 873, 1084, 873, 1566.9, 52.0313, 1559.09, 198, 1222, 180.5, 828, 54.9219, 828, 198, 1009, 173, 78, 543.156, 181.148, 53.3672, 1222, 590.852, 228.852)
+vertices = PackedVector2Array(786.297, 116, 873, -222.883, 873, 902, 768.852, 181.148, 768.852, 50.8516, 721.148, 228.852, 723.5, 902, 721.148, 3.15625, 188, -215.109, 656, -14.2969, 590.852, 3.15625, 188, 78, 543.156, 50.8516, 525.703, 116, 173, 520, 346, 1009, 346, 821.5, 656, 246.297, 723.5, 1084, 54.0313, 725.719, -574.609, 801.672, -567.359, 586.852, 54.1406, 639.898, 180.5, 821.5, 52.6406, 520, 873, 1084, 873, 1566.9, 52.0234, 1559.09, 198, 1222, 180.5, 828, 53.7813, 828, 198, 1009, 173, 78, 543.156, 181.148, 52.8438, 1222, 590.852, 228.852)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(1, 0, 4), PackedInt32Array(5, 3, 2, 6), PackedInt32Array(1, 4, 7), PackedInt32Array(8, 1, 7, 9), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 10, 12), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 5, 6, 18), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(23, 22, 24, 14, 16), PackedInt32Array(18, 25, 26, 27, 28), PackedInt32Array(29, 30, 19, 23), PackedInt32Array(28, 31, 15, 18), PackedInt32Array(14, 32, 11), PackedInt32Array(14, 13, 33), PackedInt32Array(27, 34, 28), PackedInt32Array(35, 17, 16, 14), PackedInt32Array(14, 33, 35), PackedInt32Array(22, 23, 19)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(178, -225, 883, -233, 883, 1577, 42, 1569, 45, 808, -585, 813, -577, 576, 45, 565, 37, 68, 178, 68)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(178, -225, 883, -233, 883, 1577, 42, 1569, 44, 737, -585, 813, -577, 576, 44, 629, 37, 68, 178, 68)])
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aitcx"]
 radius = 119.942
@@ -118,7 +118,7 @@ position = Vector2(236, -74)
 position = Vector2(657, 281)
 
 [node name="Couch_Marker" type="Marker2D" parent="Position_Markers"]
-position = Vector2(123, 1080)
+position = Vector2(255, 1086)
 
 [node name="Desk_Marker" type="Marker2D" parent="Position_Markers"]
 position = Vector2(265, 1440)
@@ -141,9 +141,11 @@ script = ExtResource("4_on6nq")
 room_target = NodePath("../Position_Markers/Initial_Spot")
 
 [node name="Sprite2D" type="Sprite2D" parent="College_Student"]
+rotation = 1.5708
 texture = ExtResource("4_rsyic")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="College_Student"]
+path_desired_distance = 30.0
 avoidance_enabled = true
 radius = 50.0
 debug_enabled = true
@@ -151,7 +153,6 @@ debug_use_custom = true
 debug_path_custom_color = Color(1, 0.0235294, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="College_Student"]
-position = Vector2(1, -15)
 shape = SubResource("CircleShape2D_owqmv")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

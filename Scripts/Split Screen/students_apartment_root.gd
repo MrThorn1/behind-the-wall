@@ -90,8 +90,27 @@ func _on_timer_timeout() -> void:
 
 func advance_to_next_hour() -> void:
 	current_time = current_time +1
-	if current_week == monday_schedule and current_time == 23:
+	if current_week == monday_schedule and current_time == 24:
 		current_week = tuesday_schedule
+		current_time = 0
+	if current_week == tuesday_schedule and current_time == 24:
+		current_week = wednesday_schedule
+		current_time = 0
+	if current_week == wednesday_schedule and current_time == 24:
+		current_week = thursday_schedule
+		current_time = 0
+	if current_week == thursday_schedule and current_time == 24:
+		current_week = friday_schedule
+		current_time = 0
+	if current_week == friday_schedule and current_time == 24:
+		current_week = saturday_schedule
+		current_time = 0
+	if current_week == saturday_schedule and current_time == 24:
+		current_week = sunday_schedule
+		current_time = 0
+	if current_week == sunday_schedule and current_time == 24:
+		generate_week()
+		current_week = monday_schedule
 		current_time = 0
 	print(current_time)
 	print(current_week)
