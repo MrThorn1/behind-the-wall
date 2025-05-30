@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://uacdkbkqw6cm"]
+[gd_scene load_steps=14 format=3 uid="uid://uacdkbkqw6cm"]
 
 [ext_resource type="Script" path="res://Scripts/Split Screen/students_apartment_root.gd" id="1_k2yro"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/students_apartment_camera.gd" id="2_4cglq"]
+[ext_resource type="PackedScene" uid="uid://gy8ld0ak85om" path="res://Scenes/rat/rat.tscn" id="2_kuwri"]
 [ext_resource type="Texture2D" uid="uid://do2ltbciuam68" path="res://Sprites/Screen Layouts/grandmas_apartment_draft.png" id="3_i0kis"]
 [ext_resource type="Script" path="res://Scripts/College_Student/college_student.gd" id="4_on6nq"]
 [ext_resource type="Texture2D" uid="uid://c123vsa0laeny" path="res://Sprites/College Student/College_Student_1.png" id="4_rsyic"]
@@ -25,6 +26,9 @@ size = Vector2(136, 374)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hchtt"]
 size = Vector2(141, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxk4k"]
+size = Vector2(14, 38)
 
 [node name="students_apartment" type="Node2D"]
 script = ExtResource("1_k2yro")
@@ -141,5 +145,14 @@ radius = 50.0
 debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(1, 0.0235294, 1, 1)
+
+[node name="rat" parent="." instance=ExtResource("2_kuwri")]
+position = Vector2(837, 658)
+
+[node name="Rat_Spawner_Kitchen_Counter" type="Area2D" parent="."]
+position = Vector2(900, -309)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rat_Spawner_Kitchen_Counter"]
+shape = SubResource("RectangleShape2D_hxk4k")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

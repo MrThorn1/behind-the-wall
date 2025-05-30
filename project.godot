@@ -89,3 +89,7 @@ Cycle_Targets={
 
 2d_physics/layer_1="Buildable Area"
 2d_physics/layer_2="Restricted Area (other buildings)"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

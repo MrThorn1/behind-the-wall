@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://gy8ld0ak85om"]
+
+[ext_resource type="Texture2D" uid="uid://b2pmcl087dflt" path="res://Sprites/rat/mouse_v1-Sheet.png" id="1_0mefo"]
+[ext_resource type="Script" path="res://Scenes/rat/character_body_2d.gd" id="2_daayx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffqub"]
+atlas = ExtResource("1_0mefo")
+region = Rect2(0, 0, 20, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhei2"]
+atlas = ExtResource("1_0mefo")
+region = Rect2(20, 0, 20, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_coj4b"]
+atlas = ExtResource("1_0mefo")
+region = Rect2(40, 0, 20, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgvrs"]
+atlas = ExtResource("1_0mefo")
+region = Rect2(60, 0, 20, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdlxw"]
+atlas = ExtResource("1_0mefo")
+region = Rect2(80, 0, 20, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfm8l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffqub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhei2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_coj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgvrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdlxw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="rat" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_daayx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_cfm8l")
+autoplay = "default"
