@@ -46,8 +46,8 @@ func _on_build_menu_passed_to_colony(passed_name) -> void:
 			invisible_building.name = "Temp_Invisible_Building"
 			populate_invisible_building(building)
 			$Temp_Invisible_Building.after_invisible_population()
-			$Temp_Invisible_Building/Build_Area_Selector.area_entered.connect(platform_build_enter)
-			$Temp_Invisible_Building/Build_Area_Selector.area_exited.connect(platform_build_exit)
+			#$Temp_Invisible_Building/Build_Area_Selector.area_entered.connect(platform_build_enter)
+			#$Temp_Invisible_Building/Build_Area_Selector.area_exited.connect(platform_build_exit)
 			$Temp_Invisible_Building/Build_Restrictor.area_entered.connect(restrict_build)
 			$Temp_Invisible_Building/Build_Restrictor.area_exited.connect(unrestrict_build)
 			invisible_building.modulate.a = 0.5
@@ -85,39 +85,13 @@ func _process(delta: float) -> void:
 					building_in_build_area = false
 				platform_position = building_area_hovered_within.position
 		invisible_building.position.y = building_area_hovered_within.position.y + 40
-		#invisible_building.positionb.y = build_area_bottom_surface + ($platform3/platform_3_collider.shape.size.y/2)
 		invisible_building.position.x = get_local_mouse_position().x
-		if get_local_mouse_position().y < (invisible_building.position.y - 105):
-			invisible_building.modulate.g = 1
-			invisible_building.position.y = get_local_mouse_position().y
-			pass
-		if get_local_mouse_position().y > (invisible_building.position.y + 105):
-			invisible_building.modulate.g = 1
-			invisible_building.position.y = get_local_mouse_position().y
-			pass
-		if building_restricted and building_selected:
-			invisible_building.modulate.r = 100
 	elif building_selected:
 		if not building_in_build_area:
 			invisible_building.position = get_local_mouse_position()
+			invisible_building.modulate.r = 1
+			invisible_building.modulate.g = 1
 	pass
-
-func area_entered(area: Area2D) -> void:
-	print("area entered worked for everyone")
-	pass
-
-#func _on_platform_3_area_entered(area: Area2D) -> void:
-	#if building_selected:
-		#building_area_hovered_within = area
-		#invisible_building.modulate.g = 200
-		#building_in_build_area = true
-	#pass # Replace with function body.
-
-func area_exited(area: Area2D) -> void:
-	if building_selected:
-		invisible_building.modulate.g = 1
-		building_in_build_area = false
-	pass # Replace with function body.
 	
 func populate_placed_building(building) -> void:
 	#$Temp_Placed_Building/Sprite2D.texture = building.building_sprite
@@ -147,36 +121,118 @@ func populate_invisible_building(building) -> void:
 pass
 
 func restrict_build(area: Area2D) -> void:
-	await get_tree().create_timer(.2).timeout
 	areas_on_restricted_list.append(area)
-	invisible_building.modulate.g = 1
 	building_restricted = true
+	invisible_building.modulate.g = 1
+	invisible_building.modulate.r = 500
 	pass
 
 func unrestrict_build(area: Area2D) -> void:
 	areas_on_restricted_list.erase(area)
 	if building_restricted and not areas_on_restricted_list:
 		invisible_building.modulate.r = 1
+		invisible_building.modulate.g = 500
 		building_restricted = false
-
-func platform_build_enter(area) -> void:
-	if building_selected:
-		building_area_hovered_within = area
-		invisible_building.modulate.g = 200
-		invisible_building.modulate.r = 1
-		building_in_build_area = true
-			
-func platform_build_exit(area: Area2D) -> void:
-	if building_selected:
-		invisible_building.modulate.g = 1
-		building_in_build_area = false
-	pass # Replace with function body.
-
+		
 func _on_platform_1_mouse_entered() -> void:
-	print("mouse entered")
+	if building_selected:
+		building_in_build_area = true
+		building_area_hovered_within = $platform1
+		if not building_restricted:
+			invisible_building.modulate.g = 500
+		if building_restricted:
+			invisible_building.modulate.r = 500
 	pass # Replace with function body.
 
-
-func _on_platform_1_mouse_shape_entered(shape_idx: int) -> void:
-	print("mouse entered")
+func _on_platform_2_mouse_entered() -> void:
+	if building_selected:
+		building_in_build_area = true
+		building_area_hovered_within = $platform2
+		if not building_restricted:
+			invisible_building.modulate.g = 500
+		if building_restricted:
+			invisible_building.modulate.r = 500
 	pass # Replace with function body.
+
+func _on_platform_3_mouse_entered() -> void:
+	if building_selected:
+		building_in_build_area = true
+		building_area_hovered_within = $platform3
+		if not building_restricted:
+			invisible_building.modulate.g = 500
+		if building_restricted:
+			invisible_building.modulate.r = 500
+	pass # Replace with function body.
+	
+func _on_platform_4_mouse_entered() -> void:
+	if building_selected:
+		building_in_build_area = true
+		building_area_hovered_within = $platform4
+		if not building_restricted:
+			invisible_building.modulate.g = 500
+		if building_restricted:
+			invisible_building.modulate.r = 500
+	pass # Replace with function body.
+	
+func _on_platform_5_mouse_entered() -> void:
+	if building_selected:
+		building_in_build_area = true
+		building_area_hovered_within = $platform5
+		if not building_restricted:
+			invisible_building.modulate.g = 500
+		if building_restricted:
+			invisible_building.modulate.r = 500
+
+func _on_platform_6_mouse_entered() -> void:
+	if building_selected:
+		building_in_build_area = true
+		building_area_hovered_within = $platform6
+		if not building_restricted:
+				invisible_building.modulate.g = 500
+		if building_restricted:
+				invisible_building.modulate.r = 500
+	pass # Replace with function body.
+
+func _on_platform_7_mouse_entered() -> void:
+	if building_selected:
+		building_in_build_area = true
+		building_area_hovered_within = $platform7
+		if not building_restricted:
+				invisible_building.modulate.g = 500
+		if building_restricted:
+				invisible_building.modulate.r = 500
+	pass # Replace with function body.
+
+func _on_platform_1_mouse_exited() -> void:
+	mouse_building_left_area()
+	pass # Replace with function body.
+	
+func _on_platform_2_mouse_exited() -> void:
+	mouse_building_left_area()
+	pass # Replace with function body.
+	
+func _on_platform_3_mouse_exited() -> void:
+	mouse_building_left_area()
+	pass # Replace with function body.
+
+func _on_platform_4_mouse_exited() -> void:
+	mouse_building_left_area()
+	pass # Replace with function body.
+	
+func _on_platform_5_mouse_exited() -> void:
+	mouse_building_left_area()
+	pass # Replace with function bo
+
+func _on_platform_6_mouse_exited() -> void:
+	mouse_building_left_area()
+	pass # Replace with function body.	
+
+func _on_platform_7_mouse_exited() -> void:
+	mouse_building_left_area()
+	pass # Replace with function body.
+	
+func mouse_building_left_area() -> void:
+	if building_selected:
+		building_area_hovered_within = NAN
+		building_in_build_area = false
+	pass

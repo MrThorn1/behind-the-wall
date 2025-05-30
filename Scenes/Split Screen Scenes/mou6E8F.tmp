@@ -87,10 +87,10 @@ position = Vector2(118, 58)
 [node name="platform_collider" type="CollisionShape2D" parent="platform5"]
 shape = SubResource("RectangleShape2D_dymna")
 
-[node name="platform4" type="Area2D" parent="."]
+[node name="plaform4" type="Area2D" parent="."]
 position = Vector2(677, 410)
 
-[node name="platform_collider" type="CollisionShape2D" parent="platform4"]
+[node name="platform_collider" type="CollisionShape2D" parent="plaform4"]
 shape = SubResource("RectangleShape2D_mpjqs")
 
 [node name="platform3" type="Area2D" parent="."]
@@ -99,10 +99,10 @@ position = Vector2(241, 675)
 [node name="platform_collider" type="CollisionShape2D" parent="platform3"]
 shape = SubResource("RectangleShape2D_ocru6")
 
-[node name="platform2" type="Area2D" parent="."]
+[node name="platofrm2" type="Area2D" parent="."]
 position = Vector2(715, 1179)
 
-[node name="platform_collider" type="CollisionShape2D" parent="platform2"]
+[node name="platform_collider" type="CollisionShape2D" parent="platofrm2"]
 shape = SubResource("RectangleShape2D_s0jav")
 
 [node name="platform1" type="Area2D" parent="."]
@@ -112,24 +112,12 @@ position = Vector2(372, 1424)
 shape = SubResource("RectangleShape2D_lr5s2")
 
 [connection signal="area_entered" from="platform7" to="." method="_on_platform_7_area_entered"]
-[connection signal="mouse_entered" from="platform7" to="." method="_on_platform_7_mouse_entered"]
-[connection signal="mouse_exited" from="platform7" to="." method="_on_platform_7_mouse_exited"]
 [connection signal="area_entered" from="platform6" to="." method="_on_platform_6_area_entered"]
-[connection signal="mouse_entered" from="platform6" to="." method="_on_platform_6_mouse_entered"]
-[connection signal="mouse_exited" from="platform6" to="." method="_on_platform_6_mouse_exited"]
 [connection signal="area_entered" from="platform5" to="." method="_on_platform_5_area_entered"]
-[connection signal="mouse_entered" from="platform5" to="." method="_on_platform_5_mouse_entered"]
-[connection signal="mouse_exited" from="platform5" to="." method="_on_platform_5_mouse_exited"]
-[connection signal="area_entered" from="platform4" to="." method="_on_plaform_4_area_entered"]
-[connection signal="mouse_entered" from="platform4" to="." method="_on_platform_4_mouse_entered"]
-[connection signal="mouse_exited" from="platform4" to="." method="_on_platform_4_mouse_exited"]
+[connection signal="area_entered" from="plaform4" to="." method="_on_plaform_4_area_entered"]
 [connection signal="area_entered" from="platform3" to="." method="_on_platform_3_area_entered"]
 [connection signal="area_exited" from="platform3" to="." method="_on_platform_3_area_exited"]
-[connection signal="mouse_entered" from="platform3" to="." method="_on_platform_3_mouse_entered"]
-[connection signal="mouse_exited" from="platform3" to="." method="_on_platform_3_mouse_exited"]
-[connection signal="area_entered" from="platform2" to="." method="_on_platofrm_2_area_entered"]
-[connection signal="mouse_entered" from="platform2" to="." method="_on_platform_2_mouse_entered"]
-[connection signal="mouse_exited" from="platform2" to="." method="_on_platform_2_mouse_exited"]
+[connection signal="area_entered" from="platofrm2" to="." method="_on_platofrm_2_area_entered"]
 [connection signal="area_entered" from="platform1" to="." method="_on_platform_1_area_entered"]
 [connection signal="mouse_entered" from="platform1" to="." method="_on_platform_1_mouse_entered"]
 [connection signal="mouse_exited" from="platform1" to="." method="_on_platform_1_mouse_exited"]
