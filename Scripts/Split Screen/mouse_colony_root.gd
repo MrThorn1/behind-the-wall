@@ -56,8 +56,6 @@ func _on_build_menu_passed_to_colony(passed_name) -> void:
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
-	if building_restricted and building_selected:
-		invisible_building.modulate.r = 100
 	if Input.is_action_just_pressed("Cancel_Build") and building_selected:
 		building_selected = false
 		building_in_build_area = false
@@ -72,18 +70,6 @@ func _process(delta: float) -> void:
 				managerclick.ref.click(7,building.elec_cost)
 				managerclick.ref.click(8,building.fuel_cost)
 	if building_in_build_area and building_selected:
-		platform_position = building_area_hovered_within.position
-		invisible_building.position.y = building_area_hovered_within.position.y + 40
-		#invisible_building.positionb.y = build_area_bottom_surface + ($platform3/platform_3_collider.shape.size.y/2)
-		invisible_building.position.x = get_local_mouse_position().x
-		if get_local_mouse_position().y < (invisible_building.position.y - 105):
-			invisible_building.modulate.g = 1
-			invisible_building.position.y = get_local_mouse_position().y
-			pass
-		if get_local_mouse_position().y > (invisible_building.position.y + 105):
-			invisible_building.modulate.g = 1
-			invisible_building.position.y = get_local_mouse_position().y
-			pass
 		if Input.is_action_just_pressed("Build_Building") and building_selected and not building_restricted:
 			invisible_building.queue_free()
 			for building in _content:
@@ -97,6 +83,20 @@ func _process(delta: float) -> void:
 					placed_building.position.y = invisible_building.position.y
 					building_selected = false
 					building_in_build_area = false
+				platform_position = building_area_hovered_within.position
+		invisible_building.position.y = building_area_hovered_within.position.y + 40
+		#invisible_building.positionb.y = build_area_bottom_surface + ($platform3/platform_3_collider.shape.size.y/2)
+		invisible_building.position.x = get_local_mouse_position().x
+		if get_local_mouse_position().y < (invisible_building.position.y - 105):
+			invisible_building.modulate.g = 1
+			invisible_building.position.y = get_local_mouse_position().y
+			pass
+		if get_local_mouse_position().y > (invisible_building.position.y + 105):
+			invisible_building.modulate.g = 1
+			invisible_building.position.y = get_local_mouse_position().y
+			pass
+		if building_restricted and building_selected:
+			invisible_building.modulate.r = 100
 	elif building_selected:
 		if not building_in_build_area:
 			invisible_building.position = get_local_mouse_position()
@@ -147,6 +147,7 @@ func populate_invisible_building(building) -> void:
 pass
 
 func restrict_build(area: Area2D) -> void:
+	await get_tree().create_timer(.2).timeout
 	areas_on_restricted_list.append(area)
 	invisible_building.modulate.g = 1
 	building_restricted = true
@@ -155,7 +156,6 @@ func restrict_build(area: Area2D) -> void:
 func unrestrict_build(area: Area2D) -> void:
 	areas_on_restricted_list.erase(area)
 	if building_restricted and not areas_on_restricted_list:
-		invisible_building.modulate.g = 200
 		invisible_building.modulate.r = 1
 		building_restricted = false
 
@@ -163,10 +163,20 @@ func platform_build_enter(area) -> void:
 	if building_selected:
 		building_area_hovered_within = area
 		invisible_building.modulate.g = 200
+		invisible_building.modulate.r = 1
 		building_in_build_area = true
 			
 func platform_build_exit(area: Area2D) -> void:
 	if building_selected:
 		invisible_building.modulate.g = 1
 		building_in_build_area = false
+	pass # Replace with function body.
+
+func _on_platform_1_mouse_entered() -> void:
+	print("mouse entered")
+	pass # Replace with function body.
+
+
+func _on_platform_1_mouse_shape_entered(shape_idx: int) -> void:
+	print("mouse entered")
 	pass # Replace with function body.

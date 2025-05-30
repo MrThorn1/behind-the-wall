@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 	
 	direction = nav.get_next_path_position() - global_position
 	current_rotation = rad_to_deg((direction.angle()))
-	print(rad_to_deg(direction.angle()))
 	direction = direction.normalized()
 	set_rotation_degrees(current_rotation+180)
 	velocity = velocity.lerp(direction*speed, accel * delta)

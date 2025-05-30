@@ -36,17 +36,10 @@ script = ExtResource("1_5ob52")
 anchor_mode = 0
 script = ExtResource("2_vmeys")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -533.0
-offset_right = 886.0
-offset_bottom = 1599.0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, -540)
 texture = ExtResource("3_gyobu")
+centered = false
 
 [node name="cloth_button" parent="." instance=ExtResource("4_h2tv7")]
 offset_left = 468.0
@@ -110,7 +103,6 @@ shape = SubResource("RectangleShape2D_ocru6")
 position = Vector2(715, 1179)
 
 [node name="platform_collider" type="CollisionShape2D" parent="platofrm2"]
-position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_s0jav")
 
 [node name="platform1" type="Area2D" parent="."]
@@ -127,3 +119,5 @@ shape = SubResource("RectangleShape2D_lr5s2")
 [connection signal="area_exited" from="platform3" to="." method="_on_platform_3_area_exited"]
 [connection signal="area_entered" from="platofrm2" to="." method="_on_platofrm_2_area_entered"]
 [connection signal="area_entered" from="platform1" to="." method="_on_platform_1_area_entered"]
+[connection signal="mouse_entered" from="platform1" to="." method="_on_platform_1_mouse_entered"]
+[connection signal="mouse_shape_entered" from="platform1" to="." method="_on_platform_1_mouse_shape_entered"]

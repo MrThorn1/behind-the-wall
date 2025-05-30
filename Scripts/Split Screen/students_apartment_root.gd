@@ -66,8 +66,6 @@ func generate_weekday() -> void:
 		if friday_schedule[i] == 10:
 			friday_schedule[i] = possible_free_time_positions[randi_range(0,6)]
 	pass
-	print(monday_schedule)
-	print(tuesday_schedule)
 
 func generate_weekend() -> void:
 	for i in 24:
@@ -112,7 +110,5 @@ func advance_to_next_hour() -> void:
 		generate_week()
 		current_week = monday_schedule
 		current_time = 0
-	print(current_time)
-	print(current_week)
 	assign_location()
 	pass

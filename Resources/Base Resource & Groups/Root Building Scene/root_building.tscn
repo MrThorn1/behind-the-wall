@@ -27,6 +27,7 @@ collision_mask = 2
 [node name="Build_Restrictor_Collider" type="CollisionShape2D" parent="Build_Restrictor"]
 light_mask = 3
 visibility_layer = 3
+z_index = 1
 shape = SubResource("RectangleShape2D_6xmgk")
 
 [connection signal="area_entered" from="Build_Restrictor" to="." method="_on_build_restrictor_area_entered"]
