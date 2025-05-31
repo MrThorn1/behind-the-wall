@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://gy8ld0ak85om"]
+[gd_scene load_steps=10 format=3 uid="uid://gy8ld0ak85om"]
 
 [ext_resource type="Texture2D" uid="uid://b2pmcl087dflt" path="res://Sprites/rat/mouse_v1-Sheet.png" id="1_0mefo"]
 [ext_resource type="Script" path="res://Scenes/rat/character_body_2d.gd" id="2_daayx"]
@@ -46,6 +46,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxfke"]
+radius = 1.0
+
 [node name="rat" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -54,3 +57,11 @@ script = ExtResource("2_daayx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_cfm8l")
 autoplay = "default"
+frame = 1
+frame_progress = 0.826634
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+light_mask = 0
+visibility_layer = 0
+rotation = 1.5708
+shape = SubResource("CircleShape2D_dxfke")

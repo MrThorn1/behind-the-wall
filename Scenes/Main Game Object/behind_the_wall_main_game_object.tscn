@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://s7yshsnqmwi0" path="res://Assets/ui_assets/pcb_icon_v1.png" id="14_088wt"]
 [ext_resource type="PackedScene" uid="uid://bpm2sgl8swtl8" path="res://Scenes/Managers/fuel_manager/managerfuel.tscn" id="14_bbxb5"]
 [ext_resource type="Script" path="res://Scenes/Managers/fuel_manager/managerfuel.gd" id="15_8e6mu"]
-[ext_resource type="PackedScene" uid="uid://uacdkbkqw6cm" path="res://Scenes/Split Screen Scenes/grandmas_apartment.tscn" id="17_o2vrg"]
+[ext_resource type="PackedScene" uid="uid://uacdkbkqw6cm" path="res://Scenes/Split Screen Scenes/students_apartment.tscn" id="17_o2vrg"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/center_split_screen_spacer.gd" id="18_tkn8k"]
 [ext_resource type="PackedScene" uid="uid://d2ac426qbsocv" path="res://Scenes/Split Screen Scenes/mouse_colony.tscn" id="19_7yuw8"]
 [ext_resource type="Script" path="res://Scripts/ui/wood_value.gd" id="21_gir1x"]

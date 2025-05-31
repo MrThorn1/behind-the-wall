@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://uacdkbkqw6cm"]
+[gd_scene load_steps=16 format=3 uid="uid://uacdkbkqw6cm"]
 
 [ext_resource type="Script" path="res://Scripts/Split Screen/students_apartment_root.gd" id="1_k2yro"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/students_apartment_camera.gd" id="2_4cglq"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://do2ltbciuam68" path="res://Sprites/Screen Layouts/grandmas_apartment_draft.png" id="3_i0kis"]
 [ext_resource type="Script" path="res://Scripts/College_Student/college_student.gd" id="4_on6nq"]
 [ext_resource type="Texture2D" uid="uid://c123vsa0laeny" path="res://Sprites/College Student/College_Student_1.png" id="4_rsyic"]
+[ext_resource type="PackedScene" uid="uid://du41tmmbagmfr" path="res://Scenes/Resource_Drop/resource_drop.tscn" id="5_lbw76"]
+[ext_resource type="Script" path="res://Scenes/Split Screen Scenes/rat_spawner_kitchen_counter.gd" id="6_vbs84"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cmikq"]
 vertices = PackedVector2Array(786.297, 116, 873, -222.883, 873, 902, 768.852, 181.148, 768.852, 50.8516, 721.148, 228.852, 723.5, 902, 721.148, 3.15625, 188, -215.109, 656, -14.2969, 590.852, 3.15625, 188, 78, 543.156, 50.8516, 525.703, 116, 173, 520, 346, 1009, 346, 821.5, 656, 246.297, 723.5, 1084, 76.3281, 702.313, -574.602, 801.297, -567.359, 586.883, 72.5, 642.961, 180.5, 821.5, 67.0391, 520, 180.5, 828, 72.8125, 828, 873, 1566.9, 52.2813, 1559.09, 61.75, 1222, 198, 1222, 873, 1084, 198, 1009, 590.852, 228.852, 173, 78, 543.156, 181.148)
@@ -132,6 +134,7 @@ position = Vector2(513, 644)
 [node name="College_Student" type="CharacterBody2D" parent="." node_paths=PackedStringArray("room_target")]
 position = Vector2(520, 669)
 script = ExtResource("4_on6nq")
+resource_drop = ExtResource("5_lbw76")
 room_target = NodePath("../Position_Markers/Initial_Spot")
 
 [node name="Sprite2D" type="Sprite2D" parent="College_Student"]
@@ -146,11 +149,10 @@ debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(1, 0.0235294, 1, 1)
 
-[node name="rat" parent="." instance=ExtResource("2_kuwri")]
-position = Vector2(837, 658)
-
 [node name="Rat_Spawner_Kitchen_Counter" type="Area2D" parent="."]
-position = Vector2(900, -309)
+position = Vector2(908, -314)
+script = ExtResource("6_vbs84")
+rat_scene = ExtResource("2_kuwri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rat_Spawner_Kitchen_Counter"]
 shape = SubResource("RectangleShape2D_hxk4k")
