@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/College_Student/college_student.gd" id="4_on6nq"]
 [ext_resource type="Texture2D" uid="uid://c123vsa0laeny" path="res://Sprites/College Student/College_Student_1.png" id="4_rsyic"]
 [ext_resource type="PackedScene" uid="uid://du41tmmbagmfr" path="res://Scenes/Resource_Drop/resource_drop.tscn" id="5_lbw76"]
-[ext_resource type="Script" path="res://Scenes/Split Screen Scenes/rat_spawner_kitchen_counter.gd" id="6_vbs84"]
+[ext_resource type="Script" path="res://Scenes/rat/rat_spawner_kitchen_counter.gd" id="6_vbs84"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cmikq"]
 vertices = PackedVector2Array(786.297, 116, 873, -222.883, 873, 902, 768.852, 181.148, 768.852, 50.8516, 721.148, 228.852, 723.5, 902, 721.148, 3.15625, 188, -215.109, 656, -14.2969, 590.852, 3.15625, 188, 78, 543.156, 50.8516, 525.703, 116, 173, 520, 346, 1009, 346, 821.5, 656, 246.297, 723.5, 1084, 76.3281, 702.313, -574.602, 801.297, -567.359, 586.883, 72.5, 642.961, 180.5, 821.5, 67.0391, 520, 180.5, 828, 72.8125, 828, 873, 1566.9, 52.2813, 1559.09, 61.75, 1222, 198, 1222, 873, 1084, 198, 1009, 590.852, 228.852, 173, 78, 543.156, 181.148)

@@ -17,8 +17,6 @@ func _ready():
 	hide()
 
 func open():
-	#standrad UI command that shows it rather than hides it
-	show()
 	#loops through all of the buildings in the new resource array, and adds them to the new grid container slot for each one
 	for building in _content:
 		var slot = slot_scene.instantiate()
@@ -26,12 +24,17 @@ func open():
 		slot.display(building)
 		slot.build_button_pressed.connect(build_selected)
 	get_tree().paused = true
+	#standrad UI command that shows it rather than hides it
+	show()
 
 func _on_close_button_pressed() -> void:
 	hide()
 	get_tree().paused = false
 	for child in grid_container.get_children():
+		print(child)
 		child.queue_free()
+		print("single grid container emptied")
+		pass
 	pass # Replace with function body.
 
 func _on_build_button_pressed() -> void:

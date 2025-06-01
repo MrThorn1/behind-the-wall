@@ -7,7 +7,6 @@ func _enter_tree() -> void:
 	if ref:
 		queue_free()
 		return
-		
 	ref = self
 
 signal wood_created(quantity : int)

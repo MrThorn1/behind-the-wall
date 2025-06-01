@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=42 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/Managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
@@ -30,18 +30,16 @@
 [ext_resource type="Texture2D" uid="uid://s7yshsnqmwi0" path="res://Assets/ui_assets/pcb_icon_v1.png" id="14_088wt"]
 [ext_resource type="PackedScene" uid="uid://bpm2sgl8swtl8" path="res://Scenes/Managers/fuel_manager/managerfuel.tscn" id="14_bbxb5"]
 [ext_resource type="Script" path="res://Scenes/Managers/fuel_manager/managerfuel.gd" id="15_8e6mu"]
-[ext_resource type="Script" path="res://Scenes/Managers/population_manager/managerpopulation.gd" id="16_6geie"]
 [ext_resource type="PackedScene" uid="uid://uacdkbkqw6cm" path="res://Scenes/Split Screen Scenes/students_apartment.tscn" id="17_o2vrg"]
 [ext_resource type="Script" path="res://Scripts/Split Screen/center_split_screen_spacer.gd" id="18_tkn8k"]
 [ext_resource type="PackedScene" uid="uid://d2ac426qbsocv" path="res://Scenes/Split Screen Scenes/mouse_colony.tscn" id="19_7yuw8"]
 [ext_resource type="Script" path="res://Scripts/ui/wood_value.gd" id="21_gir1x"]
-[ext_resource type="Script" path="res://Scripts/ui/population_value.gd" id="21_kapg2"]
 [ext_resource type="Script" path="res://Scripts/ui/metal_value.gd" id="25_jjrh6"]
 [ext_resource type="Script" path="res://Scripts/ui/elec_value.gd" id="29_rtg7l"]
 [ext_resource type="Script" path="res://Scripts/ui/fuel_value.gd" id="31_0flp7"]
 [ext_resource type="PackedScene" uid="uid://b25i4vgs5h6hd" path="res://Buttons/suspicion_up_button.tscn" id="39_x7goa"]
 [ext_resource type="PackedScene" uid="uid://dachufo7e0hk5" path="res://Buttons/suspicion_down_button.tscn" id="40_cv7hv"]
-[ext_resource type="Script" path="res://Scripts/Buttons/populatin_button.gd" id="41_i0jpi"]
+[ext_resource type="Script" path="res://Scenes/Main Game Object/populatin_button.gd" id="41_i0jpi"]
 [ext_resource type="PackedScene" uid="uid://b78yiyqathxrt" path="res://Scenes/UI Scenes/build_menu.tscn" id="41_rdebj"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
@@ -74,9 +72,6 @@ script = ExtResource("13_dy4lm")
 
 [node name="managerfuel" parent="technical_management_nodes/resource_managers" instance=ExtResource("14_bbxb5")]
 script = ExtResource("15_8e6mu")
-
-[node name="managerpopulation" type="Node" parent="technical_management_nodes/resource_managers"]
-script = ExtResource("16_6geie")
 
 [node name="data_repository" type="Node" parent="technical_management_nodes"]
 script = ExtResource("1_f5bdk")
@@ -165,7 +160,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 35
 text = "100000"
-script = ExtResource("21_kapg2")
 
 [node name="trash_ui_centering_container" type="CenterContainer" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
@@ -376,15 +370,6 @@ script = ExtResource("31_0flp7")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="population_button" type="Button" parent="ui_overlay"]
-offset_left = 1212.0
-offset_top = 921.0
-offset_right = 1305.0
-offset_bottom = 952.0
-text = "population
-"
-script = ExtResource("41_i0jpi")
-
 [node name="suspicion_up_button" parent="ui_overlay" instance=ExtResource("39_x7goa")]
 offset_left = 909.0
 offset_top = 571.0
@@ -417,6 +402,14 @@ text = "Raid"
 process_mode = 2
 visible = false
 
-[connection signal="pressed" from="ui_overlay/population_button" to="ui_overlay/population_button" method="_on_pressed"]
+[node name="populatin_button" type="Button" parent="ui_overlay"]
+offset_left = 1212.0
+offset_top = 921.0
+offset_right = 1305.0
+offset_bottom = 952.0
+text = "population
+"
+script = ExtResource("41_i0jpi")
+
 [connection signal="pressed" from="ui_overlay/build_button" to="ui_overlay/build_menu" method="_on_build_button_pressed"]
 [connection signal="passed_to_colony" from="ui_overlay/build_menu" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport/mouse_colony" method="_on_build_menu_passed_to_colony"]

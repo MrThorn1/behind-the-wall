@@ -53,6 +53,4 @@ func after_invisible_population() -> void:
 	$Build_Restrictor/Build_Restrictor_Collider.shape.size.y = sprite_size.y	
 
 func _on_build_restrictor_area_entered(area: Area2D) -> void:
-	print("signal for entering a restricted area emitted")
-	print(area)
 	pass # Replace with function body.

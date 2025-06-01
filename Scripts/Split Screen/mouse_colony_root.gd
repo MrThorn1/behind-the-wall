@@ -21,6 +21,7 @@ var building_restricted : bool = false
 var areas_on_restricted_list : Array
 var current_platform
 
+@export var building_suspicion_penalty : int = 2
 var invisible_building : Node2D
 var placed_building : Node2D
 var tweenscalechange : float = 1.5
@@ -72,6 +73,7 @@ func _process(delta: float) -> void:
 	if building_in_build_area and building_selected:
 		if Input.is_action_just_pressed("Build_Building") and building_selected and not building_restricted:
 			invisible_building.queue_free()
+			managerclick.ref.click(4,building_suspicion_penalty)
 			for building in _content:
 				if building.building_name == temp_name:
 					building_placement_holder_2 = load("res://Resources/Base Resource & Groups/Root Building Scene/root_building.tscn").duplicate()

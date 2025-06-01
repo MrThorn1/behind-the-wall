@@ -59,6 +59,6 @@ func _timer_timeout():
 	pass
 	loops_iterated = loops_iterated + 1
 	if loops_iterated == 10:
-		resource_drop_time = randi_range(0,5)
+		resource_drop_time = randi_range(10,15)
 		loops_iterated = 0
 		

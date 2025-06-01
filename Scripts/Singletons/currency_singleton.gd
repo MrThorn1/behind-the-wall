@@ -8,6 +8,8 @@ var global_metal : int
 var global_elec : int
 var global_fuel : int
 var global_suspicion : int
+var global_population : int
+var global_research : int
 var full_building_list
 
 func _ready():

@@ -39,4 +39,7 @@ func click(resource_type, quantity) -> void:
 		managerelec.ref.create_elec(quantity)
 	if resource_type == 8:
 		managerfuel.ref.create_fuel(quantity)
+	if resource_type == 9:
+		managerpopulation.ref.create_population(quantity)
+		pass
 	pass
