@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4u76s864xhs3"]
+
+[ext_resource type="Script" path="res://Scenes/Launch Scene/ecentric_orbits_launch_screen.gd" id="1_ba0p3"]
+[ext_resource type="Texture2D" uid="uid://c482upybpv0pa" path="res://Sprites/Logos/Ecentric_Orbit_Games_Prototype_Logo.png" id="1_lf003"]
+[ext_resource type="FontFile" uid="uid://cpnrnh1photo2" path="res://Themes/Geo-Regular.ttf" id="2_vru5t"]
+
+[node name="Ecentric Orbit Launch Screen" type="Node2D"]
+script = ExtResource("1_ba0p3")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_right = 1921.0
+offset_bottom = 1078.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.219501, 0.219501, 0.219501, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Backdrop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Backdrop/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_lf003")
+
+[node name="Label" type="Label" parent="Backdrop/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_vru5t")
+theme_override_font_sizes/font_size = 50
+text = "Ecentric Orbit Games"
