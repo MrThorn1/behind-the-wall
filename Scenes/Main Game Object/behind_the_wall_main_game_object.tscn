@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://drb7asspowt7k"]
+[gd_scene load_steps=45 format=3 uid="uid://drb7asspowt7k"]
 
 [ext_resource type="Script" path="res://Scripts/data_repository.gd" id="1_f5bdk"]
 [ext_resource type="PackedScene" uid="uid://7ijvap7kk4cb" path="res://Scenes/Managers/cloth_manager/managercloth.tscn" id="3_40ffs"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dachufo7e0hk5" path="res://Buttons/suspicion_down_button.tscn" id="40_cv7hv"]
 [ext_resource type="Script" path="res://Scripts/Buttons/populatin_button.gd" id="41_i0jpi"]
 [ext_resource type="PackedScene" uid="uid://b78yiyqathxrt" path="res://Scenes/UI Scenes/build_menu.tscn" id="41_rdebj"]
+[ext_resource type="PackedScene" uid="uid://by6uo08prqvpa" path="res://Scenes/UI Scenes/raid_menu.tscn" id="44_gkua3"]
 
 [node name="Behind The Wall Main Game Object" type="Node"]
 
@@ -377,10 +378,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="population_button" type="Button" parent="ui_overlay"]
-offset_left = 1212.0
-offset_top = 921.0
-offset_right = 1305.0
-offset_bottom = 952.0
+offset_left = 909.0
+offset_top = 534.0
+offset_right = 1002.0
+offset_bottom = 565.0
 text = "population
 "
 script = ExtResource("41_i0jpi")
@@ -399,13 +400,6 @@ offset_right = 1005.0
 offset_bottom = 636.0
 text = "suspicion -"
 
-[node name="build_button" type="Button" parent="ui_overlay"]
-offset_left = 933.0
-offset_top = 668.0
-offset_right = 982.0
-offset_bottom = 699.0
-text = "Build"
-
 [node name="raid_button" type="Button" parent="ui_overlay"]
 offset_left = 935.0
 offset_top = 637.0
@@ -413,10 +407,22 @@ offset_right = 977.0
 offset_bottom = 668.0
 text = "Raid"
 
+[node name="build_button" type="Button" parent="ui_overlay"]
+offset_left = 933.0
+offset_top = 668.0
+offset_right = 982.0
+offset_bottom = 699.0
+text = "Build"
+
 [node name="build_menu" parent="ui_overlay" instance=ExtResource("41_rdebj")]
 process_mode = 2
 visible = false
 
+[node name="raid_menu" parent="ui_overlay" instance=ExtResource("44_gkua3")]
+process_mode = 2
+visible = false
+
 [connection signal="pressed" from="ui_overlay/population_button" to="ui_overlay/population_button" method="_on_pressed"]
+[connection signal="pressed" from="ui_overlay/raid_button" to="ui_overlay/raid_menu" method="_on_raid_button_pressed"]
 [connection signal="pressed" from="ui_overlay/build_button" to="ui_overlay/build_menu" method="_on_build_button_pressed"]
 [connection signal="passed_to_colony" from="ui_overlay/build_menu" to="split_screen_overlay/MarginContainer/split_screen_hbox_container/mouse_colony_viewport_container/mouse_colony_viewport/mouse_colony" method="_on_build_menu_passed_to_colony"]
