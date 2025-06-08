@@ -11,11 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cliqksp8tu5ij" path="res://Assets/ui_assets/gas_nozel_icon_v1.png" id="8_p6upw"]
 
 [node name="build_menu_slot" type="PanelContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 96.0
+offset_bottom = 118.0
 mouse_filter = 1
 theme_override_styles/panel = ExtResource("1_58eyl")
 script = ExtResource("1_s08gy")
@@ -77,7 +74,7 @@ stretch_mode = 4
 [node name="food_cost_label" type="Label" parent="MarginContainer/build_menu_individual/food_cloth_wood/Food"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "-"
 
 [node name="Cloth" type="HBoxContainer" parent="MarginContainer/build_menu_individual/food_cloth_wood"]
 layout_mode = 2
@@ -94,7 +91,7 @@ stretch_mode = 4
 [node name="cloth_cost_label" type="Label" parent="MarginContainer/build_menu_individual/food_cloth_wood/Cloth"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "-"
 
 [node name="Wood" type="HBoxContainer" parent="MarginContainer/build_menu_individual/food_cloth_wood"]
 layout_mode = 2
@@ -111,7 +108,7 @@ stretch_mode = 4
 [node name="wood_cost_label" type="Label" parent="MarginContainer/build_menu_individual/food_cloth_wood/Wood"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "-"
 
 [node name="metal_elec_fuel" type="HBoxContainer" parent="MarginContainer/build_menu_individual"]
 layout_mode = 2
@@ -132,7 +129,7 @@ stretch_mode = 4
 [node name="metal_cost_label" type="Label" parent="MarginContainer/build_menu_individual/metal_elec_fuel/metal"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "-"
 
 [node name="elec" type="HBoxContainer" parent="MarginContainer/build_menu_individual/metal_elec_fuel"]
 layout_mode = 2
@@ -149,7 +146,7 @@ stretch_mode = 4
 [node name="elec_cost_label" type="Label" parent="MarginContainer/build_menu_individual/metal_elec_fuel/elec"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "-"
 
 [node name="fuel" type="HBoxContainer" parent="MarginContainer/build_menu_individual/metal_elec_fuel"]
 layout_mode = 2
@@ -166,7 +163,7 @@ stretch_mode = 4
 [node name="fuel_cost_label" type="Label" parent="MarginContainer/build_menu_individual/metal_elec_fuel/fuel"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "-"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -24,7 +24,7 @@ resources_spreadsheet_view/freeze_first_column=true
 [application]
 
 config/name="Behind the Wall"
-run/main_scene="res://Scenes/Launch Scene/Blank_Launch_Screen.tscn"
+run/main_scene="res://Scenes/Main Game Object/behind_the_wall_main_game_object.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

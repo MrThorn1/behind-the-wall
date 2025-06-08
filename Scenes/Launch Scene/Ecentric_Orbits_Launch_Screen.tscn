@@ -37,4 +37,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_vru5t")
 theme_override_font_sizes/font_size = 50
-text = "Ecentric Orbit Games"
+text = "Eccentric Orbit Games"

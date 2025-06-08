@@ -1,0 +1,103 @@
+[gd_resource type="Resource" script_class="Building" load_steps=16 format=3 uid="uid://btq0k0r73sn03"]
+
+[ext_resource type="Texture2D" uid="uid://n7u8khndqg0g" path="res://Sprites/Buildings/Matchbox House/matchbox_house_prototype_2.png" id="1_g0v7n"]
+[ext_resource type="Script" path="res://Resources/Base Resource & Groups/building.gd" id="1_s11gd"]
+[ext_resource type="Texture2D" uid="uid://chusktqaifanl" path="res://Sprites/Buildings/Matchbox House/matchbox_house_prototype_2-Sheet.png" id="2_b5jlr"]
+[ext_resource type="Texture2D" uid="uid://chuylgbp7cjxv" path="res://Sprites/Buildings/Matchbox House/matchbox_house_prototype_hover.png" id="3_j2nbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7wsc"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(0, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fvsu"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(75, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk37e"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(150, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpio1"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(225, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts8qb"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(300, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iola"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(375, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg7rw"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(450, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h83ct"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(525, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3goqc"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(600, 0, 75, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_368hi"]
+atlas = ExtResource("2_b5jlr")
+region = Rect2(675, 0, 75, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcbvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7wsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fvsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk37e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpio1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts8qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iola")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg7rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h83ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3goqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_368hi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_s11gd")
+building_name = "Matchbox House"
+building_sprite = ExtResource("1_g0v7n")
+building_sprite_sheet = ExtResource("2_b5jlr")
+icon = ExtResource("1_g0v7n")
+icon_hover = ExtResource("3_j2nbh")
+trash_cost = 5.0
+food_cost = 0
+wood_cost = 0
+metal_cost = 0
+elec_cost = 0
+fuel_cost = 0
+cloth_cost = 0
+production_type = 0
+production_quantity = 9
+production_time = 0.0
+building_animation_sheet = SubResource("SpriteFrames_mcbvi")
