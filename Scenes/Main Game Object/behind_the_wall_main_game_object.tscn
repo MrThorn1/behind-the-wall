@@ -421,6 +421,7 @@ visible = false
 [node name="raid_menu" parent="ui_overlay" instance=ExtResource("44_gkua3")]
 process_mode = 2
 visible = false
+mouse_filter = 1
 
 [connection signal="pressed" from="ui_overlay/population_button" to="ui_overlay/population_button" method="_on_pressed"]
 [connection signal="pressed" from="ui_overlay/raid_button" to="ui_overlay/raid_menu" method="_on_raid_button_pressed"]

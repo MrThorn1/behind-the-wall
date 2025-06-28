@@ -160,4 +160,7 @@ shape = SubResource("RectangleShape2D_hxk4k")
 
 [node name="Drops" type="Node2D" parent="."]
 
+[node name="resource_drop" parent="." instance=ExtResource("5_lbw76")]
+position = Vector2(580, 470)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

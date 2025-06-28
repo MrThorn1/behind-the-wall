@@ -44,8 +44,7 @@ func after_placed_population() -> void:
 	print(sprite_size)
 	sprite_holder.offset = Vector2(0, -(sprite_size.y/2))
 	sprite_holder.play("idle")
-	$Build_Restrictor/Build_Restrictor_Collider.shape.size.x = sprite_size.x
-	$Build_Restrictor/Build_Restrictor_Collider.shape.size.y = sprite_size.y
+	$Build_Restrictor/Build_Restrictor_Collider.shape.set_size(Vector2(sprite_size.x,sprite_size.y))
 	pass
 	
 func after_invisible_population() -> void:

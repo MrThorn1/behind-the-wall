@@ -11,6 +11,7 @@ var global_suspicion : int
 var global_population : int
 var global_research : int
 var full_building_list
+var raid_menu_open : bool
 
 func _ready():
 	var resource_group:ResourceGroup = load("res://Resources/Base Resource & Groups/building_resource_group.tres")
