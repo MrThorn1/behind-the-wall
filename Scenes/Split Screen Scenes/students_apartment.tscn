@@ -33,6 +33,7 @@ size = Vector2(141, 162)
 size = Vector2(14, 38)
 
 [node name="students_apartment" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_k2yro")
 
 [node name="Timer" type="Timer" parent="."]

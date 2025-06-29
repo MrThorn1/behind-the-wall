@@ -61,7 +61,6 @@ offset_left = 316.0
 offset_top = 920.0
 offset_right = 368.0
 offset_bottom = 951.0
-mouse_filter = 1
 
 [node name="wood_button" parent="." instance=ExtResource("7_p0vlj")]
 offset_left = 585.0

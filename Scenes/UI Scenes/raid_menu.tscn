@@ -25,7 +25,7 @@ mouse_filter = 2
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-mouse_filter = 2
+mouse_filter = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/CenterContainer"]
 layout_mode = 2

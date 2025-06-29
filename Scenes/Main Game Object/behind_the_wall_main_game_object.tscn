@@ -83,6 +83,7 @@ script = ExtResource("16_6geie")
 script = ExtResource("1_f5bdk")
 
 [node name="split_screen_overlay" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="split_screen_overlay"]
 offset_right = 1920.0
@@ -149,6 +150,7 @@ grow_horizontal = 2
 [node name="Control" type="Control" parent="ui_overlay/VBoxContainer"]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="top_row_resource_ui" type="HBoxContainer" parent="ui_overlay/VBoxContainer"]
 layout_mode = 2
@@ -157,6 +159,7 @@ size_flags_vertical = 0
 [node name="population_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "Population:"
 horizontal_alignment = 2
@@ -164,6 +167,7 @@ horizontal_alignment = 2
 [node name="population_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "100000"
 script = ExtResource("21_kapg2")
@@ -182,6 +186,7 @@ texture = ExtResource("7_li4si")
 [node name="trash_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_ui_centering_container/trash_ui_hbox_container"]
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = ":"
 horizontal_alignment = 2
@@ -189,6 +194,7 @@ horizontal_alignment = 2
 [node name="trash_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui/trash_ui_centering_container/trash_ui_hbox_container"]
 layout_mode = 2
 size_flags_horizontal = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "10000000000000"
 script = ExtResource("7_epm3s")
@@ -196,6 +202,7 @@ script = ExtResource("7_epm3s")
 [node name="research_label" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "Research: "
 horizontal_alignment = 2
@@ -203,6 +210,7 @@ horizontal_alignment = 2
 [node name="research_value" type="Label" parent="ui_overlay/VBoxContainer/top_row_resource_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "100000"
 
@@ -214,6 +222,7 @@ size_flags_vertical = 0
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_stretch_ratio = 0.75
+mouse_filter = 1
 
 [node name="suspicion_progress_bar" type="TextureProgressBar" parent="ui_overlay/VBoxContainer/middle_row_resource_ui"]
 custom_minimum_size = Vector2(0, 20)
@@ -226,6 +235,7 @@ script = ExtResource("13_i5l6l")
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_stretch_ratio = 0.75
+mouse_filter = 1
 
 [node name="bottom_row_resouce_ui" type="HBoxContainer" parent="ui_overlay/VBoxContainer"]
 layout_mode = 2
@@ -233,6 +243,7 @@ layout_mode = 2
 [node name="spacer_container_1" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 
 [node name="hotdog_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 custom_minimum_size = Vector2(40, 40)
@@ -244,6 +255,7 @@ stretch_mode = 4
 
 [node name="food_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = ":  "
 horizontal_alignment = 2
@@ -251,6 +263,7 @@ horizontal_alignment = 2
 [node name="food_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "99999"
 script = ExtResource("7_tfr7a")
@@ -259,6 +272,7 @@ script = ExtResource("7_tfr7a")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
+mouse_filter = 1
 
 [node name="cloth_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 custom_minimum_size = Vector2(40, 40)
@@ -270,6 +284,7 @@ stretch_mode = 4
 
 [node name="cloth_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = ": "
 horizontal_alignment = 2
@@ -277,6 +292,7 @@ horizontal_alignment = 2
 [node name="cloth_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "99999"
 script = ExtResource("7_gorkp")
@@ -285,6 +301,7 @@ script = ExtResource("7_gorkp")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
+mouse_filter = 1
 
 [node name="wood_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
@@ -293,6 +310,7 @@ texture = ExtResource("12_pv02s")
 [node name="wood_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = ":  "
 horizontal_alignment = 2
@@ -300,6 +318,7 @@ horizontal_alignment = 2
 [node name="wood_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "99999"
 script = ExtResource("21_gir1x")
@@ -308,6 +327,7 @@ script = ExtResource("21_gir1x")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
+mouse_filter = 1
 
 [node name="metal_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
@@ -316,6 +336,7 @@ texture = ExtResource("13_yl8wh")
 [node name="metal_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = ":  "
 horizontal_alignment = 2
@@ -323,6 +344,7 @@ horizontal_alignment = 2
 [node name="metal_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "99999"
 script = ExtResource("25_jjrh6")
@@ -331,6 +353,7 @@ script = ExtResource("25_jjrh6")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
+mouse_filter = 1
 
 [node name="elec_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
@@ -339,6 +362,7 @@ texture = ExtResource("14_088wt")
 [node name="elec_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = ":  "
 horizontal_alignment = 2
@@ -346,6 +370,7 @@ horizontal_alignment = 2
 [node name="elec_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "99999"
 script = ExtResource("29_rtg7l")
@@ -354,6 +379,7 @@ script = ExtResource("29_rtg7l")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
+mouse_filter = 1
 
 [node name="fuel_icon" type="TextureRect" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
@@ -362,6 +388,7 @@ texture = ExtResource("12_gxrn2")
 [node name="fuel_label" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = ":  "
 horizontal_alignment = 2
@@ -369,6 +396,7 @@ horizontal_alignment = 2
 [node name="fuel_value" type="Label" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_font_sizes/font_size = 35
 text = "99999"
 script = ExtResource("31_0flp7")
@@ -376,12 +404,14 @@ script = ExtResource("31_0flp7")
 [node name="spacer_container_2" type="Control" parent="ui_overlay/VBoxContainer/bottom_row_resouce_ui"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 
 [node name="population_button" type="Button" parent="ui_overlay"]
 offset_left = 909.0
 offset_top = 534.0
 offset_right = 1002.0
 offset_bottom = 565.0
+mouse_filter = 1
 text = "population
 "
 script = ExtResource("41_i0jpi")
@@ -391,6 +421,7 @@ offset_left = 909.0
 offset_top = 571.0
 offset_right = 1004.0
 offset_bottom = 602.0
+mouse_filter = 1
 text = "Suspicion +"
 
 [node name="suspicion_down_button" parent="ui_overlay" instance=ExtResource("40_cv7hv")]
@@ -398,6 +429,7 @@ offset_left = 911.0
 offset_top = 605.0
 offset_right = 1005.0
 offset_bottom = 636.0
+mouse_filter = 1
 text = "suspicion -"
 
 [node name="raid_button" type="Button" parent="ui_overlay"]
@@ -405,6 +437,7 @@ offset_left = 935.0
 offset_top = 637.0
 offset_right = 977.0
 offset_bottom = 668.0
+mouse_filter = 1
 text = "Raid"
 
 [node name="build_button" type="Button" parent="ui_overlay"]
@@ -412,6 +445,7 @@ offset_left = 933.0
 offset_top = 668.0
 offset_right = 982.0
 offset_bottom = 699.0
+mouse_filter = 1
 text = "Build"
 
 [node name="build_menu" parent="ui_overlay" instance=ExtResource("41_rdebj")]
