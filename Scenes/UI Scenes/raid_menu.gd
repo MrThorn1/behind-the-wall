@@ -1,5 +1,5 @@
 class_name RaidMenu
-extends Control
+extends PanelContainer
 
 func _ready():
 	hide()
@@ -12,6 +12,14 @@ func _on_raid_button_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_close_button_pressed() -> void:
+	hide()
+	get_tree().paused = false
+	CurrencySingleton.raid_menu_open = false
+	pass # Replace with function body.
+
+
+func _on_launch_raid_pressed() -> void:
+	print("raid initated!!!")
 	hide()
 	get_tree().paused = false
 	CurrencySingleton.raid_menu_open = false

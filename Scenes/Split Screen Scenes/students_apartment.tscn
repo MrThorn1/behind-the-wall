@@ -94,6 +94,7 @@ shape = SubResource("RectangleShape2D_hchtt")
 affect_navigation_mesh = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
 anchor_mode = 0
 script = ExtResource("2_4cglq")
 
@@ -151,6 +152,7 @@ debug_use_custom = true
 debug_path_custom_color = Color(1, 0.0235294, 1, 1)
 
 [node name="Rat_Spawner_Kitchen_Counter" type="Area2D" parent="."]
+process_mode = 3
 position = Vector2(908, -314)
 script = ExtResource("6_vbs84")
 rat_scene = ExtResource("2_kuwri")

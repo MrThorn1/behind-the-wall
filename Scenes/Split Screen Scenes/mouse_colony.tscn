@@ -33,6 +33,7 @@ size = Vector2(743, 80)
 script = ExtResource("1_5ob52")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
 anchor_mode = 0
 script = ExtResource("2_vmeys")
 
