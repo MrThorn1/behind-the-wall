@@ -107,6 +107,8 @@ func populate_placed_building(building) -> void:
 	$Temp_Placed_Building.cloth_cost = building.cloth_cost
 	$Temp_Placed_Building.production_type = building.production_type
 	$Temp_Placed_Building.production_quantity = building.production_quantity
+	if $Temp_Placed_Building.production_type == 9:
+		managerclick.ref.click(9,$Temp_Placed_Building.production_quantity)
 	$Temp_Placed_Building.production_time = building.production_time
 	$Temp_Placed_Building/AnimatedSprite2D.sprite_frames = building.building_animation_sheet
 	$Temp_Placed_Building.after_placed_population()

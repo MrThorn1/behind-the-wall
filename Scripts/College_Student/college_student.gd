@@ -13,6 +13,7 @@ var rand_max : int = 100000
 var rand_location_place : int
 var rng = RandomNumberGenerator.new()
 var resource_drop_time : int
+var drops_created : int = 0
 @export var resource_drop : PackedScene
 @export var room_target : Marker2D
 @onready var nav:NavigationAgent2D = $NavigationAgent2D
@@ -55,7 +56,9 @@ func _timer_timeout():
 		var drop = resource_drop.instantiate()
 		drop.global_position = self.global_position
 		add_sibling.call_deferred(drop)
-		drop.name = "resource_drop"
+		drop.reparent($Drops)
+		drop.name = "resource_drop " + str(drops_created)
+		drops_created = drops_created + 1
 	pass
 	loops_iterated = loops_iterated + 1
 	if loops_iterated == 10:

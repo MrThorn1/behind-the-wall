@@ -24,3 +24,6 @@ func _on_launch_raid_pressed() -> void:
 	get_tree().paused = false
 	CurrencySingleton.raid_menu_open = false
 	pass # Replace with function body.
+
+func resource_drop_selected() -> void:
+	print("signal connected")

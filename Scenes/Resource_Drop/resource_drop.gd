@@ -1,12 +1,14 @@
+class_name Resource_Drop
 extends Node2D
 
-signal resource_drop_selected
+signal resource_drop_selected(resource_name)
 var selected_for_raid : bool = false
+var is_resource : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	self.add_to_group("drops")
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,13 +34,11 @@ func unhighlight_object() -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if CurrencySingleton.raid_menu_open:
-		print("raid menu open check passed")
 		if event is InputEventMouseButton:
-			print("mouse button event check passed")
 			if event.button_index ==1:
-				print("mouse button event passed correctly")
+				if not selected_for_raid:
+					selected_for_raid = true
+					emit_signal("resource_drop_selected", self.name)
 				if selected_for_raid:
 					pass
-				selected_for_raid = true
-				emit_signal("resource_dropt_selected", self.name)
 	pass # Replace with function body.

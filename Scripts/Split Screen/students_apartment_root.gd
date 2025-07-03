@@ -19,6 +19,8 @@ var class_schedules = [class_schedule_1,class_schedule_2,class_schedule_3,class_
 var current_week
 var current_time
 var rng = RandomNumberGenerator.new()
+signal resource_clicked_pass
+var resource_clicked_pass_name
 
 func _ready() -> void:
 	generate_week()
@@ -26,7 +28,6 @@ func _ready() -> void:
 	current_week = monday_schedule
 	assign_location()
 	get_viewport().size = Vector2(886,1066)
-
 	pass # Replace with function body.
 
 func generate_week() -> void:
@@ -111,4 +112,18 @@ func advance_to_next_hour() -> void:
 		current_week = monday_schedule
 		current_time = 0
 	assign_location()
+	pass
+
+func _on_child_entered_tree(node: Node) -> void:
+	print("child entered tree signal works")
+	if node.is_in_group("drops"):
+		print("is class worked")
+		node.resource_drop_selected.connect(pass_drop_selected_signal_to_raid_menu)
+		var resource_selected : String
+		pass
+	#use this to connect the individaul signal from each resource node when it is dropped so that it can be clicked to notify the raid menu
+	pass # Replace with function body.
+	
+func pass_drop_selected_signal_to_raid_menu(resouce_selected) -> void:
+	print("drop output signal connected, and working upon click")
 	pass
