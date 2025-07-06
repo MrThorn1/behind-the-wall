@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b865i04xilvms" path="res://Sprites/Buildings/Food Bowl/Food_Bowl_Sprite_Sheet.png" id="1_aigsi"]
 [ext_resource type="Texture2D" uid="uid://btonw7rt8mg3d" path="res://Sprites/Buildings/Food Bowl/Food_Bowl.png" id="2_ui767"]
 [ext_resource type="Texture2D" uid="uid://f6w33bykbydg" path="res://Sprites/Buildings/Food Bowl/Food_Bowl_Hover.png" id="3_4mctw"]
-[ext_resource type="Script" path="res://Resources/Base Resource & Groups/building.gd" id="4_m1d2y"]
+[ext_resource type="Script" path="res://Resources/Building Resource & Groups/building.gd" id="4_m1d2y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kr55"]
 atlas = ExtResource("1_aigsi")

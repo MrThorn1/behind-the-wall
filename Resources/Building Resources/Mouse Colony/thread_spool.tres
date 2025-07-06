@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cqleeuma88kbu" path="res://Sprites/Buildings/Thread Spool/Tread_Spool_Sprite_Sheet.png" id="1_w68bt"]
 [ext_resource type="Texture2D" uid="uid://5q8wqca5svnw" path="res://Sprites/Buildings/Thread Spool/Tread_Spool.png" id="2_unin8"]
 [ext_resource type="Texture2D" uid="uid://b4yvgrbbutk0p" path="res://Sprites/Buildings/Thread Spool/Tread_Spool_hover.png" id="3_jf1ts"]
-[ext_resource type="Script" path="res://Resources/Base Resource & Groups/building.gd" id="4_dax13"]
+[ext_resource type="Script" path="res://Resources/Building Resource & Groups/building.gd" id="4_dax13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7ux0"]
 atlas = ExtResource("1_w68bt")

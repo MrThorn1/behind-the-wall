@@ -21,6 +21,8 @@ var current_time
 var rng = RandomNumberGenerator.new()
 signal resource_clicked_pass
 var resource_clicked_pass_name
+var drop_resource_group:ResourceGroup = load("res://Resources/Drop_Resource_&_Groups/drop_resource_group.tres")
+var _content = drop_resource_group.load_all()
 
 func _ready() -> void:
 	generate_week()
@@ -115,15 +117,14 @@ func advance_to_next_hour() -> void:
 	pass
 
 func _on_child_entered_tree(node: Node) -> void:
-	print("child entered tree signal works")
 	if node.is_in_group("drops"):
-		print("is class worked")
 		node.resource_drop_selected.connect(pass_drop_selected_signal_to_raid_menu)
 		var resource_selected : String
 		pass
 	#use this to connect the individaul signal from each resource node when it is dropped so that it can be clicked to notify the raid menu
 	pass # Replace with function body.
 	
-func pass_drop_selected_signal_to_raid_menu(resouce_selected) -> void:
-	print("drop output signal connected, and working upon click")
+func pass_drop_selected_signal_to_raid_menu(resource_selected) -> void:
+
+	emit_signal("resource_clicked_pass", resource_selected)
 	pass

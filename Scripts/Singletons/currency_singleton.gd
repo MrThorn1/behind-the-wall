@@ -14,6 +14,6 @@ var full_building_list
 var raid_menu_open : bool
 
 func _ready():
-	var resource_group:ResourceGroup = load("res://Resources/Base Resource & Groups/building_resource_group.tres")
+	var resource_group:ResourceGroup = load("res://Resources/Building Resource & Groups/building_resource_group.tres")
 	var full_building_list = resource_group.load_all()
 #loading all of those resources, might have to autoload in the future

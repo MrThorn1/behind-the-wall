@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1qkkehrr7c66"]
 
-[ext_resource type="Script" path="res://Resources/Base Resource & Groups/Root Building Scene/root_building.gd" id="1_5w68t"]
+[ext_resource type="Script" path="res://Resources/Building Resource & Groups/Root Building Scene/root_building.gd" id="1_5w68t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i2dct"]
 

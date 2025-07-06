@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/UI Scenes/build_menu.gd" id="1_letha"]
 [ext_resource type="PackedScene" uid="uid://b6gu5sn1mcvsm" path="res://Scenes/UI Scenes/building_slot.tscn" id="2_m7xgi"]
-[ext_resource type="PackedScene" uid="uid://n0xle1hxq6qm" path="res://Resources/Base Resource & Groups/Root Building Scene/invisible_building.tscn" id="3_omu2l"]
+[ext_resource type="PackedScene" uid="uid://n0xle1hxq6qm" path="res://Resources/Building Resource & Groups/Root Building Scene/invisible_building.tscn" id="3_omu2l"]
 
 [node name="build_menu" type="PanelContainer"]
 anchors_preset = 8

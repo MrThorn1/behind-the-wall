@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="drop" load_steps=3 format=3 uid="uid://diqhgibubvda5"]
+
+[ext_resource type="Script" path="res://Resources/Drop_Resource_&_Groups/drop.gd" id="1_hofiv"]
+[ext_resource type="Texture2D" uid="uid://dusfxgwt4p5o5" path="res://Sprites/Drops/Ball_of_paper.png" id="1_u5nwv"]
+
+[resource]
+script = ExtResource("1_hofiv")
+drop_sprite = ExtResource("1_u5nwv")
+icon = ExtResource("1_u5nwv")
+trash_amount = 15
+food_amount = 0
+wood_amount = 0
+metal_amount = 0
+elec_amount = 0
+fuel_amount = 0
+cloth_amount = 0

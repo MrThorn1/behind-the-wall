@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://do2ltbciuam68" path="res://Sprites/Screen Layouts/grandmas_apartment_draft.png" id="3_i0kis"]
 [ext_resource type="Script" path="res://Scripts/College_Student/college_student.gd" id="4_on6nq"]
 [ext_resource type="Texture2D" uid="uid://c123vsa0laeny" path="res://Sprites/College Student/College_Student_1.png" id="4_rsyic"]
-[ext_resource type="PackedScene" uid="uid://du41tmmbagmfr" path="res://Scenes/Resource_Drop/resource_drop.tscn" id="5_lbw76"]
+[ext_resource type="PackedScene" uid="uid://du41tmmbagmfr" path="res://Resources/Drop_Resource_&_Groups/Root_Resource_Drop/resource_drop.tscn" id="5_lbw76"]
 [ext_resource type="Script" path="res://Scenes/rat/rat_spawner_kitchen_counter.gd" id="6_vbs84"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cmikq"]

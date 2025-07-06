@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" load_steps=2 format=3 uid="uid://cddjb53v7d60y"]
+
+[ext_resource type="Script" path="res://addons/godot_resource_groups/resource_group.gd" id="1_djpbw"]
+
+[resource]
+script = ExtResource("1_djpbw")
+base_folder = "res://Resources/Drop_Resource_&_Groups/Drops"
+includes = Array[String]([])
+excludes = Array[String]([])
+paths = Array[String](["res://Resources/Drop_Resource_&_Groups/Drops/ball_of_paper.tres", "res://Resources/Drop_Resource_&_Groups/Drops/food_drop.tres"])

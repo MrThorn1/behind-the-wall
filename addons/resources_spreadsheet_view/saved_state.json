@@ -21,11 +21,59 @@
       "resource_name": {
         "visibility": 0
       }
+    },
+    "res://Resources/Building Resources/Apartment/": {
+      "metadata/_custom_type_script": {
+        "visibility": 0
+      },
+      "resource_local_to_scene": {
+        "visibility": 0
+      },
+      "resource_name": {
+        "visibility": 0
+      }
+    },
+    "res://Resources/Building Resources/Mouse Colony/": {
+      "metadata/_custom_type_script": {
+        "visibility": 0
+      },
+      "resource_local_to_scene": {
+        "visibility": 0
+      },
+      "resource_name": {
+        "visibility": 0
+      }
+    },
+    "res://Resources/Drop_Resource_&_Groups/": {
+      "metadata/_custom_type_script": {
+        "visibility": 0
+      },
+      "resource_local_to_scene": {
+        "visibility": 0
+      },
+      "resource_name": {
+        "visibility": 0
+      }
+    },
+    "res://Resources/Drop_Resource_&_Groups/Drops/": {
+      "metadata/_custom_type_script": {
+        "visibility": 0
+      },
+      "resource_local_to_scene": {
+        "visibility": 0
+      },
+      "resource_name": {
+        "visibility": 0
+      }
     }
   },
   "recent_paths": [
     "res://Resources/",
-    "res://Resources/Building Resources/"
+    "res://Resources/Building Resources/",
+    "res://Resources/Drop_Resource_&_Groups/Drops/",
+    "res://Resources/Building Resources/Apartment/",
+    "res://Resources/Building Resources/Mouse Colony/",
+    "res://Resources/Drop_Resource_&_Groups/"
   ],
   "table_functions": {
     "filter": [

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="drop" load_steps=3 format=3 uid="uid://2f3sm07elwa2"]
+
+[ext_resource type="Script" path="res://Resources/Drop_Resource_&_Groups/drop.gd" id="1_llrrs"]
+[ext_resource type="Texture2D" uid="uid://bgrhnvyo23k5i" path="res://Sprites/Drops/food_drop.png" id="1_xdykn"]
+
+[resource]
+script = ExtResource("1_llrrs")
+drop_sprite = ExtResource("1_xdykn")
+icon = ExtResource("1_xdykn")
+trash_amount = 0
+food_amount = 0
+wood_amount = 0
+metal_amount = 0
+elec_amount = 0
+fuel_amount = 0
+cloth_amount = 0

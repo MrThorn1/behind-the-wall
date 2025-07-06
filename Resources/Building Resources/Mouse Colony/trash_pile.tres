@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Building" load_steps=16 format=3 uid="uid://cury1f512a1ms"]
 
 [ext_resource type="Texture2D" uid="uid://we85jskh5kl7" path="res://Sprites/Buildings/Trash_Pile/Trash_Pile.png" id="1_ij6ky"]
-[ext_resource type="Script" path="res://Resources/Base Resource & Groups/building.gd" id="1_miemj"]
+[ext_resource type="Script" path="res://Resources/Building Resource & Groups/building.gd" id="1_miemj"]
 [ext_resource type="Texture2D" uid="uid://cupoyb345flg" path="res://Sprites/Buildings/Trash_Pile/Trash_Pile_Sprite_Sheet.png" id="2_ul0h7"]
 [ext_resource type="Texture2D" uid="uid://smpg6k64e66a" path="res://Sprites/Buildings/Trash_Pile/Trash_Pile_hover.png" id="3_moi7m"]
 

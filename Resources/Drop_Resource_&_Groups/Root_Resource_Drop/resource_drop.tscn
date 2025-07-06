@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://du41tmmbagmfr"]
+[gd_scene load_steps=3 format=3 uid="uid://du41tmmbagmfr"]
 
-[ext_resource type="Texture2D" uid="uid://dusfxgwt4p5o5" path="res://Sprites/Drops/Ball_of_paper.png" id="1_1m2vb"]
-[ext_resource type="Script" path="res://Scenes/Resource_Drop/resource_drop.gd" id="1_qqqux"]
+[ext_resource type="Script" path="res://Resources/Drop_Resource_&_Groups/Root_Resource_Drop/resource_drop.gd" id="1_qqqux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81slb"]
 size = Vector2(50, 50)
@@ -13,7 +12,6 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qqqux")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1m2vb")
 
 [node name="Area2D" type="Area2D" parent="."]
 

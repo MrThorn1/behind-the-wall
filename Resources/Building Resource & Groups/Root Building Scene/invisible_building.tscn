@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://n0xle1hxq6qm"]
 
-[ext_resource type="Script" path="res://Resources/Base Resource & Groups/Root Building Scene/invisible_building.gd" id="1_mud20"]
+[ext_resource type="Script" path="res://Resources/Building Resource & Groups/Root Building Scene/invisible_building.gd" id="1_mud20"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f43gd"]
 radius = 3.0

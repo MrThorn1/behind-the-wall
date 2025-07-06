@@ -7,7 +7,7 @@ extends PanelContainer
 #references with a scene unique name the grid container in th ebottom of the vbox container
 @onready var grid_container: GridContainer = %GridContainer
 #new resource group pulling everything from the building resources folder
-var resource_group:ResourceGroup = load("res://Resources/Base Resource & Groups/building_resource_group.tres")
+var resource_group:ResourceGroup = load("res://Resources/Building Resource & Groups/building_resource_group.tres")
 #loading all of those resources, might have to autoload in the future
 var _content = resource_group.load_all()
 signal passed_to_colony
